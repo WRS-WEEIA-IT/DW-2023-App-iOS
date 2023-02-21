@@ -6,15 +6,15 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-    }
 
+    }
 
 }
 

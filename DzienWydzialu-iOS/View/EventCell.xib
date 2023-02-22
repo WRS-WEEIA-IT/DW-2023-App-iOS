@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="181" id="cSa-3m-hGx" customClass="EventCell" customModule="DzienWydzialu_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="423" height="181"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cSa-3m-hGx" id="Jgu-Ni-teQ">
+                <rect key="frame" x="0.0" y="0.0" width="423" height="181"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventCellBackground" translatesAutoresizingMaskIntoConstraints="NO" id="R4d-b3-EE7">
+                        <rect key="frame" x="0.0" y="0.0" width="423" height="181"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YQn-cw-aBj" userLabel="Filter">
+                        <rect key="frame" x="0.0" y="-1" width="423" height="182"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <color key="tintColor" name="backgroundColor"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31.03.2023 10:00 - 11:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6T-QE-gWr">
+                        <rect key="frame" x="302.5" y="10" width="110.5" height="22"/>
+                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="10"/>
+                        <color key="textColor" name="reversedBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="eqy-Fe-nFf">
+                        <rect key="frame" x="10" y="77.5" width="100.5" height="93.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Szkolenie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgY-P2-xjD">
+                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="22"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temat szkolenia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfG-uq-2dT">
+                                <rect key="frame" x="0.0" y="22" width="100.5" height="31"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1B-B2-b4a">
+                                <rect key="frame" x="0.0" y="53" width="100" height="40.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Tln-kW-X06"/>
+                                </constraints>
+                                <color key="tintColor" name="buttonColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Zapisz się" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="12"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="cSa-3m-hGx" eventType="touchUpInside" id="hj4-Bp-Qez"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="R4d-b3-EE7" secondAttribute="bottom" id="82w-5f-TSU"/>
+                    <constraint firstAttribute="trailing" secondItem="YQn-cw-aBj" secondAttribute="trailing" id="I3T-M3-7xJ"/>
+                    <constraint firstAttribute="bottom" secondItem="eqy-Fe-nFf" secondAttribute="bottom" constant="10" id="d8r-1U-MCj"/>
+                    <constraint firstItem="R4d-b3-EE7" firstAttribute="leading" secondItem="Jgu-Ni-teQ" secondAttribute="leading" id="dL9-2D-OVQ"/>
+                    <constraint firstAttribute="trailing" secondItem="u6T-QE-gWr" secondAttribute="trailing" constant="10" id="dVj-v8-oNV"/>
+                    <constraint firstItem="YQn-cw-aBj" firstAttribute="leading" secondItem="Jgu-Ni-teQ" secondAttribute="leading" id="eKa-ef-bTk"/>
+                    <constraint firstAttribute="trailing" secondItem="R4d-b3-EE7" secondAttribute="trailing" id="hfh-oO-56a"/>
+                    <constraint firstItem="R4d-b3-EE7" firstAttribute="top" secondItem="Jgu-Ni-teQ" secondAttribute="top" id="jaj-ee-MRh"/>
+                    <constraint firstAttribute="bottom" secondItem="YQn-cw-aBj" secondAttribute="bottom" id="l6G-Yp-8TS"/>
+                    <constraint firstItem="YQn-cw-aBj" firstAttribute="top" secondItem="Jgu-Ni-teQ" secondAttribute="top" id="n3e-SM-zqd"/>
+                    <constraint firstItem="eqy-Fe-nFf" firstAttribute="leading" secondItem="Jgu-Ni-teQ" secondAttribute="leading" constant="10" id="yTZ-iT-jMu"/>
+                    <constraint firstItem="u6T-QE-gWr" firstAttribute="top" secondItem="Jgu-Ni-teQ" secondAttribute="top" constant="10" id="zcL-AQ-zqX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="u6T-QE-gWr" id="aEV-bJ-fGr"/>
+                <outlet property="eventSubject" destination="hfG-uq-2dT" id="xfT-CF-q0a"/>
+                <outlet property="eventType" destination="YgY-P2-xjD" id="8kL-Si-att"/>
+            </connections>
+            <point key="canvasLocation" x="-69.465648854961827" y="79.225352112676063"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="EventCellBackground" width="331" height="150"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <namedColor name="backgroundColor">
+            <color red="0.99599999189376831" green="0.99599999189376831" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonColor">
+            <color red="0.059000000357627869" green="0.60000002384185791" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="reversedBackgroundColor">
+            <color red="0.050999999046325684" green="0.050999999046325684" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

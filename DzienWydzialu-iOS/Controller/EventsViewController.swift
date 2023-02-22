@@ -10,11 +10,32 @@ import FirebaseFirestore
 
 class EventsViewController: UIViewController {
         
+    @IBOutlet weak var eventTableView: UITableView!
+    
+    var eventsArray : [Events] = []
+    
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
+        
+    }
+
+
+}
+
+
+
+
+
+
+
+//MARK: - Firebase
+
+extension EventsViewController {
+    func loadData() {
         let docRef = db.collection("events").document("1")
 
         docRef.getDocument { (document, error) in
@@ -25,9 +46,5 @@ class EventsViewController: UIViewController {
                 print("Document does not exist")
             }
         }
-        
     }
-
-
 }
-

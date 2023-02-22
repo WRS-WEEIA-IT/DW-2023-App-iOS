@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -309,6 +310,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DFw-gU-uhu">
+                                <rect key="frame" x="0.0" y="214" width="414" height="569"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="e8e-E1-G1M">
                                 <rect key="frame" x="114.5" y="15" width="185" height="128"/>
                                 <constraints>
@@ -535,9 +540,9 @@
                                     <constraint firstItem="BUq-bd-hYR" firstAttribute="leading" secondItem="gm8-oJ-dzd" secondAttribute="leading" constant="10" id="61f-8b-Y2r"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd0-e1-uvh">
-                                <rect key="frame" x="149.5" y="424" width="115.5" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd0-e1-uvh">
+                                <rect key="frame" x="20" y="151" width="193" height="55"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -546,25 +551,33 @@
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="e8e-E1-G1M" firstAttribute="centerX" secondItem="9mp-Xb-tV5" secondAttribute="centerX" id="2lc-cm-YDv"/>
-                            <constraint firstItem="Nd0-e1-uvh" firstAttribute="centerY" secondItem="9mp-Xb-tV5" secondAttribute="centerY" id="3FK-Gu-ZIm"/>
-                            <constraint firstItem="Nd0-e1-uvh" firstAttribute="centerX" secondItem="9mp-Xb-tV5" secondAttribute="centerX" id="4GH-Dx-sUq"/>
+                            <constraint firstItem="Nd0-e1-uvh" firstAttribute="leading" secondItem="uEl-CX-cFP" secondAttribute="leading" constant="20" id="2vc-Sx-4Ab"/>
                             <constraint firstItem="gm8-oJ-dzd" firstAttribute="leading" secondItem="uEl-CX-cFP" secondAttribute="leading" id="969-gg-4fW"/>
                             <constraint firstItem="Q7A-Oh-PS8" firstAttribute="trailing" secondItem="uEl-CX-cFP" secondAttribute="trailing" id="9qy-dm-O1z"/>
                             <constraint firstItem="OBz-Ly-NJs" firstAttribute="trailing" secondItem="uEl-CX-cFP" secondAttribute="trailing" id="A4Q-hZ-HeX"/>
+                            <constraint firstItem="uEl-CX-cFP" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nd0-e1-uvh" secondAttribute="trailing" symbolic="YES" id="AqD-R0-xk3"/>
                             <constraint firstItem="e8e-E1-G1M" firstAttribute="top" secondItem="9mp-Xb-tV5" secondAttribute="top" constant="15" id="F6d-6U-Ul9"/>
                             <constraint firstAttribute="bottom" secondItem="gm8-oJ-dzd" secondAttribute="bottom" constant="25" id="Gkj-XY-LEQ"/>
+                            <constraint firstItem="DFw-gU-uhu" firstAttribute="leading" secondItem="uEl-CX-cFP" secondAttribute="leading" id="UbD-y3-rh7"/>
                             <constraint firstItem="Q7A-Oh-PS8" firstAttribute="leading" secondItem="uEl-CX-cFP" secondAttribute="leading" id="V1g-6B-Nrz"/>
                             <constraint firstItem="gm8-oJ-dzd" firstAttribute="centerX" secondItem="9mp-Xb-tV5" secondAttribute="centerX" id="fZe-UK-W1N"/>
+                            <constraint firstItem="DFw-gU-uhu" firstAttribute="trailing" secondItem="uEl-CX-cFP" secondAttribute="trailing" id="g8a-lm-rl2"/>
                             <constraint firstAttribute="bottom" secondItem="OBz-Ly-NJs" secondAttribute="bottom" id="m7V-de-UYx"/>
+                            <constraint firstItem="OBz-Ly-NJs" firstAttribute="top" secondItem="DFw-gU-uhu" secondAttribute="bottom" constant="8" id="nku-mK-gGv"/>
                             <constraint firstItem="uEl-CX-cFP" firstAttribute="trailing" secondItem="gm8-oJ-dzd" secondAttribute="trailing" id="pyA-QD-XVU"/>
+                            <constraint firstItem="DFw-gU-uhu" firstAttribute="top" secondItem="Nd0-e1-uvh" secondAttribute="bottom" constant="8" id="sIT-Cf-eN8"/>
                             <constraint firstAttribute="bottom" secondItem="Q7A-Oh-PS8" secondAttribute="bottom" id="y5d-XU-erR"/>
                             <constraint firstItem="OBz-Ly-NJs" firstAttribute="leading" secondItem="uEl-CX-cFP" secondAttribute="leading" id="yPc-a8-7Tp"/>
+                            <constraint firstItem="Nd0-e1-uvh" firstAttribute="top" secondItem="e8e-E1-G1M" secondAttribute="bottom" constant="8" id="yc1-oA-W7z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eventTableView" destination="DFw-gU-uhu" id="nzE-Ny-16x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdt-fF-U5a" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1817" y="-3"/>
+            <point key="canvasLocation" x="1815.9420289855075" y="-3.3482142857142856"/>
         </scene>
         <!--Tasks View Controller-->
         <scene sceneID="qZo-Tm-f5X">
@@ -833,9 +846,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="F9S-4W-q2u"/>
+        <segue reference="Xdu-fX-JHx"/>
         <segue reference="23d-Lh-gD5"/>
-        <segue reference="FSS-bf-7Nn"/>
+        <segue reference="B7M-XL-kzl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FluidShadow_home_page" width="317" height="310"/>
@@ -853,5 +866,8 @@
         <namedColor name="backgroundColor">
             <color red="0.99599999189376831" green="0.99599999189376831" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

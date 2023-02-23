@@ -10,4 +10,5 @@ import Foundation
 struct K {
     static let cellIdentifier = "ReusableCell"
     static let nibName = "EventCell"
+    static let buttonColor = "buttonColor"
 }

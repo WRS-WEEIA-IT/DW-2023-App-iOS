@@ -305,6 +305,10 @@
                             <constraint firstItem="qg9-jC-Me4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yyO-Sd-87d"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="homeLabel" destination="pfy-da-jcN" id="UUO-k7-l2H"/>
+                        <outlet property="houseIcon" destination="6Bl-dV-kJc" id="zTC-Rw-xfz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -325,7 +329,7 @@
                                     <constraint firstAttribute="height" constant="128" id="zVp-CC-TzK"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="heR-BR-IGn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="heR-BR-IGn">
                                 <rect key="frame" x="10" y="201" width="355" height="506"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                             </tableView>
@@ -588,6 +592,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="eventIcon" destination="FKK-8q-9dv" id="0zl-fc-Xad"/>
+                        <outlet property="eventLabel" destination="z6H-ee-e2g" id="pcz-Xx-bUA"/>
                         <outlet property="eventTableView" destination="heR-BR-IGn" id="VDk-Ex-9Zi"/>
                     </connections>
                 </viewController>

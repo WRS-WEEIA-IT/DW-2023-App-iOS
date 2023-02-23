@@ -11,6 +11,8 @@ import FirebaseFirestore
 class EventsViewController: UIViewController {
         
     @IBOutlet weak var eventTableView: UITableView!
+    @IBOutlet weak var eventIcon: UIImageView!
+    @IBOutlet weak var eventLabel: UILabel!
     
     var eventsArray : [Events] = [
         Events(eventType: "Szkolenie", timeStart: "31.03.2023 15:00-16:00", timeEnd: "something", title: "Swift Development"),
@@ -27,6 +29,9 @@ class EventsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        eventIcon.tintColor = UIColor(named: K.buttonColor)
+        eventLabel.textColor = UIColor(named: K.buttonColor)
+        
         eventTableView.dataSource = self
         eventTableView.register(UINib(nibName: K.nibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
         
@@ -53,8 +58,7 @@ extension EventsViewController : UITableViewDataSource {
         
         return cell
     }
-    
-    
+
 }
 
 

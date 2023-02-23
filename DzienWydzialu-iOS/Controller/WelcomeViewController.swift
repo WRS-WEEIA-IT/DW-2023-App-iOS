@@ -10,10 +10,15 @@ import FirebaseFirestore
 
 class WelcomeViewController: UIViewController {
     
+    @IBOutlet weak var houseIcon: UIImageView!
+    @IBOutlet weak var homeLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        homeLabel.textColor = UIColor(named: K.buttonColor)
+        houseIcon.tintColor = UIColor(named: K.buttonColor)
     }
 
 }

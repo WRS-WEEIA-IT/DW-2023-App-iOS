@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="181" id="cSa-3m-hGx" customClass="EventCell" customModule="DzienWydzialu_iOS" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="181" id="cSa-3m-hGx" customClass="EventCell" customModule="DzienWydzialu_iOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="423" height="181"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cSa-3m-hGx" id="Jgu-Ni-teQ">
@@ -31,24 +31,25 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="eqy-Fe-nFf">
-                        <rect key="frame" x="10" y="77.5" width="100.5" height="93.5"/>
+                        <rect key="frame" x="10" y="90" width="100.5" height="81"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Szkolenie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgY-P2-xjD">
-                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="22"/>
+                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="19"/>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temat szkolenia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfG-uq-2dT">
-                                <rect key="frame" x="0.0" y="22" width="100.5" height="31"/>
+                                <rect key="frame" x="0.0" y="19" width="100.5" height="27"/>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1B-B2-b4a">
-                                <rect key="frame" x="0.0" y="53" width="100" height="40.5"/>
+                                <rect key="frame" x="0.0" y="46" width="100" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Tln-kW-X06"/>
+                                    <constraint firstAttribute="height" constant="35" id="za3-fJ-9ow"/>
                                 </constraints>
                                 <color key="tintColor" name="buttonColor"/>
                                 <state key="normal" title="Button"/>
@@ -62,6 +63,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" name="backgroundColor"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="R4d-b3-EE7" secondAttribute="bottom" id="82w-5f-TSU"/>
                     <constraint firstAttribute="trailing" secondItem="YQn-cw-aBj" secondAttribute="trailing" id="I3T-M3-7xJ"/>
@@ -77,7 +79,9 @@
                     <constraint firstItem="u6T-QE-gWr" firstAttribute="top" secondItem="Jgu-Ni-teQ" secondAttribute="top" constant="10" id="zcL-AQ-zqX"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" name="backgroundColor"/>
             <connections>
+                <outlet property="backgroundImage" destination="R4d-b3-EE7" id="kHV-p6-EQR"/>
                 <outlet property="dateLabel" destination="u6T-QE-gWr" id="aEV-bJ-fGr"/>
                 <outlet property="eventSubject" destination="hfG-uq-2dT" id="xfT-CF-q0a"/>
                 <outlet property="eventType" destination="YgY-P2-xjD" id="8kL-Si-att"/>

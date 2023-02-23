@@ -10,8 +10,8 @@ import Foundation
 struct Events {
     
     let eventType : String
-    let timeStart : Date
-    let timeEnd : Date
+    let timeStart : String
+    let timeEnd : String
     let title : String
     
 }

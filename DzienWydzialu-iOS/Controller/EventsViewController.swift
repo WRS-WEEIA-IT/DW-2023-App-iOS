@@ -33,7 +33,8 @@ class EventsViewController: UIViewController {
         eventLabel.textColor = UIColor(named: K.buttonColor)
         
         eventTableView.dataSource = self
-        eventTableView.register(UINib(nibName: K.nibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        eventTableView.rowHeight = K.rowHeight
+        eventTableView.register(UINib(nibName: K.eventNibName, bundle: nil), forCellReuseIdentifier: K.eventCellIdentifier)
         
     }
 
@@ -50,7 +51,7 @@ extension EventsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let event = eventsArray[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! EventCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.eventCellIdentifier, for: indexPath) as! EventCell
         
         cell.dateLabel.text = event.timeStart
         cell.eventSubject.text = event.title
@@ -58,6 +59,8 @@ extension EventsViewController : UITableViewDataSource {
         
         return cell
     }
+    
+    
 
 }
 

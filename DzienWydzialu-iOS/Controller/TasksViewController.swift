@@ -10,11 +10,55 @@ import FirebaseFirestore
 
 class TasksViewController: UIViewController {
 
-//    let db = Firestore.firestore()
+    @IBOutlet weak var taskIcon: UIImageView!
+    @IBOutlet weak var taskLabel: UILabel!
+    @IBOutlet weak var tasksTabelView: UITableView!
+    
+    var tasksArray : [Tasks] = [
+    Tasks(numberOfTask: "Zadanie 1", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "15 PUNKTÓW", done: false),
+    Tasks(numberOfTask: "Zadanie 2", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "10 PUNKTÓW", done: false)
+    ]
     
     override func viewDidLoad() {
-//        super.viewDidLoad()
-//
+        super.viewDidLoad()
+        
+        taskIcon.tintColor = UIColor(named: K.buttonColor)
+        taskLabel.textColor = UIColor(named: K.buttonColor)
+
+        tasksTabelView.dataSource = self
+        tasksTabelView.rowHeight = K.rowHeight
+        tasksTabelView.register(UINib(nibName: K.taskNibName, bundle: nil), forCellReuseIdentifier: K.taskCellIdentifier)
+    }
+
+
+}
+
+extension TasksViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasksArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let task = tasksArray[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.taskCellIdentifier, for: indexPath) as! TaskCell
+        
+        cell.titleLabel.text = task.title
+        cell.descriptionLabel.text = task.description
+        cell.taskNumberLabel.text = task.numberOfTask
+        cell.pointsButton.titleLabel?.text = task.points
+        
+        return cell
+    }
+    
+    
+}
+
+
+//MARK: - FIRESTORE
+
+
+//        let db = Firestore.firestore()
 //        let docRef = db.collection("tasks").document("gała")
 //
 //        docRef.getDocument { (document, error) in
@@ -25,9 +69,3 @@ class TasksViewController: UIViewController {
 //                print("Document does not exist")
 //            }
 //        }
-        
-        
-    }
-
-
-}

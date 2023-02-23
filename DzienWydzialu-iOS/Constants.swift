@@ -8,7 +8,10 @@
 import Foundation
 
 struct K {
-    static let cellIdentifier = "ReusableCell"
-    static let nibName = "EventCell"
+    static let eventCellIdentifier = "ReusableEventCell"
+    static let taskCellIdentifier = "ReusableTaskCell"
+    static let eventNibName = "EventCell"
+    static let taskNibName = "TaskCell"
     static let buttonColor = "buttonColor"
+    static let rowHeight : CGFloat = 180
 }

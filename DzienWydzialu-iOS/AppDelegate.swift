@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        //FirebaseApp.configure()
+        FirebaseApp.configure()
         //Messaging.messaging().delegate = self
         
         return true

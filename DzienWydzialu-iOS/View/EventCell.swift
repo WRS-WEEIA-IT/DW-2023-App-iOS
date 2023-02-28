@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class EventCell : UITableViewCell {
     
@@ -21,6 +22,8 @@ class EventCell : UITableViewCell {
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
+        
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0))
         
         backgroundImage.layer.cornerRadius = backgroundImage.frame.size.height / 8
@@ -28,8 +31,11 @@ class EventCell : UITableViewCell {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         if let url = URL(string: "https://weeia.p.lodz.pl/") {
+            //let safariVC = SFSafariViewController(url: url)
             UIApplication.shared.open(url)
         }
     }
+    
+    
     
 }

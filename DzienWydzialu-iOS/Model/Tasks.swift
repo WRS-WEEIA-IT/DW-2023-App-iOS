@@ -11,6 +11,6 @@ struct Tasks {
     let numberOfTask : String
     let title : String
     let description : String
-    let points : String
+    let points : String // Int
     let done : Bool
 }

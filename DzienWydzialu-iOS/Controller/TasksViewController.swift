@@ -16,7 +16,10 @@ class TasksViewController: UIViewController {
     
     var tasksArray : [Tasks] = [
     Tasks(numberOfTask: "Zadanie 1", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "15 PUNKTÓW", done: false),
-    Tasks(numberOfTask: "Zadanie 2", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "10 PUNKTÓW", done: false)
+    Tasks(numberOfTask: "Zadanie 2", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "10 PUNKTÓW", done: true),
+    Tasks(numberOfTask: "Zadanie 3", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "5 PUNKTÓW", done: false),
+    Tasks(numberOfTask: "Zadanie 4", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "10 PUNKTÓW", done: false),
+    Tasks(numberOfTask: "Zadanie 5", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "15 PUNKTÓW", done: false)
     ]
     
     override func viewDidLoad() {
@@ -47,6 +50,20 @@ extension TasksViewController : UITableViewDataSource {
         cell.descriptionLabel.text = task.description
         cell.taskNumberLabel.text = task.numberOfTask
         cell.pointsButton.titleLabel?.text = task.points
+        
+        if task.done {
+            cell.qrcodeImage.isHidden = true
+            cell.upTextLabel.text = "ZADANIE WYKONANE!"
+            cell.downTextLabel.isHidden = true
+            cell.filter.alpha = 0.75
+        } else {
+            cell.checkmarkImage.isHidden = true
+            
+            cell.downTextLabel.isHidden = false
+            cell.upTextLabel.text = "ZESKANUJ KOD"
+            cell.downTextLabel.text = "ABY WYKONAĆ ZADANIE"
+            
+        }
         
         return cell
     }

@@ -27,9 +27,7 @@ class EventCell : UITableViewCell {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        
-        
-        
+                
     }
     
 }

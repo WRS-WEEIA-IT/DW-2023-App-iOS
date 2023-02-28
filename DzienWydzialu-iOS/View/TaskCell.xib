@@ -53,15 +53,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RSZ-H7-n7w">
-                                <rect key="frame" x="0.0" y="32.999999999999993" width="132.66666666666666" height="46.666666666666664"/>
+                                <rect key="frame" x="0.0" y="33" width="132.66666666666666" height="46.666666666666657"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kod do wykonania zadania znajdziesz.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45E-wL-NRm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kod do wykonania zadania znajdziesz.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45E-wL-NRm">
                                         <rect key="frame" x="0.0" y="0.0" width="132.66666666666666" height="8.6666666666666661"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="132.66999999999999" id="1r7-o9-7Bm"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="7"/>
                                         <color key="textColor" name="reversedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDW-9J-h1E">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDW-9J-h1E">
                                         <rect key="frame" x="0.0" y="16.666666666666671" width="90" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="7g6-M5-o9I"/>
@@ -71,25 +74,34 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="15 PUNKTÓW" cornerStyle="capsule">
                                             <fontDescription key="titleFontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="8"/>
+                                            <color key="baseForegroundColor" name="reversedBackgroundColor"/>
+                                            <color key="baseBackgroundColor" name="buttonColor"/>
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lLz-hX-6hb">
-                        <rect key="frame" x="232" y="25" width="170" height="130"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lLz-hX-6hb">
+                        <rect key="frame" x="299.66666666666669" y="13.666666666666671" width="102.33333333333331" height="153"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hgs-bF-oNd">
-                                <rect key="frame" x="0.0" y="1.3333333333333357" width="170" height="108"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmarkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="6Nu-b7-FNo">
+                                <rect key="frame" x="18.333333333333314" y="0.0" width="66" height="60"/>
                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="CDX-dA-p58"/>
-                                    <constraint firstAttribute="width" constant="170" id="skP-D5-R5H"/>
+                                    <constraint firstAttribute="height" constant="60" id="ofn-A4-kkQ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VectorqrCodeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hgs-bF-oNd">
+                                <rect key="frame" x="21.333333333333314" y="65" width="60" height="60"/>
+                                <color key="tintColor" name="reversedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="CDX-dA-p58"/>
+                                    <constraint firstAttribute="width" constant="60" id="t3Z-r0-A6g"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZESKANUJ KOD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ur-nu-Hcf">
-                                <rect key="frame" x="52.666666666666693" y="110" width="64.666666666666686" height="10"/>
+                                <rect key="frame" x="19" y="130" width="64.666666666666671" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="rHs-qL-Rmk"/>
                                 </constraints>
@@ -98,9 +110,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABY WYKONAĆ ZADANIE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5x2-PD-m2L">
-                                <rect key="frame" x="33.999999999999993" y="120" width="102.33333333333331" height="10"/>
+                                <rect key="frame" x="0.0" y="145" width="102.33333333333333" height="8"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="DOc-LC-bXj"/>
+                                    <constraint firstAttribute="height" constant="8" id="DOc-LC-bXj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="8"/>
                                 <color key="textColor" name="reversedBackgroundColor"/>
@@ -126,17 +138,23 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="backgroundImage" destination="4vW-H5-H6P" id="jWd-eJ-lXJ"/>
+                <outlet property="checkmarkImage" destination="6Nu-b7-FNo" id="i01-0z-fHf"/>
                 <outlet property="descriptionLabel" destination="45E-wL-NRm" id="9Qd-wa-IRU"/>
+                <outlet property="downTextLabel" destination="5x2-PD-m2L" id="LU8-hH-3Un"/>
+                <outlet property="filter" destination="ztW-8M-r4W" id="OfT-9s-d2Y"/>
                 <outlet property="pointsButton" destination="dDW-9J-h1E" id="xij-Wg-JfQ"/>
+                <outlet property="qrcodeImage" destination="hgs-bF-oNd" id="F94-lV-Xli"/>
                 <outlet property="taskNumberLabel" destination="3EE-7f-ACV" id="Xtk-mg-tMo"/>
                 <outlet property="titleLabel" destination="mXX-4w-4U8" id="jXo-rw-0s2"/>
+                <outlet property="upTextLabel" destination="0ur-nu-Hcf" id="ZYW-4O-AIc"/>
             </connections>
             <point key="canvasLocation" x="-583.20610687022895" y="-50.70422535211268"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="EventCellBackground" width="331" height="150"/>
-        <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="VectorqrCodeIcon" width="66" height="66"/>
+        <image name="checkmarkIcon" width="66" height="50"/>
         <namedColor name="backgroundColor">
             <color red="0.99599999189376831" green="0.99599999189376831" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

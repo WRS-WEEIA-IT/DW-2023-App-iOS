@@ -1,0 +1,87 @@
+
+/* Class = "UILabel"; text = "Home"; ObjectID = "1Ob-fN-KlA"; */
+"1Ob-fN-KlA.text" = "Home";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "47p-sU-fNU"; */
+"47p-sU-fNU.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6Rx-RQ-IkK"; */
+"6Rx-RQ-IkK.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7SB-gm-ciL"; */
+"7SB-gm-ciL.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Events"; ObjectID = "8pn-vM-c6W"; */
+"8pn-vM-c6W.text" = "Events";
+
+/* Class = "UILabel"; text = "Tasks"; ObjectID = "AAP-e4-WDS"; */
+"AAP-e4-WDS.text" = "Tasks";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "AUu-Is-JOQ"; */
+"AUu-Is-JOQ.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "AYh-sO-pDa"; */
+"AYh-sO-pDa.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Fph-Oe-7CG"; */
+"Fph-Oe-7CG.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "JqC-Cf-teu"; */
+"JqC-Cf-teu.text" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "NcM-Pq-3Wa"; */
+"NcM-Pq-3Wa.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "RPr-Td-NKt"; */
+"RPr-Td-NKt.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "U5h-DP-wO0"; */
+"U5h-DP-wO0.text" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "VDf-uT-Mcz"; */
+"VDf-uT-Mcz.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Upcoming events"; ObjectID = "a4A-hN-Ehr"; */
+"a4A-hN-Ehr.text" = "Upcoming events";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ebq-6Q-gU8"; */
+"ebq-6Q-gU8.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "exB-Ze-8fw"; */
+"exB-Ze-8fw.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "lQu-KN-79l"; */
+"lQu-KN-79l.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "m2q-dl-ycP"; */
+"m2q-dl-ycP.text" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mKz-2K-5e2"; */
+"mKz-2K-5e2.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Events"; ObjectID = "nr2-si-GtR"; */
+"nr2-si-GtR.text" = "Events";
+
+/* Class = "UILabel"; text = "Tasks"; ObjectID = "oHV-c7-Wgk"; */
+"oHV-c7-Wgk.text" = "Tasks";
+
+/* Class = "UILabel"; text = "Tasks"; ObjectID = "okx-Sg-JaM"; */
+"okx-Sg-JaM.text" = "Tasks";
+
+/* Class = "UILabel"; text = "Home"; ObjectID = "pfy-da-jcN"; */
+"pfy-da-jcN.text" = "Home";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ssT-Tb-6ko"; */
+"ssT-Tb-6ko.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Home"; ObjectID = "tQM-dE-Tk8"; */
+"tQM-dE-Tk8.text" = "Home";
+
+/* Class = "UILabel"; text = "Available tasks"; ObjectID = "wJU-Tm-m4Z"; */
+"wJU-Tm-m4Z.text" = "Available tasks";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wkr-Dk-zJK"; */
+"wkr-Dk-zJK.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Events"; ObjectID = "z6H-ee-e2g"; */
+"z6H-ee-e2g.text" = "Events";

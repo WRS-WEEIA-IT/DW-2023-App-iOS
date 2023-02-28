@@ -64,6 +64,7 @@
 		293CAF9A29A81A8900D75D48 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 293CAF8329A817DF00D75D48 /* Montserrat-Bold.ttf */; };
 		293CAF9B29A81A8900D75D48 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 293CAF7E29A817DF00D75D48 /* Montserrat-LightItalic.ttf */; };
 		293CAF9D29A8243D00D75D48 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293CAF9C29A8243D00D75D48 /* Tasks.swift */; };
+		297C39E729AE062700C62979 /* QrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297C39E629AE062700C62979 /* QrViewController.swift */; };
 		297E713C299FABF00053E32E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E713B299FABF00053E32E /* AppDelegate.swift */; };
 		297E713E299FABF00053E32E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E713D299FABF00053E32E /* SceneDelegate.swift */; };
 		297E7140299FABF00053E32E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E713F299FABF00053E32E /* WelcomeViewController.swift */; };
@@ -103,6 +104,7 @@
 		293CAF8629A817DF00D75D48 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		293CAF8729A817DF00D75D48 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		293CAF9C29A8243D00D75D48 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		297C39E629AE062700C62979 /* QrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrViewController.swift; sourceTree = "<group>"; };
 		297E7138299FABF00053E32E /* DzienWydzialu-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DzienWydzialu-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		297E713B299FABF00053E32E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		297E713D299FABF00053E32E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				291D370F29A5219B00577E78 /* EventsViewController.swift */,
 				291DA18C29A56DE00087E1D8 /* TasksViewController.swift */,
 				293CAF6D29A6731E00D75D48 /* SettingsViewController.swift */,
+				297C39E629AE062700C62979 /* QrViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				293CAF7229A7FC5000D75D48 /* TaskCell.swift in Sources */,
 				293CAF6A29A6632700D75D48 /* Events.swift in Sources */,
 				293CAF9D29A8243D00D75D48 /* Tasks.swift in Sources */,
+				297C39E729AE062700C62979 /* QrViewController.swift in Sources */,
 				293CAF6C29A666F200D75D48 /* Constants.swift in Sources */,
 				293CAF6829A6617B00D75D48 /* EventCell.swift in Sources */,
 				297E713E299FABF00053E32E /* SceneDelegate.swift in Sources */,

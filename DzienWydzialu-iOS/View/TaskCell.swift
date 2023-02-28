@@ -15,6 +15,15 @@ class TaskCell : UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pointsButton: UIButton!
     
+    @IBOutlet weak var checkmarkImage: UIImageView!
+    @IBOutlet weak var qrcodeImage: UIImageView!
+    
+    @IBOutlet weak var upTextLabel: UILabel!
+    @IBOutlet weak var downTextLabel: UILabel!
+    
+    @IBOutlet weak var filter: UIView!
+    
+    
     override class func awakeFromNib() {
         super.awakeFromNib()
         

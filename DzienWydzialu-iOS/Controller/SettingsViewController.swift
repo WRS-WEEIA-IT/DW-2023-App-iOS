@@ -9,9 +9,13 @@ import UIKit
 
 class SettingsViewController : UIViewController {
     
+    @IBOutlet weak var settingsIcon: UIImageView!
+    @IBOutlet weak var settingsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        settingsIcon.tintColor = UIColor(named: K.buttonColor)
+        settingsLabel.textColor = UIColor(named: K.buttonColor)
     }
 }

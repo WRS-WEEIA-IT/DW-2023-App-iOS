@@ -13,10 +13,10 @@ class EventCell : UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var eventType: UILabel!
     @IBOutlet weak var eventSubject: UILabel!
+    @IBOutlet weak var signUpButton: UIButton!
     
     override class func awakeFromNib() {
         super.awakeFromNib()
-        
         
     }
     
@@ -27,7 +27,9 @@ class EventCell : UITableViewCell {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-                
+        if let url = URL(string: "https://weeia.p.lodz.pl/") {
+            UIApplication.shared.open(url)
+        }
     }
     
 }

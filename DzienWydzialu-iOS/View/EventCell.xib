@@ -95,6 +95,7 @@
                 <outlet property="dateLabel" destination="u6T-QE-gWr" id="aEV-bJ-fGr"/>
                 <outlet property="eventSubject" destination="hfG-uq-2dT" id="xfT-CF-q0a"/>
                 <outlet property="eventType" destination="YgY-P2-xjD" id="8kL-Si-att"/>
+                <outlet property="signUpButton" destination="s1B-B2-b4a" id="Z1L-iZ-jo9"/>
             </connections>
             <point key="canvasLocation" x="-44.927536231884062" y="77.34375"/>
         </tableViewCell>

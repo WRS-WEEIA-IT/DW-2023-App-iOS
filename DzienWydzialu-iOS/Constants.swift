@@ -14,6 +14,7 @@ struct K {
     static let taskNibName = "TaskCell"
     static let buttonColor = "buttonColor"
     static let rowHeight : CGFloat = 180
+    static let buttonAction = "buttonPressed"
     
     struct images {
         

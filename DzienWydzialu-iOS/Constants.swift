@@ -12,9 +12,10 @@ struct K {
     static let taskCellIdentifier = "ReusableTaskCell"
     static let eventNibName = "EventCell"
     static let taskNibName = "TaskCell"
+    
     static let buttonColor = "buttonColor"
-    static let rowHeight : CGFloat = 180
     static let buttonAction = "buttonPressed"
+    static let rowHeight : CGFloat = 180
     static let lectures = "lectures"
     static let workshops = "workshops"
     

@@ -40,7 +40,7 @@ extension TasksViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let task = tasksArray[indexPath.row]
+        var task = tasksArray[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.taskCellIdentifier, for: indexPath) as! TaskCell
         
@@ -49,18 +49,22 @@ extension TasksViewController : UITableViewDataSource {
         cell.taskNumberLabel.text = "Zadanie \(task.numberOfTask)"
         cell.pointsButton.titleLabel?.text = "\(task.points) PUNKTÓW"
         
+//          TEST ONLY
+        if task.numberOfTask == 1 {
+            task.done = true
+        }
+//
+        
         if task.done {
             cell.qrcodeImage.isHidden = true
             cell.upTextLabel.text = "ZADANIE WYKONANE!"
             cell.downTextLabel.isHidden = true
-            cell.filter.alpha = 0.75
+            cell.filter.alpha = 0.85
         } else {
             cell.checkmarkImage.isHidden = true
-            
             cell.downTextLabel.isHidden = false
             cell.upTextLabel.text = "ZESKANUJ KOD"
             cell.downTextLabel.text = "ABY WYKONAĆ ZADANIE"
-            
         }
         
         return cell

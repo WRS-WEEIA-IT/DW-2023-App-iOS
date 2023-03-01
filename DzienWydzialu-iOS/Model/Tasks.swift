@@ -14,5 +14,5 @@ struct Tasks {
     let imageSource : String
     
     let numberOfTask : Int
-    let done : Bool
+    var done : Bool
 }

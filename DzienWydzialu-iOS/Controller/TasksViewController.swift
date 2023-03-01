@@ -12,15 +12,11 @@ class TasksViewController: UIViewController {
 
     @IBOutlet weak var taskIcon: UIImageView!
     @IBOutlet weak var taskLabel: UILabel!
-    @IBOutlet weak var tasksTabelView: UITableView!
+    @IBOutlet weak var tasksTableView: UITableView!
+  
+    var tasksArray : [Tasks] = []
     
-    var tasksArray : [Tasks] = [
-    Tasks(numberOfTask: "Zadanie 1", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "15 PUNKTÓW", done: false),
-    Tasks(numberOfTask: "Zadanie 2", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "10 PUNKTÓW", done: true),
-    Tasks(numberOfTask: "Zadanie 3", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "5 PUNKTÓW", done: false),
-    Tasks(numberOfTask: "Zadanie 4", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "10 PUNKTÓW", done: false),
-    Tasks(numberOfTask: "Zadanie 5", title: "Witamy na wydziale!", description: "Kod do wykonania zadania znajdziesz..", points: "15 PUNKTÓW", done: false)
-    ]
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +24,11 @@ class TasksViewController: UIViewController {
         taskIcon.tintColor = UIColor(named: K.buttonColor)
         taskLabel.textColor = UIColor(named: K.buttonColor)
 
-        tasksTabelView.dataSource = self
-        tasksTabelView.rowHeight = K.rowHeight
-        tasksTabelView.register(UINib(nibName: K.taskNibName, bundle: nil), forCellReuseIdentifier: K.taskCellIdentifier)
+        tasksTableView.dataSource = self
+        tasksTableView.rowHeight = K.rowHeight
+        tasksTableView.register(UINib(nibName: K.taskNibName, bundle: nil), forCellReuseIdentifier: K.taskCellIdentifier)
+        
+        loadTasks()
     }
 
 
@@ -48,8 +46,8 @@ extension TasksViewController : UITableViewDataSource {
         
         cell.titleLabel.text = task.title
         cell.descriptionLabel.text = task.description
-        cell.taskNumberLabel.text = task.numberOfTask
-        cell.pointsButton.titleLabel?.text = task.points
+        cell.taskNumberLabel.text = "Zadanie \(task.numberOfTask)"
+        cell.pointsButton.titleLabel?.text = "\(task.points) PUNKTÓW"
         
         if task.done {
             cell.qrcodeImage.isHidden = true
@@ -74,15 +72,43 @@ extension TasksViewController : UITableViewDataSource {
 
 //MARK: - FIRESTORE
 
-
-//        let db = Firestore.firestore()
-//        let docRef = db.collection("tasks").document("gała")
-//
-//        docRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//                print("Document data: \(dataDescription)")
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
+extension TasksViewController {
+    
+    func loadTasks() {
+        db.collection("tasks").addSnapshotListener { snapshot , error in
+            
+            self.tasksArray = []
+            
+            if error != nil {
+                print("Error fetching tasks from firebase!")
+            } else {
+                if let snapshotDocuments = snapshot?.documents {
+                    for document in snapshotDocuments {
+                        let documentData = document.data()
+                        if let newTask = self.createTask(documentData: documentData){
+                            self.tasksArray.append(newTask)
+                            
+                            DispatchQueue.main.async {
+                                self.tasksTableView.reloadData()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func createTask(documentData : [String : Any]) -> Tasks? {
+        if let newTitle = documentData[K.tasks.title] as? String, let newDescription = documentData[K.tasks.description] as? String, let newImageSource = documentData[K.tasks.imageSource] as? String, let newPoints = documentData[K.tasks.points] as? Int {
+            
+            let newTask = Tasks(title: newTitle, description: newDescription, points: newPoints, imageSource: newImageSource, numberOfTask: tasksArray.count+1, done: false)
+            return newTask
+            
+        } else {
+            print("Error fetching data!")
+        }
+        return nil
+    }
+    
+}
+    

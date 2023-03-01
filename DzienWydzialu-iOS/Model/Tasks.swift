@@ -8,9 +8,11 @@
 import Foundation
 
 struct Tasks {
-    let numberOfTask : String
     let title : String
     let description : String
-    let points : String // Int
+    let points : Int
+    let imageSource : String
+    
+    let numberOfTask : Int
     let done : Bool
 }

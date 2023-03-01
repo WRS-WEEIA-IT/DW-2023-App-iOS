@@ -27,6 +27,13 @@ struct K {
         static let imageSource = "imageSource"
     }
     
+    struct tasks {
+        static let title = "title"
+        static let imageSource = "imageSource"
+        static let description = "description"
+        static let points = "points"
+    }
+    
     struct images {
         
     }

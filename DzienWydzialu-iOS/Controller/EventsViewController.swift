@@ -56,9 +56,6 @@ extension EventsViewController : UITableViewDataSource {
 }
 
 
-
-
-
 //MARK: - Firebase
 
 extension EventsViewController {

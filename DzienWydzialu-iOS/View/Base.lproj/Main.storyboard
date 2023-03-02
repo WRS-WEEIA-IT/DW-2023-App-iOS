@@ -11,9 +11,6 @@
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
-        <array key="Montserrat-Regular.ttf">
-            <string>Montserrat-Regular</string>
-        </array>
         <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
         </array>
@@ -1272,32 +1269,9 @@
                     <view key="view" contentMode="scaleToFill" id="edf-jp-4N4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ok8-ZI-cD5">
-                                <rect key="frame" x="12.666666666666657" y="202.66666666666663" width="350" height="350"/>
-                                <color key="tintColor" name="reversedBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="350" id="Ct9-qG-W3E"/>
-                                    <constraint firstAttribute="height" constant="353" id="TSG-Ug-FFt"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan your qrCode!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dvg-f5-Fgi">
-                                <rect key="frame" x="96.666666666666686" y="82" width="182" height="25"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rXq-Gc-31f"/>
                         <color key="backgroundColor" name="backgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ok8-ZI-cD5" firstAttribute="centerX" secondItem="edf-jp-4N4" secondAttribute="centerX" id="5Tc-vH-40V"/>
-                            <constraint firstItem="Dvg-f5-Fgi" firstAttribute="top" secondItem="rXq-Gc-31f" secondAttribute="top" constant="35" id="I1J-Ha-kSH"/>
-                            <constraint firstItem="ok8-ZI-cD5" firstAttribute="centerY" secondItem="edf-jp-4N4" secondAttribute="centerY" id="Pt0-Rf-dql"/>
-                            <constraint firstItem="Dvg-f5-Fgi" firstAttribute="centerX" secondItem="edf-jp-4N4" secondAttribute="centerX" id="uJl-7z-IUD"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tH1-OA-F1U"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMP-nD-ODB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1324,7 +1298,6 @@
         <image name="launchScreenImage" width="375" height="420"/>
         <image name="mainScreenImage" width="1776" height="2796"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
-        <image name="square" catalog="system" width="128" height="114"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="backgroundColor">
             <color red="0.99599999189376831" green="0.99599999189376831" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

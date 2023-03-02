@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class QrViewController: UIViewController {
     
     var avCaptureSession: AVCaptureSession!
     var avPreviewLayer: AVCaptureVideoPreviewLayer!
@@ -90,7 +90,7 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     }
     
 }
-extension QrViewController {
+extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         avCaptureSession.stopRunning()
         

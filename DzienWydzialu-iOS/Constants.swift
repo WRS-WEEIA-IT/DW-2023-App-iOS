@@ -35,6 +35,10 @@ struct K {
         static let points = "points"
     }
     
+    struct gradient {
+        
+    }
+    
     struct images {
         
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -25,14 +25,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="DzienWydzialu_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-fJ-DOK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="GeI-Wp-FAf">
-                                <rect key="frame" x="95" y="15" width="185" height="128"/>
+                                <rect key="frame" x="114.5" y="15" width="185" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="23y-WU-ldt"/>
                                     <constraint firstAttribute="width" constant="185" id="a4n-g6-C4D"/>
@@ -53,16 +53,16 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_Info" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-6G-fg6" userLabel="backgroundInfo">
-                                <rect key="frame" x="0.0" y="332" width="375" height="480"/>
+                                <rect key="frame" x="0.0" y="416" width="414" height="480"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backlight" translatesAutoresizingMaskIntoConstraints="NO" id="qqa-Mn-pfN">
-                                <rect key="frame" x="0.0" y="687" width="375" height="125"/>
+                                <rect key="frame" x="0.0" y="771" width="414" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="Xbl-eB-CzS"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="519-NK-fRt" userLabel="NavbarRectangle">
-                                <rect key="frame" x="0.0" y="706" width="375" height="105.66666666666663"/>
+                                <rect key="frame" x="0.0" y="790" width="414" height="106"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="backgroundColor"/>
                                 <constraints>
@@ -70,13 +70,13 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qg9-jC-Me4">
-                                <rect key="frame" x="0.0" y="682" width="375" height="105"/>
+                                <rect key="frame" x="0.0" y="766" width="414" height="105"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kca-fF-Sdd" userLabel="qrCodeView">
-                                        <rect key="frame" x="165" y="0.0" width="45" height="50"/>
+                                        <rect key="frame" x="184.5" y="0.0" width="45" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUu-Is-JOQ">
-                                                <rect key="frame" x="0.0" y="2.6666666666666288" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="2.5" width="45" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="Lxh-eC-9f8"/>
                                                     <constraint firstAttribute="height" constant="45" id="v9M-56-JHL"/>
@@ -106,16 +106,16 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="lSW-Xx-wyZ" userLabel="Stack View Navbar">
-                                        <rect key="frame" x="10" y="55" width="355" height="50"/>
+                                        <rect key="frame" x="10" y="55" width="394" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hkw-sg-BeK" userLabel="homeSet">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewI-zk-hSt" userLabel="homeIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkr-Dk-zJK">
-                                                                <rect key="frame" x="-5" y="-18.666666666666629" width="70" height="60"/>
+                                                                <rect key="frame" x="-5" y="-18.5" width="70" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="5ni-lv-P5b"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="oBG-dZ-vgj"/>
@@ -124,7 +124,7 @@
                                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6Bl-dV-kJc">
-                                                                <rect key="frame" x="15" y="-3.9999999999999645" width="30" height="29.333333333333336"/>
+                                                                <rect key="frame" x="15" y="-4.5" width="30" height="30"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="JAd-Dj-CNb"/>
@@ -141,7 +141,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfy-da-jcN">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -149,13 +149,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="euV-7I-kKq" userLabel="calendarSet">
-                                                <rect key="frame" x="73.666666666666671" y="0.0" width="60.000000000000014" height="50"/>
+                                                <rect key="frame" x="83.5" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aE9-h6-Qfa" userLabel="eventIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQu-KN-79l">
-                                                                <rect key="frame" x="0.0" y="-18.666666666666629" width="60" height="60"/>
+                                                                <rect key="frame" x="0.0" y="-18.5" width="60" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="FXS-DQ-z5v"/>
                                                                     <constraint firstAttribute="height" constant="60" id="IYE-DQ-OCc"/>
@@ -167,7 +167,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JlC-F1-mjd">
-                                                                <rect key="frame" x="15" y="-1.9999999999999645" width="30" height="27.000000000000004"/>
+                                                                <rect key="frame" x="15" y="-2.5" width="30" height="27.5"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="wtF-A7-pmN"/>
@@ -184,7 +184,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nr2-si-GtR">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -192,20 +192,20 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wi-n6-uYG">
-                                                <rect key="frame" x="147.66666666666666" y="0.0" width="60" height="50"/>
+                                                <rect key="frame" x="167" y="0.0" width="60" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="4se-ah-6gn"/>
                                                     <constraint firstAttribute="height" constant="50" id="Hqj-KS-k7v"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mGa-Fr-nRZ" userLabel="tasksSet">
-                                                <rect key="frame" x="221.33333333333334" y="0.0" width="60.000000000000028" height="50"/>
+                                                <rect key="frame" x="250.5" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0a-Os-iTf" userLabel="taskIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SB-gm-ciL">
-                                                                <rect key="frame" x="0.0" y="-18.666666666666629" width="60" height="60"/>
+                                                                <rect key="frame" x="0.0" y="-18.5" width="60" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="Guf-3y-BFu"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="dbi-VR-QX5"/>
@@ -217,7 +217,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0oo-Ng-XSr">
-                                                                <rect key="frame" x="15" y="-2.6666666666666305" width="30" height="28.666666666666664"/>
+                                                                <rect key="frame" x="15" y="-3" width="30" height="29"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="JZF-67-IU3"/>
@@ -234,7 +234,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAP-e4-WDS">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -242,13 +242,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ucz-he-i2t" userLabel="settingsSet">
-                                                <rect key="frame" x="295" y="0.0" width="60" height="50"/>
+                                                <rect key="frame" x="334" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOx-U2-2jc" userLabel="settingsIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Rx-RQ-IkK">
-                                                                <rect key="frame" x="-5" y="-18.666666666666629" width="70" height="60"/>
+                                                                <rect key="frame" x="-5" y="-18.5" width="70" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="J3Y-8P-tKI"/>
                                                                     <constraint firstAttribute="height" constant="60" id="jbi-Rk-UW5"/>
@@ -260,7 +260,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JNE-ty-egT">
-                                                                <rect key="frame" x="0.0" y="-3.3333333333332966" width="60" height="29.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="-3.5" width="60" height="30"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="cmI-hX-TNk"/>
@@ -277,7 +277,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2q-dl-ycP">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -337,28 +337,28 @@
             <objects>
                 <viewController id="rgm-Pj-FyN" customClass="EventsViewController" customModule="DzienWydzialu_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zee-if-23D">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="Lid-fd-y3c">
-                                <rect key="frame" x="95" y="15" width="185" height="128"/>
+                                <rect key="frame" x="114.5" y="15" width="185" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="gdY-SL-8pT"/>
                                     <constraint firstAttribute="height" constant="128" id="zVp-CC-TzK"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="heR-BR-IGn">
-                                <rect key="frame" x="10" y="180" width="355" height="527"/>
+                                <rect key="frame" x="10" y="180" width="394" height="611"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backlight" translatesAutoresizingMaskIntoConstraints="NO" id="mXd-fe-IXY">
-                                <rect key="frame" x="0.0" y="687" width="375" height="125"/>
+                                <rect key="frame" x="0.0" y="771" width="414" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="2M0-t5-1PP"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="chJ-mw-uQA" userLabel="NavbarRectangle">
-                                <rect key="frame" x="0.0" y="706" width="375" height="105.66666666666663"/>
+                                <rect key="frame" x="0.0" y="790" width="414" height="106"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="backgroundColor"/>
                                 <constraints>
@@ -366,13 +366,13 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QYF-Ws-V6m">
-                                <rect key="frame" x="0.0" y="682" width="375" height="105"/>
+                                <rect key="frame" x="0.0" y="766" width="414" height="105"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYU-1u-idu" userLabel="qrCodeView">
-                                        <rect key="frame" x="165" y="0.0" width="45" height="50"/>
+                                        <rect key="frame" x="184.5" y="0.0" width="45" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcM-Pq-3Wa">
-                                                <rect key="frame" x="0.0" y="2.6666666666666288" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="2.5" width="45" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="T6H-g9-McP"/>
                                                     <constraint firstAttribute="height" constant="45" id="nrt-pk-Wb5"/>
@@ -402,16 +402,16 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="lrW-SC-X0N" userLabel="Stack View Navbar">
-                                        <rect key="frame" x="10" y="55" width="355" height="50"/>
+                                        <rect key="frame" x="10" y="55" width="394" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VBw-PG-hzC" userLabel="homeSet">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgt-G7-Io9" userLabel="homeIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fph-Oe-7CG">
-                                                                <rect key="frame" x="-5" y="-18.666666666666629" width="70" height="60"/>
+                                                                <rect key="frame" x="-5" y="-18.5" width="70" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="4Pn-lt-tzB"/>
                                                                     <constraint firstAttribute="height" constant="60" id="Nua-Vh-vjQ"/>
@@ -423,7 +423,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="90S-HV-lmM">
-                                                                <rect key="frame" x="15" y="-3.9999999999999645" width="30" height="29.333333333333336"/>
+                                                                <rect key="frame" x="15" y="-4.5" width="30" height="30"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="5rb-Hg-WYt"/>
@@ -440,7 +440,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ob-fN-KlA">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -448,13 +448,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ARE-c5-dzE" userLabel="calendarSet">
-                                                <rect key="frame" x="73.666666666666671" y="0.0" width="60.000000000000014" height="50"/>
+                                                <rect key="frame" x="83.5" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16q-TI-il2" userLabel="eventIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKz-2K-5e2">
-                                                                <rect key="frame" x="0.0" y="-18.666666666666629" width="60" height="60"/>
+                                                                <rect key="frame" x="0.0" y="-18.5" width="60" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Dpx-A7-wJr"/>
                                                                     <constraint firstAttribute="height" constant="60" id="yj3-1M-ijV"/>
@@ -463,7 +463,7 @@
                                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FKK-8q-9dv">
-                                                                <rect key="frame" x="15" y="-1.9999999999999645" width="30" height="27.000000000000004"/>
+                                                                <rect key="frame" x="15" y="-2.5" width="30" height="27.5"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="bCZ-2f-3O3"/>
@@ -480,7 +480,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6H-ee-e2g">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -488,20 +488,20 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ed4-PY-DXl">
-                                                <rect key="frame" x="147.66666666666666" y="0.0" width="60" height="50"/>
+                                                <rect key="frame" x="167" y="0.0" width="60" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="3zb-4R-FbP"/>
                                                     <constraint firstAttribute="width" constant="60" id="B9a-bN-Jqt"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Uw8-Ga-CEc" userLabel="tasksSet">
-                                                <rect key="frame" x="221.33333333333334" y="0.0" width="60.000000000000028" height="50"/>
+                                                <rect key="frame" x="250.5" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkf-cP-aFA" userLabel="taskIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDf-uT-Mcz">
-                                                                <rect key="frame" x="0.0" y="-18.666666666666629" width="60" height="60"/>
+                                                                <rect key="frame" x="0.0" y="-18.5" width="60" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="0LD-dd-RwF"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="dNq-Dj-JQi"/>
@@ -513,7 +513,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bFr-wC-OZF">
-                                                                <rect key="frame" x="15" y="-2.6666666666666305" width="30" height="28.666666666666664"/>
+                                                                <rect key="frame" x="15" y="-3" width="30" height="29"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="4nS-6s-Lxn"/>
@@ -530,7 +530,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHV-c7-Wgk">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -538,13 +538,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="i8Y-yC-9za" userLabel="settingsSet">
-                                                <rect key="frame" x="295" y="0.0" width="60" height="50"/>
+                                                <rect key="frame" x="334" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIL-bT-f2w" userLabel="settingsIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exB-Ze-8fw">
-                                                                <rect key="frame" x="-5" y="-18.666666666666629" width="70" height="60"/>
+                                                                <rect key="frame" x="-5" y="-18.5" width="70" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="8pP-DW-qmW"/>
                                                                     <constraint firstAttribute="height" constant="60" id="OqD-QW-mSw"/>
@@ -556,7 +556,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uVP-xJ-bXj">
-                                                                <rect key="frame" x="0.0" y="-3.3333333333332966" width="60" height="29.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="-3.5" width="60" height="30"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="60" id="6Qn-H3-PTF"/>
@@ -573,7 +573,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5h-DP-wO0">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -589,7 +589,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4A-hN-Ehr">
-                                <rect key="frame" x="10" y="148" width="164.33333333333334" height="22"/>
+                                <rect key="frame" x="10" y="148" width="164.5" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" name="reversedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -634,28 +634,28 @@
             <objects>
                 <viewController id="V7q-qx-HLz" customClass="TasksViewController" customModule="DzienWydzialu_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rI6-Wl-Cy3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="sB1-UD-p1t">
-                                <rect key="frame" x="95" y="15" width="185" height="128"/>
+                                <rect key="frame" x="114.5" y="15" width="185" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="abq-l3-ta4"/>
                                     <constraint firstAttribute="width" constant="185" id="pgE-PO-gw5"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FO1-fw-vkL">
-                                <rect key="frame" x="10" y="206.66666666666666" width="355" height="500.33333333333337"/>
+                                <rect key="frame" x="10" y="207" width="394" height="584"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backlight" translatesAutoresizingMaskIntoConstraints="NO" id="msm-IT-0ky">
-                                <rect key="frame" x="0.0" y="687" width="375" height="125"/>
+                                <rect key="frame" x="0.0" y="771" width="414" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="m8E-Wl-aZg"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oaf-V1-Vt4" userLabel="NavbarRectangle">
-                                <rect key="frame" x="0.0" y="706" width="375" height="105.66666666666663"/>
+                                <rect key="frame" x="0.0" y="790" width="414" height="106"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="backgroundColor"/>
                                 <constraints>
@@ -663,13 +663,13 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Iz-o5-qdf">
-                                <rect key="frame" x="0.0" y="682" width="375" height="105"/>
+                                <rect key="frame" x="0.0" y="766" width="414" height="105"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bR-4g-e44" userLabel="qrCodeView">
-                                        <rect key="frame" x="165" y="0.0" width="45" height="50"/>
+                                        <rect key="frame" x="184.5" y="0.0" width="45" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYh-sO-pDa">
-                                                <rect key="frame" x="0.0" y="2.6666666666666288" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="2.5" width="45" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="AXK-mg-VRz"/>
                                                     <constraint firstAttribute="height" constant="45" id="L63-49-rYj"/>
@@ -699,16 +699,16 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="rsE-Ma-Idi" userLabel="Stack View Navbar">
-                                        <rect key="frame" x="10" y="55" width="355" height="50"/>
+                                        <rect key="frame" x="10" y="55" width="394" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="viF-na-4pP" userLabel="homeSet">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXX-pD-PU6" userLabel="homeIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47p-sU-fNU">
-                                                                <rect key="frame" x="-5" y="-18.666666666666629" width="70" height="60"/>
+                                                                <rect key="frame" x="-5" y="-18.5" width="70" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="9wv-BG-6fl"/>
                                                                     <constraint firstAttribute="height" constant="60" id="PeD-nx-q2q"/>
@@ -720,7 +720,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mso-SG-Iuv">
-                                                                <rect key="frame" x="15" y="-3.9999999999999645" width="30" height="29.333333333333336"/>
+                                                                <rect key="frame" x="15" y="-4.5" width="30" height="30"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="1hb-Ma-t9E"/>
@@ -737,7 +737,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQM-dE-Tk8">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -745,13 +745,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wpP-aA-fDq" userLabel="calendarSet">
-                                                <rect key="frame" x="73.666666666666671" y="0.0" width="60.000000000000014" height="50"/>
+                                                <rect key="frame" x="83.5" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLn-kl-Zau" userLabel="eventIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssT-Tb-6ko">
-                                                                <rect key="frame" x="0.0" y="-18.666666666666629" width="60" height="60"/>
+                                                                <rect key="frame" x="0.0" y="-18.5" width="60" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="I3T-lg-AEh"/>
                                                                     <constraint firstAttribute="height" constant="60" id="pDl-IL-H1o"/>
@@ -763,7 +763,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="77a-GF-0HZ">
-                                                                <rect key="frame" x="15" y="-1.9999999999999645" width="30" height="27.000000000000004"/>
+                                                                <rect key="frame" x="15" y="-2.5" width="30" height="27.5"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="b3B-UT-tcr"/>
@@ -780,7 +780,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pn-vM-c6W">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -788,20 +788,20 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZg-Mv-FMg">
-                                                <rect key="frame" x="147.66666666666666" y="0.0" width="60" height="50"/>
+                                                <rect key="frame" x="167" y="0.0" width="60" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="0UW-dA-olx"/>
                                                     <constraint firstAttribute="width" constant="60" id="Wn6-2E-Vb6"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gKX-9t-BEM" userLabel="tasksSet">
-                                                <rect key="frame" x="221.33333333333334" y="0.0" width="60.000000000000028" height="50"/>
+                                                <rect key="frame" x="250.5" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bi9-ib-fXR" userLabel="taskIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebq-6Q-gU8">
-                                                                <rect key="frame" x="0.0" y="-18.666666666666629" width="60" height="60"/>
+                                                                <rect key="frame" x="0.0" y="-18.5" width="60" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="0ac-0u-HSK"/>
                                                                     <constraint firstAttribute="height" constant="60" id="xjg-6u-2dK"/>
@@ -810,7 +810,7 @@
                                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Sbv-qf-4qH">
-                                                                <rect key="frame" x="15" y="-2.6666666666666305" width="30" height="28.666666666666664"/>
+                                                                <rect key="frame" x="15" y="-3" width="30" height="29"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="1qf-PP-m3I"/>
@@ -827,7 +827,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okx-Sg-JaM">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -835,13 +835,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6Tt-Xl-9UE" userLabel="settingsSet">
-                                                <rect key="frame" x="295" y="0.0" width="60" height="50"/>
+                                                <rect key="frame" x="334" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ii9-mC-0WM" userLabel="settingsIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPr-Td-NKt">
-                                                                <rect key="frame" x="-5" y="-18.666666666666629" width="70" height="60"/>
+                                                                <rect key="frame" x="-5" y="-18.5" width="70" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="TXx-AF-ox4"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="W27-2a-5Og"/>
@@ -853,7 +853,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kNc-gs-H56">
-                                                                <rect key="frame" x="0.0" y="-3.3333333333332966" width="60" height="29.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="-3.5" width="60" height="30"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="ADN-4d-OFd"/>
@@ -870,7 +870,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqC-Cf-teu">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -886,13 +886,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJU-Tm-m4Z">
-                                <rect key="frame" x="10" y="148" width="137.33333333333334" height="22"/>
+                                <rect key="frame" x="10" y="148" width="137.5" height="22"/>
                                 <fontDescription key="fontDescription" name="MontserratRoman-SemiBold" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" name="reversedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently you have 0 points!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9N-ve-49r">
-                                <rect key="frame" x="102.33333333333333" y="182" width="170.66666666666669" height="14.666666666666657"/>
+                                <rect key="frame" x="121.5" y="182" width="171" height="15"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" name="reversedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -939,24 +939,24 @@
             <objects>
                 <viewController id="nQq-To-3F6" customClass="SettingsViewController" customModule="DzienWydzialu_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B8C-NO-8v7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="UdB-UE-CEC">
-                                <rect key="frame" x="95" y="15" width="185" height="128"/>
+                                <rect key="frame" x="114.5" y="15" width="185" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="6SL-mW-rmL"/>
                                     <constraint firstAttribute="width" constant="185" id="Y6L-RS-dRB"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backlight" translatesAutoresizingMaskIntoConstraints="NO" id="a3J-hm-gSv">
-                                <rect key="frame" x="0.0" y="687" width="375" height="125"/>
+                                <rect key="frame" x="0.0" y="771" width="414" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="bUJ-Ua-61I"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ghj-cY-hQZ" userLabel="NavbarRectangle">
-                                <rect key="frame" x="0.0" y="706" width="375" height="105.66666666666663"/>
+                                <rect key="frame" x="0.0" y="790" width="414" height="106"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="backgroundColor"/>
                                 <constraints>
@@ -964,13 +964,13 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TT3-KV-fQE" userLabel="Navbar Stack View">
-                                <rect key="frame" x="0.0" y="682" width="375" height="105"/>
+                                <rect key="frame" x="0.0" y="766" width="414" height="105"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3B-iI-eaZ" userLabel="qrCodeView">
-                                        <rect key="frame" x="165" y="0.0" width="45" height="50"/>
+                                        <rect key="frame" x="184.5" y="0.0" width="45" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7t-Gm-3FI">
-                                                <rect key="frame" x="0.0" y="2.6666666666666288" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="2.5" width="45" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="DhY-wr-XLD"/>
                                                     <constraint firstAttribute="height" constant="45" id="SwL-nZ-isR"/>
@@ -1000,16 +1000,16 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="H8s-4I-gAe" userLabel="Stack View Navbar">
-                                        <rect key="frame" x="10" y="55" width="355" height="50"/>
+                                        <rect key="frame" x="10" y="55" width="394" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="r5R-Sk-3Fo" userLabel="homeSet">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2q-ke-zSU" userLabel="homeIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9A-iP-FlQ">
-                                                                <rect key="frame" x="-5" y="-18.666666666666629" width="70" height="60"/>
+                                                                <rect key="frame" x="-5" y="-18.5" width="70" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="TQ3-Pp-AEx"/>
                                                                     <constraint firstAttribute="height" constant="60" id="gud-yz-ka9"/>
@@ -1021,7 +1021,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="I70-kT-DwF">
-                                                                <rect key="frame" x="15" y="-3.9999999999999645" width="30" height="29.333333333333336"/>
+                                                                <rect key="frame" x="15" y="-4.5" width="30" height="30"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="g3I-Xc-5gF"/>
@@ -1038,7 +1038,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnZ-jj-OAD">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1046,13 +1046,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oGU-EK-Efx" userLabel="calendarSet">
-                                                <rect key="frame" x="73.666666666666671" y="0.0" width="60.000000000000014" height="50"/>
+                                                <rect key="frame" x="83.5" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxz-BS-KfU" userLabel="eventIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEy-6e-JAc">
-                                                                <rect key="frame" x="0.0" y="-18.666666666666629" width="60" height="60"/>
+                                                                <rect key="frame" x="0.0" y="-18.5" width="60" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="6jI-Bv-bCM"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="TJc-QY-zFB"/>
@@ -1064,7 +1064,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mEp-G5-w6c">
-                                                                <rect key="frame" x="15" y="-1.9999999999999645" width="30" height="27.000000000000004"/>
+                                                                <rect key="frame" x="15" y="-2.5" width="30" height="27.5"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="Wix-OC-sJs"/>
@@ -1081,7 +1081,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcs-Sd-UkI">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1089,20 +1089,20 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3t-eT-ewh">
-                                                <rect key="frame" x="147.66666666666666" y="0.0" width="60" height="50"/>
+                                                <rect key="frame" x="167" y="0.0" width="60" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="OYi-DH-GdW"/>
                                                     <constraint firstAttribute="height" constant="50" id="PiO-3P-vDl"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8y8-Vk-Lca" userLabel="tasksSet">
-                                                <rect key="frame" x="221.33333333333334" y="0.0" width="60.000000000000028" height="50"/>
+                                                <rect key="frame" x="250.5" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGd-gf-txj" userLabel="taskIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruG-zz-GJd">
-                                                                <rect key="frame" x="0.0" y="-18.666666666666629" width="60" height="60"/>
+                                                                <rect key="frame" x="0.0" y="-18.5" width="60" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Ivb-ns-rj0"/>
                                                                     <constraint firstAttribute="height" constant="60" id="aYK-Rx-FcC"/>
@@ -1114,7 +1114,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="K6P-Gz-eUm">
-                                                                <rect key="frame" x="15" y="-2.6666666666666305" width="30" height="28.666666666666664"/>
+                                                                <rect key="frame" x="15" y="-3" width="30" height="29"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="SfR-HA-XNa"/>
@@ -1131,7 +1131,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvV-Q9-xmf">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1139,13 +1139,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fyW-Mx-tQB" userLabel="settingsSet">
-                                                <rect key="frame" x="295" y="0.0" width="60" height="50"/>
+                                                <rect key="frame" x="334" y="0.0" width="60" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7k-pT-dq4" userLabel="settingsIconView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Y-Ku-yiU">
-                                                                <rect key="frame" x="-5" y="-18.666666666666629" width="70" height="60"/>
+                                                                <rect key="frame" x="-5" y="-18.5" width="70" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="PMQ-X1-4OO"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="wc1-n9-r0z"/>
@@ -1154,7 +1154,7 @@
                                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AUy-4S-Wd5">
-                                                                <rect key="frame" x="0.0" y="-3.3333333333332966" width="60" height="29.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="-3.5" width="60" height="30"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="1Zv-tS-kxX"/>
@@ -1171,7 +1171,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbd-34-GB6">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="60" height="22.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="27.5" width="60" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1187,37 +1187,37 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="dHb-hx-1Ns" userLabel="Contact Stack View">
-                                <rect key="frame" x="104.33333333333333" y="163" width="166.33333333333337" height="489"/>
+                                <rect key="frame" x="124" y="163" width="166.5" height="573"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYd-6A-eDu">
-                                        <rect key="frame" x="5.6666666666666714" y="0.0" width="155.33333333333331" height="17.333333333333332"/>
+                                        <rect key="frame" x="5.5" y="0.0" width="155.5" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                         <color key="textColor" name="reversedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0r-Hm-jLa">
-                                        <rect key="frame" x="18.666666666666671" y="144.66666666666669" width="129" height="17.333333333333343"/>
+                                        <rect key="frame" x="18.5" y="172.5" width="129" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                         <color key="textColor" name="reversedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJt-yw-OY7">
-                                        <rect key="frame" x="37.000000000000021" y="289" width="92.333333333333314" height="17.333333333333314"/>
+                                        <rect key="frame" x="37" y="345" width="92.5" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                         <color key="textColor" name="reversedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ImZ-IU-gtT">
-                                        <rect key="frame" x="0.0" y="433.66666666666663" width="166.33333333333334" height="55.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="517.5" width="166.5" height="55.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some more questions?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjZ-zY-yQG">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.33333333333334" height="15.333333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="166.5" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                                 <color key="textColor" name="reversedBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWR-ic-Xkb">
-                                                <rect key="frame" x="37.333333333333321" y="25.333333333333371" width="91.666666666666686" height="30"/>
+                                                <rect key="frame" x="37.5" y="25.5" width="91.5" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="xmI-hf-8OV"/>
                                                 </constraints>
@@ -1267,11 +1267,28 @@
             <objects>
                 <viewController id="6bM-km-RQW" customClass="QrViewController" customModule="DzienWydzialu_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="edf-jp-4N4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VMg-7u-MXT">
+                                <rect key="frame" x="82" y="295" width="250" height="247.5"/>
+                                <color key="tintColor" name="reversedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="JeE-cD-BNy"/>
+                                    <constraint firstAttribute="width" constant="250" id="iN5-rq-vPW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rXq-Gc-31f"/>
                         <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VMg-7u-MXT" firstAttribute="centerX" secondItem="edf-jp-4N4" secondAttribute="centerX" id="5Tg-TC-lqx"/>
+                            <constraint firstItem="VMg-7u-MXT" firstAttribute="centerY" secondItem="edf-jp-4N4" secondAttribute="centerY" id="h9J-hI-3dK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="squareFrame" destination="VMg-7u-MXT" id="7kp-Go-rKO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMP-nD-ODB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1298,6 +1315,7 @@
         <image name="launchScreenImage" width="375" height="420"/>
         <image name="mainScreenImage" width="1776" height="2796"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="square" catalog="system" width="128" height="114"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="backgroundColor">
             <color red="0.050999999046325684" green="0.050999999046325684" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

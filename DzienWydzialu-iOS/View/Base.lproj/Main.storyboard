@@ -1269,26 +1269,9 @@
                     <view key="view" contentMode="scaleToFill" id="edf-jp-4N4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VMg-7u-MXT">
-                                <rect key="frame" x="82" y="295" width="250" height="247.5"/>
-                                <color key="tintColor" name="reversedBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="JeE-cD-BNy"/>
-                                    <constraint firstAttribute="width" constant="250" id="iN5-rq-vPW"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rXq-Gc-31f"/>
                         <color key="backgroundColor" name="backgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="VMg-7u-MXT" firstAttribute="centerX" secondItem="edf-jp-4N4" secondAttribute="centerX" id="5Tg-TC-lqx"/>
-                            <constraint firstItem="VMg-7u-MXT" firstAttribute="centerY" secondItem="edf-jp-4N4" secondAttribute="centerY" id="h9J-hI-3dK"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="squareFrame" destination="VMg-7u-MXT" id="7kp-Go-rKO"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMP-nD-ODB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1296,11 +1279,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="luv-L0-sIU"/>
-        <segue reference="v0a-fK-3bE"/>
-        <segue reference="hM6-bZ-oYj"/>
+        <segue reference="neY-WD-hPW"/>
+        <segue reference="1ch-Xj-D5A"/>
+        <segue reference="gKH-yg-1OF"/>
         <segue reference="cQS-fp-ZgJ"/>
-        <segue reference="vmf-6z-G4u"/>
+        <segue reference="2a4-1k-zv2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FluidShadow_home_page" width="317" height="310"/>
@@ -1315,7 +1298,6 @@
         <image name="launchScreenImage" width="375" height="420"/>
         <image name="mainScreenImage" width="1776" height="2796"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
-        <image name="square" catalog="system" width="128" height="114"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="backgroundColor">
             <color red="0.050999999046325684" green="0.050999999046325684" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

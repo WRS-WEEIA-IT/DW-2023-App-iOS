@@ -19,6 +19,12 @@ struct K {
     static let lectures = "lectures"
     static let workshops = "workshops"
     
+    static let qrTextSize = 15.0
+    static let qrTextYDistance = 25.0
+    
+    static let frameWidth = 200.0
+    static let frameHeight = 200.0
+    
     struct events {
         static let eventType = "eventType"
         static let timeStart = "timeStart"

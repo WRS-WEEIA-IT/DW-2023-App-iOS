@@ -155,7 +155,7 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
             guard let stringValue = readableObject.stringValue else { return }
             manageCode(codeString: stringValue)
         }
-                
+            
         dismiss(animated: true)
     }
     
@@ -181,7 +181,7 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                             if codeString == taskQrCode {
                                 codeArray.append(codeString)
                                 K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
-                                AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+                                self.foundVibration()
                                 return
                             }
                         } else {
@@ -203,5 +203,9 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             errorVibrate.impactOccurred()
         }
+    }
+    
+    func foundVibration() {
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
 }

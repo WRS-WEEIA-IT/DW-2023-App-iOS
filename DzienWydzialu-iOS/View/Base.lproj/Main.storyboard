@@ -84,7 +84,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <segue destination="6bM-km-RQW" kind="presentation" id="biX-cT-uk2"/>
+                                                    <segue destination="6bM-km-RQW" kind="show" id="biX-cT-uk2"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ikn-0b-Yam" userLabel="circle">
@@ -1273,6 +1273,7 @@
                         <viewLayoutGuide key="safeArea" id="rXq-Gc-31f"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="q7V-Hw-Ri1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMP-nD-ODB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1280,7 +1281,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2se-Oe-g3R"/>
+        <segue reference="biX-cT-uk2"/>
         <segue reference="v0a-fK-3bE"/>
         <segue reference="gKH-yg-1OF"/>
         <segue reference="eDS-EC-aJ0"/>

@@ -32,7 +32,11 @@ class TasksViewController: UIViewController {
         
         loadTasks()
     }
-
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        loadTasks()
+//        self.tasksTableView.reloadData()
+//    }
 
 }
 
@@ -65,7 +69,6 @@ extension TasksViewController : UITableViewDataSource {
         
         return cell
     }
-    
     
 }
 

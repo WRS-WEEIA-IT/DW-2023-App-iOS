@@ -13,7 +13,7 @@ class QrViewController: UIViewController {
     
     var avCaptureSession: AVCaptureSession!
     var avPreviewLayer: AVCaptureVideoPreviewLayer!
-        
+            
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
@@ -85,7 +85,6 @@ class QrViewController: UIViewController {
             
             let textLayer = CATextLayer()
             textLayer.font = UIFont(name: "Montserrat-SemiBold", size: K.qrTextSize) as CFTypeRef
-//            textLayer.font = UIFont.systemFont(ofSize: K.qrTextSize).fontName as CFTypeRef
             textLayer.fontSize = K.qrTextSize
             textLayer.string = "Swipe down to exit scanner!"
             textLayer.contentsScale = UIScreen.main.scale
@@ -154,18 +153,17 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
         if let metadataObject = metadataObjects.first {
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
             guard let stringValue = readableObject.stringValue else { return }
-            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             manageCode(codeString: stringValue)
         }
-        
+                
         dismiss(animated: true)
     }
     
     func manageCode(codeString: String) {
-        print(codeString)
         var codeArray: [String] = []
         if let currentCodeArray: [String] = K.defaults.sharedUserDefaults.stringArray(forKey: K.defaults.codeArray) {
             if currentCodeArray.contains(codeString) {
+                self.errorVibration()
                 return
             } else {
                 codeArray = currentCodeArray
@@ -180,10 +178,11 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                     for document in snapshotDocuments {
                         let documentData = document.data()
                         if let taskQrCode = documentData[K.tasks.qrCode] as? String {
-                            print(taskQrCode)
                             if codeString == taskQrCode {
                                 codeArray.append(codeString)
                                 K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
+                                AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+                                return
                             }
                         } else {
                             print("Failed to fetch task's qrCode")
@@ -193,6 +192,16 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
             }
         }
         
+        self.errorVibration()
         K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
+    }
+    
+    func errorVibration() {
+        let errorVibrate = UIImpactFeedbackGenerator(style: .heavy)
+        errorVibrate.prepare()
+        errorVibrate.impactOccurred()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            errorVibrate.impactOccurred()
+        }
     }
 }

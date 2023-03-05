@@ -17,9 +17,15 @@ class TasksViewController: UIViewController {
     var tasksArray : [Tasks] = []
     
     let db = Firestore.firestore()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let codesArray : [String] = K.defaults.sharedUserDefaults.stringArray(forKey: K.defaults.codeArray) {
+            print(codesArray)
+        } else {
+            print("Failed to access UserDefaults!")
+        }
         
         taskIcon.tintColor = UIColor(named: K.buttonColor)
         taskLabel.textColor = UIColor(named: K.buttonColor)
@@ -84,7 +90,7 @@ extension TasksViewController {
             self.tasksArray = []
             
             if error != nil {
-                print("Error fetching tasks from firebase!")
+                print("Error fetching tasks from Firebase!")
             } else {
                 if let snapshotDocuments = snapshot?.documents {
                     for document in snapshotDocuments {

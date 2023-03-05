@@ -7,11 +7,14 @@
 
 import UIKit
 import AVFoundation
+import FirebaseFirestore
 
 class QrViewController: UIViewController {
     
     var avCaptureSession: AVCaptureSession!
     var avPreviewLayer: AVCaptureVideoPreviewLayer!
+        
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,13 +155,44 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
             guard let stringValue = readableObject.stringValue else { return }
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-            found(code: stringValue)
+            manageCode(codeString: stringValue)
         }
         
         dismiss(animated: true)
     }
     
-    func found(code: String) {
-        print(code)
+    func manageCode(codeString: String) {
+        print(codeString)
+        var codeArray: [String] = []
+        if let currentCodeArray: [String] = K.defaults.sharedUserDefaults.stringArray(forKey: K.defaults.codeArray) {
+            if currentCodeArray.contains(codeString) {
+                return
+            } else {
+                codeArray = currentCodeArray
+            }
+        }
+        
+        db.collection("tasks").addSnapshotListener { snapshot, error in
+            if error != nil {
+                print("Error fetching data from Firebase!")
+            } else {
+                if let snapshotDocuments = snapshot?.documents {
+                    for document in snapshotDocuments {
+                        let documentData = document.data()
+                        if let taskQrCode = documentData[K.tasks.qrCode] as? String {
+                            print(taskQrCode)
+                            if codeString == taskQrCode {
+                                codeArray.append(codeString)
+                                K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
+                            }
+                        } else {
+                            print("Failed to fetch task's qrCode")
+                        }
+                    }
+                }
+            }
+        }
+        
+        K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
     }
 }

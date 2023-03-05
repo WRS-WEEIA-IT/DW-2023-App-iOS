@@ -25,6 +25,11 @@ struct K {
     static let frameWidth = 200.0
     static let frameHeight = 200.0
     
+    struct defaults {
+        static let codeArray = "qrCodes"
+        static let sharedUserDefaults = UserDefaults.standard
+    }
+    
     struct events {
         static let eventType = "eventType"
         static let timeStart = "timeStart"
@@ -39,6 +44,7 @@ struct K {
         static let imageSource = "imageSource"
         static let description = "description"
         static let points = "points"
+        static let qrCode = "qrCode"
     }
     
     struct gradient {

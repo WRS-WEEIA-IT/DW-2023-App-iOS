@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291502B929B4C81700BBA47E /* QrDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291502B829B4C81700BBA47E /* QrDelegate.swift */; };
 		291D371029A5219B00577E78 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291D370F29A5219B00577E78 /* EventsViewController.swift */; };
 		291DA15729A552910087E1D8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 291DA15629A552910087E1D8 /* FirebaseAnalytics */; };
 		291DA15929A552910087E1D8 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 291DA15829A552910087E1D8 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -74,6 +75,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		291502B829B4C81700BBA47E /* QrDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrDelegate.swift; sourceTree = "<group>"; };
 		291D370F29A5219B00577E78 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		291DA18C29A56DE00087E1D8 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		29257A2A29A10D6D00FD5C3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				293CAF6929A6632700D75D48 /* Events.swift */,
 				293CAF9C29A8243D00D75D48 /* Tasks.swift */,
+				291502B829B4C81700BBA47E /* QrDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				293CAF9D29A8243D00D75D48 /* Tasks.swift in Sources */,
 				297C39E729AE062700C62979 /* QrViewController.swift in Sources */,
 				293CAF6C29A666F200D75D48 /* Constants.swift in Sources */,
+				291502B929B4C81700BBA47E /* QrDelegate.swift in Sources */,
 				293CAF6829A6617B00D75D48 /* EventCell.swift in Sources */,
 				297E713E299FABF00053E32E /* SceneDelegate.swift in Sources */,
 				293CAF6E29A6731E00D75D48 /* SettingsViewController.swift in Sources */,

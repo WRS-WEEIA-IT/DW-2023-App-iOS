@@ -12,6 +12,7 @@ struct Tasks {
     let description : String
     let points : Int
     let imageSource : String
+    let qrCode : String
     
     let numberOfTask : Int
     var done : Bool

@@ -16,13 +16,14 @@ class TasksViewController: UIViewController {
     @IBOutlet weak var pointsLabel: UILabel!
     
     var tasksArray : [Tasks] = []
-    var points = 0
     
     let db = Firestore.firestore()
     
+    var points = 0
+            
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         taskIcon.tintColor = UIColor(named: K.buttonColor)
         taskLabel.textColor = UIColor(named: K.buttonColor)
 
@@ -30,13 +31,13 @@ class TasksViewController: UIViewController {
         tasksTableView.rowHeight = K.rowHeight
         tasksTableView.register(UINib(nibName: K.taskNibName, bundle: nil), forCellReuseIdentifier: K.taskCellIdentifier)
         
+//        loadTasks()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        points = 0
         loadTasks()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        loadTasks()
-//        self.tasksTableView.reloadData()
-//    }
 
 }
 
@@ -59,12 +60,15 @@ extension TasksViewController : UITableViewDataSource {
             cell.qrcodeImage.isHidden = true
             cell.upTextLabel.text = "ZADANIE WYKONANE!"
             cell.downTextLabel.isHidden = true
+            cell.checkmarkImage.isHidden = false
             cell.filter.alpha = 0.85
         } else {
             cell.checkmarkImage.isHidden = true
             cell.downTextLabel.isHidden = false
+            cell.qrcodeImage.isHidden = false
             cell.upTextLabel.text = "ZESKANUJ KOD"
             cell.downTextLabel.text = "ABY WYKONAĆ ZADANIE"
+            cell.filter.alpha = 0.55
         }
         
         return cell

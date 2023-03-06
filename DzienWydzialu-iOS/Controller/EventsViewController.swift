@@ -17,7 +17,7 @@ class EventsViewController: UIViewController {
     var eventsArray: [Events] = []
     
     let db = Firestore.firestore()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -15,7 +15,7 @@ class QrViewController: UIViewController {
     var avPreviewLayer: AVCaptureVideoPreviewLayer!
             
     let db = Firestore.firestore()
-    
+                    
     override func viewDidLoad() {
         super.viewDidLoad()
         avCaptureSession = AVCaptureSession()
@@ -155,7 +155,8 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
             guard let stringValue = readableObject.stringValue else { return }
             manageCode(codeString: stringValue)
         }
-            
+        
+        print("Qr scanned succesfully")
         dismiss(animated: true)
     }
     

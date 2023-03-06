@@ -29,7 +29,6 @@ class TaskCell : UITableViewCell {
         
     }
     
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         

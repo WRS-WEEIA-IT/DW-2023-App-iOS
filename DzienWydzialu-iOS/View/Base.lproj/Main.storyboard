@@ -84,7 +84,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <segue destination="6bM-km-RQW" kind="show" id="biX-cT-uk2"/>
+                                                    <segue destination="6bM-km-RQW" kind="presentation" modalPresentationStyle="fullScreen" id="biX-cT-uk2"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ikn-0b-Yam" userLabel="circle">
@@ -380,7 +380,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <segue destination="6bM-km-RQW" kind="presentation" id="neY-WD-hPW"/>
+                                                    <segue destination="6bM-km-RQW" kind="presentation" modalPresentationStyle="fullScreen" id="neY-WD-hPW"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="B2E-n7-w7z" userLabel="circle">
@@ -677,7 +677,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <segue destination="6bM-km-RQW" kind="presentation" id="2se-Oe-g3R"/>
+                                                    <segue destination="6bM-km-RQW" kind="presentation" modalPresentationStyle="fullScreen" id="2se-Oe-g3R"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4j5-of-SCq" userLabel="circle">
@@ -979,7 +979,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <segue destination="6bM-km-RQW" kind="presentation" id="luv-L0-sIU"/>
+                                                    <segue destination="6bM-km-RQW" kind="presentation" modalPresentationStyle="fullScreen" id="luv-L0-sIU"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8KM-aU-OoL" userLabel="circle">
@@ -1268,7 +1268,7 @@
             <objects>
                 <viewController id="6bM-km-RQW" customClass="QrViewController" customModule="DzienWydzialu_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="edf-jp-4N4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="rXq-Gc-31f"/>
                         <color key="backgroundColor" name="backgroundColor"/>
@@ -1281,7 +1281,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="biX-cT-uk2"/>
+        <segue reference="2se-Oe-g3R"/>
         <segue reference="v0a-fK-3bE"/>
         <segue reference="gKH-yg-1OF"/>
         <segue reference="eDS-EC-aJ0"/>

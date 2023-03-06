@@ -25,6 +25,9 @@ struct K {
     static let frameWidth = 200.0
     static let frameHeight = 200.0
     
+    static let xPositionOfButtonX = 35.0
+    static let yPositionOfButtonX = 30.0
+    
     struct defaults {
         static let codeArray = "qrCodes"
         static let sharedUserDefaults = UserDefaults.standard

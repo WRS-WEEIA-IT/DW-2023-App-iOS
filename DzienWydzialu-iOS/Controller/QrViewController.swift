@@ -80,25 +80,32 @@ class QrViewController: UIViewController {
             layer.position = CGPoint(x: self.view.layer.bounds.midX, y: self.view.layer.bounds.midY)
             
             self.view.layer.addSublayer(layer)
-
-            //MARK: - Top text
             
-            let textLayer = CATextLayer()
-            textLayer.font = UIFont(name: "Montserrat-SemiBold", size: K.qrTextSize) as CFTypeRef
-            textLayer.fontSize = K.qrTextSize
-            textLayer.string = "Swipe down to exit scanner!"
-            textLayer.contentsScale = UIScreen.main.scale
+            //MARK: - Exit from scanner
             
-            let textSize = (textLayer.string as? NSString)?.size(withAttributes: [.font: UIFont(name: "Montserrat-SemiBold", size: K.qrTextSize) as Any])
+            let crossSize: CGFloat = 20
+            let crossLineWidth: CGFloat = 2
+            let crossColor = UIColor.white
 
-            textLayer.frame = CGRect(x: ((self.view.layer.bounds.width - textSize!.width) / 2.0), y: K.qrTextYDistance, width: textSize!.width, height: textSize!.height)
+            let crossShapeLayer = CAShapeLayer()
 
-            textLayer.shadowColor = UIColor.black.cgColor
-            textLayer.shadowOffset = CGSize(width: 0, height: 2)
-            textLayer.shadowOpacity = 0.5
-            textLayer.shadowRadius = 2
-            
-            self.view.layer.addSublayer(textLayer)
+            let crossPath = UIBezierPath()
+            crossPath.move(to: CGPoint(x: 0, y: 0))
+            crossPath.addLine(to: CGPoint(x: crossSize, y: crossSize))
+            crossPath.move(to: CGPoint(x: crossSize, y: 0))
+            crossPath.addLine(to: CGPoint(x: 0, y: crossSize))
+
+            crossShapeLayer.path = crossPath.cgPath
+            crossShapeLayer.lineWidth = crossLineWidth
+            crossShapeLayer.strokeColor = crossColor.cgColor
+            crossShapeLayer.fillColor = UIColor.clear.cgColor
+            crossShapeLayer.frame = CGRect(x: 0, y: 0, width: crossSize, height: crossSize)
+            crossShapeLayer.position = CGPoint(x: self.view.layer.bounds.minX+K.xPositionOfButtonX, y: self.view.layer.bounds.minY+K.yPositionOfButtonX)
+
+            self.view.layer.addSublayer(crossShapeLayer)
+
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissViewController))
+            self.view.addGestureRecognizer(tapGesture)
             
             DispatchQueue.global(qos: .background).async {
                     self.avCaptureSession.startRunning()
@@ -143,7 +150,12 @@ class QrViewController: UIViewController {
         return .portrait
     }
     
+    @objc func dismissViewController() {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
+
 extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         DispatchQueue.global(qos: .background).async {
@@ -156,7 +168,6 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
             manageCode(codeString: stringValue)
         }
         
-        print("Qr scanned succesfully")
         dismiss(animated: true)
     }
     

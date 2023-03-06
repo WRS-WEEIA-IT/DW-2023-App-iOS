@@ -31,7 +31,6 @@ class TasksViewController: UIViewController {
         tasksTableView.rowHeight = K.rowHeight
         tasksTableView.register(UINib(nibName: K.taskNibName, bundle: nil), forCellReuseIdentifier: K.taskCellIdentifier)
         
-//        loadTasks()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +39,8 @@ class TasksViewController: UIViewController {
     }
 
 }
+
+//MARK: - TableView
 
 extension TasksViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,7 +78,7 @@ extension TasksViewController : UITableViewDataSource {
 }
 
 
-//MARK: - FIRESTORE
+//MARK: - LOADING TASKS
 
 extension TasksViewController {
     

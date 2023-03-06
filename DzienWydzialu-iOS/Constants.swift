@@ -5,7 +5,7 @@
 //  Created by Bartek Chadryś on 22/02/2023.
 //
 
-import Foundation
+import UIKit
 
 struct K {
     static let eventCellIdentifier = "ReusableEventCell"
@@ -25,8 +25,13 @@ struct K {
     static let frameWidth = 200.0
     static let frameHeight = 200.0
     
-    static let xPositionOfButtonX = 35.0
-    static let yPositionOfButtonX = 30.0
+    struct Xcross {
+        static let xPositionOfButtonX = 35.0
+        static let yPositionOfButtonX = 30.0
+        static let crossSize = 20.0
+        static let crossLineWidth = 2.0
+        static let crossColor = UIColor.white
+    }
     
     struct defaults {
         static let codeArray = "qrCodes"
@@ -48,13 +53,5 @@ struct K {
         static let description = "description"
         static let points = "points"
         static let qrCode = "qrCode"
-    }
-    
-    struct gradient {
-        
-    }
-    
-    struct images {
-        
     }
 }

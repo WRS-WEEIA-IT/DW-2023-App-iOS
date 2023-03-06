@@ -64,7 +64,11 @@ class QrViewController: UIViewController {
 
             let context = UIGraphicsGetCurrentContext()
 
-            context?.setStrokeColor(UIColor.white.cgColor)
+            if let strokeColor = UIColor(named: "reversedBackgroundColor") {
+                context?.setStrokeColor(strokeColor.cgColor)
+            } else {
+                context?.setStrokeColor(UIColor.white.cgColor)
+            }
             context?.setLineWidth(5.0)
 
             let roundedRectPath = UIBezierPath(roundedRect: CGRect(origin: CGPoint.zero, size: frameSize), cornerRadius: 15.0)
@@ -83,24 +87,20 @@ class QrViewController: UIViewController {
             
             //MARK: - Exit from scanner
             
-            let crossSize: CGFloat = 20
-            let crossLineWidth: CGFloat = 2
-            let crossColor = UIColor.white
-
             let crossShapeLayer = CAShapeLayer()
 
             let crossPath = UIBezierPath()
             crossPath.move(to: CGPoint(x: 0, y: 0))
-            crossPath.addLine(to: CGPoint(x: crossSize, y: crossSize))
-            crossPath.move(to: CGPoint(x: crossSize, y: 0))
-            crossPath.addLine(to: CGPoint(x: 0, y: crossSize))
+            crossPath.addLine(to: CGPoint(x: K.Xcross.crossSize, y: K.Xcross.crossSize))
+            crossPath.move(to: CGPoint(x: K.Xcross.crossSize, y: 0))
+            crossPath.addLine(to: CGPoint(x: 0, y: K.Xcross.crossSize))
 
             crossShapeLayer.path = crossPath.cgPath
-            crossShapeLayer.lineWidth = crossLineWidth
-            crossShapeLayer.strokeColor = crossColor.cgColor
+            crossShapeLayer.lineWidth = K.Xcross.crossLineWidth
+            crossShapeLayer.strokeColor = K.Xcross.crossColor.cgColor
             crossShapeLayer.fillColor = UIColor.clear.cgColor
-            crossShapeLayer.frame = CGRect(x: 0, y: 0, width: crossSize, height: crossSize)
-            crossShapeLayer.position = CGPoint(x: self.view.layer.bounds.minX+K.xPositionOfButtonX, y: self.view.layer.bounds.minY+K.yPositionOfButtonX)
+            crossShapeLayer.frame = CGRect(x: 0, y: 0, width: K.Xcross.crossSize, height: K.Xcross.crossSize)
+            crossShapeLayer.position = CGPoint(x: self.view.layer.bounds.minX+K.Xcross.xPositionOfButtonX, y: self.view.layer.bounds.minY+K.Xcross.yPositionOfButtonX)
 
             self.view.layer.addSublayer(crossShapeLayer)
 

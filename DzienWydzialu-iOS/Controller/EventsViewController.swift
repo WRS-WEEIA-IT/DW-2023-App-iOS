@@ -65,7 +65,7 @@ extension EventsViewController {
         loadEvent(collectionType: K.workshops)
     }
     
-    func loadEvent(collectionType : String) {
+    func loadEvent(collectionType: String) {
         db.collection(collectionType).addSnapshotListener { snapshot, error in
             
             if error != nil {

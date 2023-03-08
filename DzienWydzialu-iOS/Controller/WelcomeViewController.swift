@@ -16,9 +16,9 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var taskTableView: UITableView!
     
     let db = Firestore.firestore()
-    
+        
     var eventsArray: [Events] = []
-    var tasksArray: [Tasks] = [Tasks(title: "yeah", description: "Yeah", points: 5, imageSource: "ee", qrCode: "ee", numberOfTask: 5, done: false)]
+    var tasksArray: [Tasks] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,46 +28,63 @@ class WelcomeViewController: UIViewController {
         
         eventTableView.dataSource = self
         eventTableView.register(UINib(nibName: K.eventNibName, bundle: nil), forCellReuseIdentifier: K.eventCellIdentifier)
+        eventTableView.rowHeight = 150
         
         taskTableView.dataSource = self
         taskTableView.register(UINib(nibName: K.taskNibName, bundle: nil), forCellReuseIdentifier: K.taskCellIdentifier)
+        taskTableView.rowHeight = 150
         
         loadAllEvents()
+        loadTasks()
     }
 
 }
 
 extension WelcomeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if(tableView == eventTableView) {
+            return 1
+        } else {
+            return tasksArray.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.eventCellIdentifier, for: indexPath) as! EventCell
-        if tableView == eventTableView {
-            let event = eventsArray[0]
-            
-            cell.dateLabel.text = event.time
-            cell.eventSubject.text = event.title
-            cell.eventType.text = event.eventType
-            
+        if(tableView == eventTableView) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.eventCellIdentifier, for: indexPath) as! EventCell
+
+            if !eventsArray.isEmpty {
+                let event = eventsArray[0]
+                    
+                cell.dateLabel.text = event.time
+                cell.eventSubject.text = event.title
+                cell.eventType.text = event.eventType
+            }
             return cell
         } else {
-            let event = eventsArray[1]
+            let taskCell = tableView.dequeueReusableCell(withIdentifier: K.taskCellIdentifier, for: indexPath) as! TaskCell
+            let task = tasksArray[indexPath.row]
+                
+            taskCell.titleLabel.text = task.title
+            taskCell.descriptionLabel.text = task.description
+            taskCell.taskNumberLabel.text = "Zadanie \(task.numberOfTask)"
+            taskCell.pointsButton.titleLabel?.text = "\(task.points) PUNKTÓW"
             
-            cell.dateLabel.text = event.time
-            cell.eventSubject.text = event.title
-            cell.eventType.text = event.eventType
+            taskCell.checkmarkImage.isHidden = true
+            taskCell.downTextLabel.isHidden = false
+            taskCell.qrcodeImage.isHidden = false
+            taskCell.upTextLabel.text = "ZESKANUJ KOD"
+            taskCell.downTextLabel.text = "ABY WYKONAĆ ZADANIE"
+            taskCell.filter.alpha = 0.55
             
-            return cell
+            return taskCell
+            }
         }
-        
-    }
     
     
 }
 
-//MARK: - Loading tasks and events
+//MARK: - Loading Events
 
 extension WelcomeViewController {
     func loadAllEvents() {
@@ -118,9 +135,55 @@ extension WelcomeViewController {
         return nil
     }
     
+}
+
+//MARK: - Loading Tasks
+
+extension WelcomeViewController {
     func loadTasks() {
-        
+        db.collection("tasks").addSnapshotListener { snapshot , error in
+            
+            self.tasksArray = []
+            
+            if error != nil {
+                print("Error fetching tasks from Firebase!")
+            } else {
+                if let snapshotDocuments = snapshot?.documents {
+                    for document in snapshotDocuments {
+                        let documentData = document.data()
+                        if let newTask = self.createTask(documentData: documentData) {
+                            self.tasksArray.append(newTask)
+                            DispatchQueue.main.async {
+                                self.taskTableView.reloadData()
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
+    func createTask(documentData : [String : Any]) -> Tasks? {
+        if let newTitle = documentData[K.tasks.title] as? String, let newDescription = documentData[K.tasks.description] as? String, let newImageSource = documentData[K.tasks.imageSource] as? String, let newPoints = documentData[K.tasks.points] as? Int, let newQrCode = documentData[K.tasks.qrCode] as? String{
+            
+            let newDone = checkTaskWithLocal(qrcode: newQrCode, newPoints: newPoints)
+            
+            let newTask = Tasks(title: newTitle, description: newDescription, points: newPoints, imageSource: newImageSource, qrCode: newQrCode, numberOfTask: tasksArray.count+1, done: newDone)
+            
+            return newTask
+        } else {
+            print("Error fetching data!")
+            return nil
+        }
+    }
+    
+    func checkTaskWithLocal(qrcode: String, newPoints: Int) -> Bool {
+        if let localCodeArray = K.defaults.sharedUserDefaults.stringArray(forKey: K.defaults.codeArray) {
+            if localCodeArray.contains(qrcode) {
+                return true
+            }
+        }
+        return false
+    }
 }
 

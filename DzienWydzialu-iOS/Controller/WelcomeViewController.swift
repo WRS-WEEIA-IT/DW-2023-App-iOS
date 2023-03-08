@@ -28,11 +28,11 @@ class WelcomeViewController: UIViewController {
         
         eventTableView.dataSource = self
         eventTableView.register(UINib(nibName: K.eventNibName, bundle: nil), forCellReuseIdentifier: K.eventCellIdentifier)
-        eventTableView.rowHeight = 150
+        eventTableView.rowHeight = K.welcomeRowHeight
         
         taskTableView.dataSource = self
         taskTableView.register(UINib(nibName: K.taskNibName, bundle: nil), forCellReuseIdentifier: K.taskCellIdentifier)
-        taskTableView.rowHeight = 150
+        taskTableView.rowHeight = K.welcomeRowHeight
         
         loadAllEvents()
         loadTasks()
@@ -94,7 +94,7 @@ extension WelcomeViewController {
     }
     
     func loadEvent(collectionType: String) {
-        db.collection(collectionType).whereField("timeEnd", isGreaterThanOrEqualTo: Timestamp.init()).addSnapshotListener { snapshot, error in
+        db.collection(collectionType).whereField(K.events.timeEnd, isGreaterThanOrEqualTo: Timestamp.init()).addSnapshotListener { snapshot, error in
             
             if error != nil {
                 print("Error with loading data from firebase!")

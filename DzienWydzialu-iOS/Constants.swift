@@ -19,6 +19,8 @@ struct K {
     static let lectures = "lectures"
     static let workshops = "workshops"
     
+    static let welcomeRowHeight : CGFloat = 150
+    
     static let qrTextSize = 15.0
     static let qrTextYDistance = 25.0
     

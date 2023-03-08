@@ -94,7 +94,7 @@ extension WelcomeViewController {
     }
     
     func loadEvent(collectionType: String) {
-        db.collection(collectionType).addSnapshotListener { snapshot, error in
+        db.collection(collectionType).whereField("timeEnd", isGreaterThanOrEqualTo: Timestamp.init()).addSnapshotListener { snapshot, error in
             
             if error != nil {
                 print("Error with loading data from firebase!")
@@ -152,9 +152,11 @@ extension WelcomeViewController {
                     for document in snapshotDocuments {
                         let documentData = document.data()
                         if let newTask = self.createTask(documentData: documentData) {
-                            self.tasksArray.append(newTask)
-                            DispatchQueue.main.async {
-                                self.taskTableView.reloadData()
+                            if !newTask.done {
+                                self.tasksArray.append(newTask)
+                                DispatchQueue.main.async {
+                                    self.taskTableView.reloadData()
+                                }
                             }
                         }
                     }

@@ -54,12 +54,12 @@ extension TasksViewController : UITableViewDataSource {
         
         cell.titleLabel.text = task.title
         cell.descriptionLabel.text = task.description
-        cell.taskNumberLabel.text = "Zadanie \(task.numberOfTask)"
-        cell.pointsButton.titleLabel?.text = "\(task.points) PUNKTÓW"
+        cell.taskNumberLabel.text = "Task \(task.numberOfTask)"
+        cell.pointsButton.titleLabel?.text = "\(task.points) POINTS"
         
         if task.done {
             cell.qrcodeImage.isHidden = true
-            cell.upTextLabel.text = "ZADANIE WYKONANE!"
+            cell.upTextLabel.text = "TASK COMPLETED!"
             cell.downTextLabel.isHidden = true
             cell.checkmarkImage.isHidden = false
             cell.filter.alpha = 0.85
@@ -67,8 +67,8 @@ extension TasksViewController : UITableViewDataSource {
             cell.checkmarkImage.isHidden = true
             cell.downTextLabel.isHidden = false
             cell.qrcodeImage.isHidden = false
-            cell.upTextLabel.text = "ZESKANUJ KOD"
-            cell.downTextLabel.text = "ABY WYKONAĆ ZADANIE"
+            cell.upTextLabel.text = "SCAN CODE"
+            cell.downTextLabel.text = "TO COMPLETE THE TASK"
             cell.filter.alpha = 0.55
         }
         

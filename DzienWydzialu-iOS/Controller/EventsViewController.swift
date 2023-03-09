@@ -101,7 +101,14 @@ extension EventsViewController {
             
             newTime += " - \(newTimeEndString)"
             
-            let newEvent = Events(eventType: collectionType, time: newTime,title: newTitle, partner: newPartner, imageSource: newImagesource)
+            var newCollectionType: String
+            if collectionType == K.lectures {
+                newCollectionType = "Lecture"
+            } else {
+                newCollectionType = "Workshop"
+            }
+            
+            let newEvent = Events(eventType: newCollectionType, time: newTime,title: newTitle, partner: newPartner, imageSource: newImagesource)
             return newEvent
         }
         return nil

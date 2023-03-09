@@ -67,14 +67,14 @@ extension WelcomeViewController : UITableViewDataSource {
                 
             taskCell.titleLabel.text = task.title
             taskCell.descriptionLabel.text = task.description
-            taskCell.taskNumberLabel.text = "Zadanie \(task.numberOfTask)"
-            taskCell.pointsButton.titleLabel?.text = "\(task.points) PUNKTÓW"
+            taskCell.taskNumberLabel.text = "Task \(task.numberOfTask)"
+            taskCell.pointsButton.titleLabel?.text = "\(task.points) POINTS"
             
             taskCell.checkmarkImage.isHidden = true
             taskCell.downTextLabel.isHidden = false
             taskCell.qrcodeImage.isHidden = false
-            taskCell.upTextLabel.text = "ZESKANUJ KOD"
-            taskCell.downTextLabel.text = "ABY WYKONAĆ ZADANIE"
+            taskCell.upTextLabel.text = "SCAN CODE"
+            taskCell.downTextLabel.text = "TO COMPLETE THE TASK"
             taskCell.filter.alpha = 0.55
             
             return taskCell
@@ -129,7 +129,14 @@ extension WelcomeViewController {
             
             newTime += " - \(newTimeEndString)"
             
-            let newEvent = Events(eventType: collectionType, time: newTime,title: newTitle, partner: newPartner, imageSource: newImagesource)
+            var newCollectionType: String
+            if collectionType == K.lectures {
+                newCollectionType = "Lecture"
+            } else {
+                newCollectionType = "Workshop"
+            }
+            
+            let newEvent = Events(eventType: newCollectionType, time: newTime,title: newTitle, partner: newPartner, imageSource: newImagesource)
             return newEvent
         }
         return nil

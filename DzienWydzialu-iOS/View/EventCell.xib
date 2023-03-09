@@ -39,16 +39,16 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eqy-Fe-nFf">
-                        <rect key="frame" x="20" y="88" width="98.5" height="76"/>
+                        <rect key="frame" x="20" y="88" width="90" height="76"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Szkolenie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgY-P2-xjD">
-                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lecture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgY-P2-xjD">
+                                <rect key="frame" x="0.0" y="0.0" width="40.5" height="14"/>
                                 <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="10"/>
                                 <color key="textColor" name="reversedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temat szkolenia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfG-uq-2dT">
-                                <rect key="frame" x="0.0" y="22" width="98.5" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfG-uq-2dT">
+                                <rect key="frame" x="0.0" y="22" width="32.5" height="16"/>
                                 <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" name="reversedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                 </constraints>
                                 <color key="tintColor" name="buttonColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Zapisz się" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="filled" title="Sign up" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="10"/>
                                     <color key="baseForegroundColor" name="reversedBackgroundColor"/>
                                     <color key="baseBackgroundColor" name="buttonColor"/>

@@ -19,6 +19,7 @@ class EventCell : UITableViewCell {
     override class func awakeFromNib() {
         super.awakeFromNib()
         
+        
     }
     
     override func layoutSubviews() {
@@ -31,8 +32,7 @@ class EventCell : UITableViewCell {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         if let url = URL(string: "https://weeia.p.lodz.pl/") {
-            //let safariVC = SFSafariViewController(url: url)
-            UIApplication.shared.open(url)
+                UIApplication.shared.open(url)
         }
     }
     

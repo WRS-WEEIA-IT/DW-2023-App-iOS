@@ -263,7 +263,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.bubble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JNE-ty-egT">
-                                                                <rect key="frame" x="0.0" y="-1.9999999999999627" width="60" height="27.333333333333343"/>
+                                                                <rect key="frame" x="0.0" y="-2.3333333333332948" width="60" height="29"/>
                                                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="cmI-hX-TNk"/>
@@ -301,21 +301,26 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9MD-cl-AP1">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="165"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="pOc-Gy-IUr" userLabel="SeeAllStackView">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="pOc-Gy-IUr" userLabel="SeeAllStackView">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="15"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAf-hI-lvW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="238" height="15"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="217.66666666666666" height="15"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See all" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6U-oi-NSp">
-                                                        <rect key="frame" x="241" y="0.0" width="93" height="15"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
-                                                        <color key="textColor" name="reversedBackgroundColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAp-Av-xT9">
+                                                        <rect key="frame" x="217.66666666666666" y="0.0" width="119.33333333333334" height="15"/>
+                                                        <color key="tintColor" name="reversedBackgroundColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="See all">
+                                                            <fontDescription key="titleFontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <segue destination="rgm-Pj-FyN" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="f4J-Ce-c4F"/>
+                                                        </connections>
+                                                    </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="w2j-Ny-Njn">
                                                         <rect key="frame" x="337" y="2.6666666666666643" width="18" height="10.000000000000002"/>
                                                         <color key="tintColor" name="reversedBackgroundColor"/>
@@ -343,21 +348,26 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0et-mj-ibp">
                                         <rect key="frame" x="0.0" y="180" width="355" height="165"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Cmt-ro-eii">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Cmt-ro-eii">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="15"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHQ-de-kFW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="224" height="15"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="202.33333333333334" height="15"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See all" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqH-1r-JJy">
-                                                        <rect key="frame" x="227" y="0.0" width="107" height="15"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
-                                                        <color key="textColor" name="reversedBackgroundColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSG-Nd-QV6">
+                                                        <rect key="frame" x="202.33333333333337" y="0.0" width="134.66666666666663" height="15"/>
+                                                        <color key="tintColor" name="reversedBackgroundColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="See all">
+                                                            <fontDescription key="titleFontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <segue destination="V7q-qx-HLz" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="YQN-2O-U6h"/>
+                                                        </connections>
+                                                    </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jp4-L6-kP2">
                                                         <rect key="frame" x="337" y="2.6666666666666643" width="18" height="10.000000000000002"/>
                                                         <color key="tintColor" name="reversedBackgroundColor"/>
@@ -1380,8 +1390,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="biX-cT-uk2"/>
         <segue reference="KgP-0y-cye"/>
-        <segue reference="Iiw-DK-qep"/>
-        <segue reference="JwW-lE-tKu"/>
+        <segue reference="YQN-2O-U6h"/>
+        <segue reference="f4J-Ce-c4F"/>
         <segue reference="vmf-6z-G4u"/>
     </inferredMetricsTieBreakers>
     <resources>

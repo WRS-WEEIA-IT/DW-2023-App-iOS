@@ -8,12 +8,13 @@
 import UIKit
 import FirebaseFirestore
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet weak var houseIcon: UIImageView!
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var eventTableView: UITableView!
-    @IBOutlet weak var taskTableView: UITableView!
+    @IBOutlet weak var taskCollectionView: UICollectionView!
+    
     
     let db = Firestore.firestore()
         
@@ -30,17 +31,27 @@ class WelcomeViewController: UIViewController {
         eventTableView.register(UINib(nibName: K.eventNibName, bundle: nil), forCellReuseIdentifier: K.eventCellIdentifier)
         eventTableView.rowHeight = K.welcomeRowHeight
         
-        taskTableView.dataSource = self
-        taskTableView.register(UINib(nibName: K.taskNibName, bundle: nil), forCellReuseIdentifier: K.taskCellIdentifier)
-        taskTableView.rowHeight = K.welcomeRowHeight
+        taskCollectionView.dataSource = self
+        taskCollectionView.register(UINib(nibName: K.taskNibName, bundle: nil), forCellWithReuseIdentifier: K.taskCellIdentifier)
         
         loadAllEvents()
         loadTasks()
     }
 
 }
+extension WelcomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+}
+
 
 extension WelcomeViewController : UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(tableView == eventTableView) {
             return 1
@@ -162,7 +173,7 @@ extension WelcomeViewController {
                             if !newTask.done {
                                 self.tasksArray.append(newTask)
                                 DispatchQueue.main.async {
-                                    self.taskTableView.reloadData()
+//                                    self.taskTableView.reloadData()
                                 }
                             }
                         }

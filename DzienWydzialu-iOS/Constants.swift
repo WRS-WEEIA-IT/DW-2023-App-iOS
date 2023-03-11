@@ -30,6 +30,8 @@ struct K {
     static let frameWidth = 200.0
     static let frameHeight = 200.0
     
+    static let scrollTimeInterval = 3.0
+    
     struct Xcross {
         static let xPositionOfButtonX = 35.0
         static let yPositionOfButtonX = 30.0

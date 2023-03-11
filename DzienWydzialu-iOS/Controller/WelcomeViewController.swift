@@ -36,7 +36,7 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
         taskCollectionView.dataSource = self
         taskCollectionView.register(UINib(nibName: K.taskCollectionNibName, bundle: nil), forCellWithReuseIdentifier: K.taskCellCollectionIdentifier)
         DispatchQueue.main.async {
-            self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: K.scrollTimeInterval, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
         
         loadAllEvents()
@@ -60,7 +60,9 @@ extension WelcomeViewController: UICollectionViewDelegate {
         taskCell.titleLabel.text = task.title
         taskCell.descriptionLabel.text = task.description
         taskCell.taskNumberLabel.text = "Task \(task.numberOfTask)"
-        taskCell.pointsButton.titleLabel?.text = "\(task.points) POINTS"
+        if taskCell.pointsButton.titleLabel?.text != nil {
+            taskCell.pointsButton.titleLabel!.text = "\(task.points) POINTS"
+        }
         
         taskCell.checkmarkImage.isHidden = true
         taskCell.downTextLabel.isHidden = false

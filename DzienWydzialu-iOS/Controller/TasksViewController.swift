@@ -55,7 +55,9 @@ extension TasksViewController : UITableViewDataSource {
         cell.titleLabel.text = task.title
         cell.descriptionLabel.text = task.description
         cell.taskNumberLabel.text = "Task \(task.numberOfTask)"
-        cell.pointsButton.titleLabel?.text = "\(task.points) POINTS"
+        if cell.pointsButton.titleLabel?.text != nil {
+            cell.pointsButton.titleLabel!.text = "\(task.points) POINTS"
+        }
         
         if task.done {
             cell.qrcodeImage.isHidden = true

@@ -131,7 +131,6 @@
                     <constraint firstItem="13S-7n-QSX" firstAttribute="leading" secondItem="xuw-X2-vpF" secondAttribute="leading" constant="20" id="WlW-Cg-RuX"/>
                     <constraint firstAttribute="bottom" secondItem="13S-7n-QSX" secondAttribute="bottom" constant="15" id="bPA-VB-VMP"/>
                     <constraint firstAttribute="trailing" secondItem="lLz-hX-6hb" secondAttribute="trailing" constant="10" id="bhG-ut-Mkj"/>
-                    <constraint firstItem="13S-7n-QSX" firstAttribute="leading" secondItem="xuw-X2-vpF" secondAttribute="leading" constant="20" id="c9h-TE-VMF"/>
                     <constraint firstItem="4vW-H5-H6P" firstAttribute="leading" secondItem="xuw-X2-vpF" secondAttribute="leading" id="dFg-Ek-q1g"/>
                     <constraint firstItem="ztW-8M-r4W" firstAttribute="top" secondItem="xuw-X2-vpF" secondAttribute="top" id="ibv-WE-7wz"/>
                     <constraint firstItem="ztW-8M-r4W" firstAttribute="leading" secondItem="xuw-X2-vpF" secondAttribute="leading" id="mxQ-X0-HKv"/>

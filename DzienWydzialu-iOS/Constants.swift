@@ -10,8 +10,11 @@ import UIKit
 struct K {
     static let eventCellIdentifier = "ReusableEventCell"
     static let taskCellIdentifier = "ReusableTaskCell"
+    static let taskCellCollectionIdentifier = "ReusableTaskCellCollection"
+    
     static let eventNibName = "EventCell"
     static let taskNibName = "TaskCell"
+    static let taskCollectionNibName = "TaskCellCollection"
     
     static let buttonColor = "buttonColor"
     static let buttonAction = "buttonPressed"

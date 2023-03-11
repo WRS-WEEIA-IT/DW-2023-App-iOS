@@ -15,7 +15,6 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var taskCollectionView: UICollectionView!
     
-    
     let db = Firestore.firestore()
         
     var eventsArray: [Events] = []
@@ -32,64 +31,66 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
         eventTableView.rowHeight = K.welcomeRowHeight
         
         taskCollectionView.dataSource = self
-        taskCollectionView.register(UINib(nibName: K.taskNibName, bundle: nil), forCellWithReuseIdentifier: K.taskCellIdentifier)
+        taskCollectionView.register(UINib(nibName: K.taskCollectionNibName, bundle: nil), forCellWithReuseIdentifier: K.taskCellCollectionIdentifier)
+
         
         loadAllEvents()
         loadTasks()
     }
 
 }
+
+//MARK: - Manage tasks
+
 extension WelcomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return tasksArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let taskCell = collectionView.dequeueReusableCell(withReuseIdentifier: K.taskCellCollectionIdentifier, for: indexPath) as! TaskCellCollection
+        
+        let task = tasksArray[indexPath.row]
+            
+        taskCell.titleLabel.text = task.title
+        taskCell.descriptionLabel.text = task.description
+        taskCell.taskNumberLabel.text = "Task \(task.numberOfTask)"
+        taskCell.pointsButton.titleLabel?.text = "\(task.points) POINTS"
+        
+        taskCell.checkmarkImage.isHidden = true
+        taskCell.downTextLabel.isHidden = false
+        taskCell.qrcodeImage.isHidden = false
+        taskCell.upTextLabel.text = "SCAN CODE"
+        taskCell.downTextLabel.text = "TO COMPLETE THE TASK"
+        taskCell.filter.alpha = 0.55
+        
+        return taskCell
     }
+    
+    
+    
 }
 
+//MARK: - Manage events
 
 extension WelcomeViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(tableView == eventTableView) {
-            return 1
-        } else {
-            return tasksArray.count
-        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if(tableView == eventTableView) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: K.eventCellIdentifier, for: indexPath) as! EventCell
-
-            if !eventsArray.isEmpty {
-                let event = eventsArray[0]
-                    
-                cell.dateLabel.text = event.time
-                cell.eventSubject.text = event.title
-                cell.eventType.text = event.eventType
-            }
-            return cell
-        } else {
-            let taskCell = tableView.dequeueReusableCell(withIdentifier: K.taskCellIdentifier, for: indexPath) as! TaskCell
-            let task = tasksArray[indexPath.row]
-                
-            taskCell.titleLabel.text = task.title
-            taskCell.descriptionLabel.text = task.description
-            taskCell.taskNumberLabel.text = "Task \(task.numberOfTask)"
-            taskCell.pointsButton.titleLabel?.text = "\(task.points) POINTS"
-            
-            taskCell.checkmarkImage.isHidden = true
-            taskCell.downTextLabel.isHidden = false
-            taskCell.qrcodeImage.isHidden = false
-            taskCell.upTextLabel.text = "SCAN CODE"
-            taskCell.downTextLabel.text = "TO COMPLETE THE TASK"
-            taskCell.filter.alpha = 0.55
-            
-            return taskCell
-            }
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.eventCellIdentifier, for: indexPath) as! EventCell
+        
+        if !eventsArray.isEmpty {
+            let event = eventsArray[0]
+                        
+            cell.dateLabel.text = event.time
+            cell.eventSubject.text = event.title
+            cell.eventType.text = event.eventType
+        }
+        
+        return cell
         }
     
     
@@ -173,7 +174,7 @@ extension WelcomeViewController {
                             if !newTask.done {
                                 self.tasksArray.append(newTask)
                                 DispatchQueue.main.async {
-//                                    self.taskTableView.reloadData()
+                                    self.taskCollectionView.reloadData()
                                 }
                             }
                         }

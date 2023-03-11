@@ -20,6 +20,9 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
     var eventsArray: [Events] = []
     var tasksArray: [Tasks] = []
     
+    var timer = Timer()
+    var counter = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +35,9 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
         
         taskCollectionView.dataSource = self
         taskCollectionView.register(UINib(nibName: K.taskCollectionNibName, bundle: nil), forCellWithReuseIdentifier: K.taskCellCollectionIdentifier)
-
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+        }
         
         loadAllEvents()
         loadTasks()
@@ -67,7 +72,16 @@ extension WelcomeViewController: UICollectionViewDelegate {
         return taskCell
     }
     
-    
+    @objc func changeImage() {
+        if counter < tasksArray.count {
+            counter += 1
+            if(counter == tasksArray.count) {
+                counter = 0
+            }
+            let index = IndexPath.init(item: counter, section: 0)
+            self.taskCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+        }
+    }
     
 }
 

@@ -9,16 +9,13 @@ import UIKit
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
-import FirebaseMessaging
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
         FirebaseApp.configure()
-        //Messaging.messaging().delegate = self
         
         return true
     }

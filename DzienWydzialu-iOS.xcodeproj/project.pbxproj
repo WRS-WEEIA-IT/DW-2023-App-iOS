@@ -73,6 +73,7 @@
 		297E7150299FAD800053E32E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 297E714F299FAD800053E32E /* GoogleService-Info.plist */; };
 		299EE35329BC9CC900DD3583 /* TaskCellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299EE35229BC9CC900DD3583 /* TaskCellCollection.swift */; };
 		299EE35729BC9E0D00DD3583 /* TaskCellCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299EE35629BC9E0D00DD3583 /* TaskCellCollection.xib */; };
+		29FDF72C29BFB699003D84E6 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FDF72B29BFB699003D84E6 /* GradientButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		297E714F299FAD800053E32E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		299EE35229BC9CC900DD3583 /* TaskCellCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellCollection.swift; sourceTree = "<group>"; };
 		299EE35629BC9E0D00DD3583 /* TaskCellCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCellCollection.xib; sourceTree = "<group>"; };
+		29FDF72B29BFB699003D84E6 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				293CAF6929A6632700D75D48 /* Events.swift */,
 				293CAF9C29A8243D00D75D48 /* Tasks.swift */,
+				29FDF72B29BFB699003D84E6 /* GradientButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				293CAF7229A7FC5000D75D48 /* TaskCell.swift in Sources */,
 				293CAF6A29A6632700D75D48 /* Events.swift in Sources */,
 				299EE35329BC9CC900DD3583 /* TaskCellCollection.swift in Sources */,
+				29FDF72C29BFB699003D84E6 /* GradientButton.swift in Sources */,
 				293CAF9D29A8243D00D75D48 /* Tasks.swift in Sources */,
 				297C39E729AE062700C62979 /* QrViewController.swift in Sources */,
 				293CAF6C29A666F200D75D48 /* Constants.swift in Sources */,

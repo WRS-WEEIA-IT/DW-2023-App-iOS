@@ -11,6 +11,7 @@ class SettingsViewController : UIViewController {
     
     @IBOutlet weak var settingsIcon: UIImageView!
     @IBOutlet weak var settingsLabel: UILabel!
+    @IBOutlet weak var contactButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

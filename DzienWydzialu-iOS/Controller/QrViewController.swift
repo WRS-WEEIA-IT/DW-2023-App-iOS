@@ -169,10 +169,9 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
         }
         
         // task complete
-        let alert = UIAlertController(title: "Task completed!", message: "Congratulations, you managed to complete a task!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-        dismiss(animated: true)
+        let alert = AlertViewController()
+        alert.appear(sender: self)
+//        dismiss(animated: true)
     }
     
     func manageCode(codeString: String) {

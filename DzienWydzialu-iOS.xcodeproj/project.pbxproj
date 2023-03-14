@@ -73,6 +73,8 @@
 		297E7150299FAD800053E32E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 297E714F299FAD800053E32E /* GoogleService-Info.plist */; };
 		299EE35329BC9CC900DD3583 /* TaskCellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299EE35229BC9CC900DD3583 /* TaskCellCollection.swift */; };
 		299EE35729BC9E0D00DD3583 /* TaskCellCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299EE35629BC9E0D00DD3583 /* TaskCellCollection.xib */; };
+		299EF2EC29C0FFBF00CAFA95 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299EF2EA29C0FFBF00CAFA95 /* AlertViewController.swift */; };
+		299EF2ED29C0FFBF00CAFA95 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299EF2EB29C0FFBF00CAFA95 /* AlertViewController.xib */; };
 		29FDF72C29BFB699003D84E6 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FDF72B29BFB699003D84E6 /* GradientButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,8 @@
 		297E714F299FAD800053E32E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		299EE35229BC9CC900DD3583 /* TaskCellCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellCollection.swift; sourceTree = "<group>"; };
 		299EE35629BC9E0D00DD3583 /* TaskCellCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCellCollection.xib; sourceTree = "<group>"; };
+		299EF2EA29C0FFBF00CAFA95 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		299EF2EB29C0FFBF00CAFA95 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		29FDF72B29BFB699003D84E6 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,12 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				297E7141299FABF00053E32E /* Main.storyboard */,
-				293CAF6329A6567900D75D48 /* EventCell.xib */,
-				293CAF6729A6617B00D75D48 /* EventCell.swift */,
-				293CAF6F29A7FC4500D75D48 /* TaskCell.xib */,
-				293CAF7129A7FC5000D75D48 /* TaskCell.swift */,
-				299EE35629BC9E0D00DD3583 /* TaskCellCollection.xib */,
-				299EE35229BC9CC900DD3583 /* TaskCellCollection.swift */,
+				299EF2E529C0FEE000CAFA95 /* Alert */,
+				299EF2E429C0FED300CAFA95 /* TaskCollection */,
+				299EF2E329C0FEC600CAFA95 /* TaskTableView */,
+				299EF2E229C0FEB200CAFA95 /* Event */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,6 +263,42 @@
 				293CAF6B29A666F200D75D48 /* Constants.swift */,
 			);
 			path = "DzienWydzialu-iOS";
+			sourceTree = "<group>";
+		};
+		299EF2E229C0FEB200CAFA95 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				293CAF6329A6567900D75D48 /* EventCell.xib */,
+				293CAF6729A6617B00D75D48 /* EventCell.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		299EF2E329C0FEC600CAFA95 /* TaskTableView */ = {
+			isa = PBXGroup;
+			children = (
+				293CAF6F29A7FC4500D75D48 /* TaskCell.xib */,
+				293CAF7129A7FC5000D75D48 /* TaskCell.swift */,
+			);
+			path = TaskTableView;
+			sourceTree = "<group>";
+		};
+		299EF2E429C0FED300CAFA95 /* TaskCollection */ = {
+			isa = PBXGroup;
+			children = (
+				299EE35629BC9E0D00DD3583 /* TaskCellCollection.xib */,
+				299EE35229BC9CC900DD3583 /* TaskCellCollection.swift */,
+			);
+			path = TaskCollection;
+			sourceTree = "<group>";
+		};
+		299EF2E529C0FEE000CAFA95 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				299EF2EA29C0FFBF00CAFA95 /* AlertViewController.swift */,
+				299EF2EB29C0FFBF00CAFA95 /* AlertViewController.xib */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +402,7 @@
 				293CAF8A29A81A8900D75D48 /* Montserrat-MediumItalic.ttf in Resources */,
 				293CAF9B29A81A8900D75D48 /* Montserrat-LightItalic.ttf in Resources */,
 				293CAF9929A81A8900D75D48 /* Montserrat-VariableFont_wght.ttf in Resources */,
+				299EF2ED29C0FFBF00CAFA95 /* AlertViewController.xib in Resources */,
 				297E7150299FAD800053E32E /* GoogleService-Info.plist in Resources */,
 				293CAF8C29A81A8900D75D48 /* Montserrat-ExtraBold.ttf in Resources */,
 				293CAF8D29A81A8900D75D48 /* Montserrat-ExtraLight.ttf in Resources */,
@@ -402,6 +441,7 @@
 				293CAF6C29A666F200D75D48 /* Constants.swift in Sources */,
 				293CAF6829A6617B00D75D48 /* EventCell.swift in Sources */,
 				297E713E299FABF00053E32E /* SceneDelegate.swift in Sources */,
+				299EF2EC29C0FFBF00CAFA95 /* AlertViewController.swift in Sources */,
 				293CAF6E29A6731E00D75D48 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

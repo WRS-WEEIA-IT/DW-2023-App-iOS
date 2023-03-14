@@ -8,7 +8,6 @@
 import UIKit
 
 class GradientButton: UIButton {
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         applyGradient(colors: [UIColor(red: 0.09, green: 0.35, blue: 0.93, alpha: 1.00).cgColor,UIColor(red: 0.02, green: 0.87, blue: 0.99, alpha: 1.00).cgColor])

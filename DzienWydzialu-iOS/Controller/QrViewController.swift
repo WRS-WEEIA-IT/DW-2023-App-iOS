@@ -168,6 +168,10 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
             manageCode(codeString: stringValue)
         }
         
+        // task complete
+        let alert = UIAlertController(title: "Task completed!", message: "Congratulations, you managed to complete a task!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
         dismiss(animated: true)
     }
     
@@ -176,6 +180,7 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
         if let currentCodeArray: [String] = K.defaults.sharedUserDefaults.stringArray(forKey: K.defaults.codeArray) {
             if currentCodeArray.contains(codeString) {
                 self.errorVibration()
+                // task juz istnieje w lokalu
                 return
             } else {
                 codeArray = currentCodeArray
@@ -194,6 +199,7 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                                 codeArray.append(codeString)
                                 K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
                                 self.foundVibration()
+                                // zly kod do taska
                                 return
                             }
                         } else {

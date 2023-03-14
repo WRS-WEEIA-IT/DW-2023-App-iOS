@@ -1110,7 +1110,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF1-mH-a9O" customClass="GradientButton" customModule="DzienWydzialu_iOS" customModuleProvider="target">
+                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF1-mH-a9O" customClass="GradientButton" customModule="DzienWydzialu_iOS" customModuleProvider="target">
                                                                 <rect key="frame" x="47.5" y="113" width="150" height="35"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="1xc-cw-s4H"/>
@@ -1151,8 +1151,8 @@
                                                             <constraint firstAttribute="height" constant="70" id="h1E-bp-BFl"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaw-im-cJa">
-                                                        <rect key="frame" x="142" y="400" width="70" height="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strategic partners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaw-im-cJa">
+                                                        <rect key="frame" x="104" y="400" width="146.5" height="20"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                                         <color key="textColor" name="reversedBackgroundColor"/>
                                                         <nil key="highlightedColor"/>

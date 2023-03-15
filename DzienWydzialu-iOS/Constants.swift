@@ -61,5 +61,6 @@ struct K {
         static let description = "description"
         static let points = "points"
         static let qrCode = "qrCode"
+        static let taskNumber = "taskNumber"
     }
 }

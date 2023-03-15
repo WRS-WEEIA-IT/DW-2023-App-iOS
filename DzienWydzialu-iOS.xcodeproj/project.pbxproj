@@ -37,6 +37,7 @@
 		291DA18B29A552910087E1D8 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 291DA18A29A552910087E1D8 /* FirebaseStorageCombine-Community */; };
 		291DA18D29A56DE00087E1D8 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DA18C29A56DE00087E1D8 /* TasksViewController.swift */; };
 		292501CD29C27E79000C5DC7 /* EventCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292501CC29C27E79000C5DC7 /* EventCreator.swift */; };
+		292501CF29C27FCD000C5DC7 /* TaskCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292501CE29C27FCD000C5DC7 /* TaskCreator.swift */; };
 		29257A2B29A10D6D00FD5C3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29257A2A29A10D6D00FD5C3A /* Assets.xcassets */; };
 		293CAF6429A6567900D75D48 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 293CAF6329A6567900D75D48 /* EventCell.xib */; };
 		293CAF6829A6617B00D75D48 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293CAF6729A6617B00D75D48 /* EventCell.swift */; };
@@ -83,6 +84,7 @@
 		291D370F29A5219B00577E78 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		291DA18C29A56DE00087E1D8 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		292501CC29C27E79000C5DC7 /* EventCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreator.swift; sourceTree = "<group>"; };
+		292501CE29C27FCD000C5DC7 /* TaskCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreator.swift; sourceTree = "<group>"; };
 		29257A2A29A10D6D00FD5C3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		293CAF6329A6567900D75D48 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		293CAF6729A6617B00D75D48 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				293CAF9C29A8243D00D75D48 /* Tasks.swift */,
 				29FDF72B29BFB699003D84E6 /* GradientButton.swift */,
 				292501CC29C27E79000C5DC7 /* EventCreator.swift */,
+				292501CE29C27FCD000C5DC7 /* TaskCreator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				297E7140299FABF00053E32E /* WelcomeViewController.swift in Sources */,
 				291D371029A5219B00577E78 /* EventsViewController.swift in Sources */,
 				291DA18D29A56DE00087E1D8 /* TasksViewController.swift in Sources */,
+				292501CF29C27FCD000C5DC7 /* TaskCreator.swift in Sources */,
 				297E713C299FABF00053E32E /* AppDelegate.swift in Sources */,
 				293CAF7229A7FC5000D75D48 /* TaskCell.swift in Sources */,
 				293CAF6A29A6632700D75D48 /* Events.swift in Sources */,

@@ -22,7 +22,9 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
     
     var timer = Timer()
     var counter = 0
+    
     let eventCreator = EventCreator()
+    let taskCreator = TaskCreator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -161,7 +163,7 @@ extension WelcomeViewController {
                 if let snapshotDocuments = snapshot?.documents {
                     for document in snapshotDocuments {
                         let documentData = document.data()
-                        if let newTask = self.createTask(documentData: documentData) {
+                        if let newTask = self.taskCreator.createTask(documentData: documentData) {
                             if !newTask.done {
                                 self.tasksArray.append(newTask)
                                 DispatchQueue.main.async {
@@ -175,27 +177,5 @@ extension WelcomeViewController {
         }
     }
     
-    func createTask(documentData : [String : Any]) -> Tasks? {
-        if let newTitle = documentData[K.tasks.title] as? String, let newDescription = documentData[K.tasks.description] as? String, let newImageSource = documentData[K.tasks.imageSource] as? String, let newPoints = documentData[K.tasks.points] as? Int, let newQrCode = documentData[K.tasks.qrCode] as? String{
-            
-            let newDone = checkTaskWithLocal(qrcode: newQrCode, newPoints: newPoints)
-            
-            let newTask = Tasks(title: newTitle, description: newDescription, points: newPoints, imageSource: newImageSource, qrCode: newQrCode, numberOfTask: tasksArray.count+1, done: newDone)
-            
-            return newTask
-        } else {
-            print("Error fetching data!")
-            return nil
-        }
-    }
-    
-    func checkTaskWithLocal(qrcode: String, newPoints: Int) -> Bool {
-        if let localCodeArray = K.defaults.sharedUserDefaults.stringArray(forKey: K.defaults.codeArray) {
-            if localCodeArray.contains(qrcode) {
-                return true
-            }
-        }
-        return false
-    }
 }
 

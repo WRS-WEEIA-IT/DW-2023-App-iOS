@@ -170,7 +170,6 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
             manageCode(codeString: stringValue)
         }
         
-        // wrong code
         let alert = AlertViewController()
         alert.parentVC = self
         alert.isWrong = true
@@ -182,7 +181,6 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
         if let currentCodeArray: [String] = K.defaults.sharedUserDefaults.stringArray(forKey: K.defaults.codeArray) {
             if currentCodeArray.contains(codeString) {
                 self.errorVibration()
-                // code already exists
                 let alert = AlertViewController()
                 alert.parentVC = self
                 alert.isWrong = false
@@ -206,6 +204,8 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                                 K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
                                 self.foundVibration()
                                 // dobry kod
+                                
+                                
                                 return
                             }
                         } else {

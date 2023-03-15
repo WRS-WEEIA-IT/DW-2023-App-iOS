@@ -16,6 +16,8 @@ class QrViewController: UIViewController {
             
     let db = Firestore.firestore()
                     
+    let alert = AlertViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         avCaptureSession = AVCaptureSession()
@@ -168,10 +170,11 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
             manageCode(codeString: stringValue)
         }
         
-        // task complete
+        // wrong code
         let alert = AlertViewController()
+        alert.parentVC = self
+        alert.isWrong = true
         alert.appear(sender: self)
-//        dismiss(animated: true)
     }
     
     func manageCode(codeString: String) {
@@ -179,7 +182,11 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
         if let currentCodeArray: [String] = K.defaults.sharedUserDefaults.stringArray(forKey: K.defaults.codeArray) {
             if currentCodeArray.contains(codeString) {
                 self.errorVibration()
-                // task juz istnieje w lokalu
+                // code already exists
+                let alert = AlertViewController()
+                alert.parentVC = self
+                alert.isWrong = false
+                alert.appear(sender: self)
                 return
             } else {
                 codeArray = currentCodeArray
@@ -198,7 +205,7 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                                 codeArray.append(codeString)
                                 K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
                                 self.foundVibration()
-                                // zly kod do taska
+                                // dobry kod
                                 return
                             }
                         } else {

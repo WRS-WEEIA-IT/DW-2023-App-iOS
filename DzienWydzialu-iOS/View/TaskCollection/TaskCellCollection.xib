@@ -85,22 +85,27 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xag-3E-b2j">
                         <rect key="frame" x="301.66666666666669" y="4" width="100.33333333333331" height="172"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmarkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mAU-a5-usg">
-                                <rect key="frame" x="15.333333333333314" y="0.0" width="70" height="60"/>
-                                <color key="tintColor" name="reversedBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="Ikl-B6-eCw"/>
-                                    <constraint firstAttribute="height" constant="60" id="ypy-j4-S5r"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VectorqrCodeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="G7n-0T-qoJ">
-                                <rect key="frame" x="15.333333333333314" y="70" width="70" height="70"/>
-                                <color key="tintColor" name="reversedBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="CaP-LO-ZNv"/>
-                                    <constraint firstAttribute="width" constant="70" id="ubV-u1-js7"/>
-                                </constraints>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="74X-fe-fkO">
+                                <rect key="frame" x="15.333333333333314" y="0.0" width="70" height="140"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmarkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mAU-a5-usg">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="60"/>
+                                        <color key="tintColor" name="reversedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="Ikl-B6-eCw"/>
+                                            <constraint firstAttribute="height" constant="60" id="ypy-j4-S5r"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VectorqrCodeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="G7n-0T-qoJ">
+                                        <rect key="frame" x="0.0" y="70" width="70" height="70"/>
+                                        <color key="tintColor" name="reversedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="CaP-LO-ZNv"/>
+                                            <constraint firstAttribute="width" constant="70" id="ubV-u1-js7"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="90c-pJ-Oaa">
                                 <rect key="frame" x="0.0" y="150" width="100.33333333333333" height="22"/>
                                 <subviews>

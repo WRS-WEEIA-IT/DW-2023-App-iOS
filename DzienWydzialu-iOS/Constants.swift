@@ -16,6 +16,7 @@ struct K {
     static let taskNibName = "TaskCell"
     static let taskCollectionNibName = "TaskCellCollection"
     static let alertNibName = "AlertViewController"
+    static let taskAlertNibName = "TaskAlert"
     
     static let buttonColor = "buttonColor"
     static let buttonAction = "buttonPressed"

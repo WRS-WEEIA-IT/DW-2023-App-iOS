@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import FirebaseFirestore
+import FirebaseDatabase
 
 class QrViewController: UIViewController {
     
@@ -15,8 +16,7 @@ class QrViewController: UIViewController {
     var avPreviewLayer: AVCaptureVideoPreviewLayer!
             
     let db = Firestore.firestore()
-                    
-    let alert = AlertViewController()
+                        
     let taskCreator = TaskCreator()
     
     override func viewDidLoad() {
@@ -170,11 +170,6 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
             guard let stringValue = readableObject.stringValue else { return }
             manageCode(codeString: stringValue)
         }
-        
-        let alert = AlertViewController()
-        alert.parentVC = self
-        alert.isWrong = true
-        alert.appear(sender: self)
     }
     
     func manageCode(codeString: String) {
@@ -192,25 +187,34 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
             }
         }
         
-        db.collection("tasks").addSnapshotListener { snapshot, error in
-            if error != nil {
-                print("Error fetching data from Firebase!")
-            } else {
-                if let snapshotDocuments = snapshot?.documents {
-                    for document in snapshotDocuments {
-                        let documentData = document.data()
-                        if let newTask = self.taskCreator.createTask(documentData: documentData) {
-                            if newTask.qrCode == codeString {
+        var taskFound = false
+        
+        DispatchQueue.main.async {
+            self.db.collection("tasks").getDocuments { snapshot, error in
+                if error != nil {
+                    print("Error fetching data from Firebase!")
+                } else {
+                    if let snapshotDocuments = snapshot?.documents {
+                        for document in snapshotDocuments {
+                            let documentData = document.data()
+                            if let newTask = self.taskCreator.createTask(documentData: documentData) {
+                                taskFound = true
                                 codeArray.append(codeString)
                                 K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
-                                self.foundVibration()
-                                // dobry kod
-                                
-                                
-                                return
+                                let alert = TaskAlert()
+                                alert.parentVC = self
+                                alert.task = newTask
+                                alert.appear(sender: self)
+                                break
+                            } else {
+                                print("Failed to fetch task's qrCode")
                             }
-                        } else {
-                            print("Failed to fetch task's qrCode")
+                        }
+                        if !taskFound {
+                            let alert = AlertViewController()
+                            alert.parentVC = self
+                            alert.isWrong = true
+                            alert.appear(sender: self)
                         }
                     }
                 }

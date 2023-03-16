@@ -13,7 +13,7 @@ class TaskCellCollection : UICollectionViewCell {
     @IBOutlet weak var taskNumberLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var pointsButton: UIButton!
+    @IBOutlet weak var pointsButton: GradientButton!
     
     @IBOutlet weak var checkmarkImage: UIImageView!
     @IBOutlet weak var qrcodeImage: UIImageView!

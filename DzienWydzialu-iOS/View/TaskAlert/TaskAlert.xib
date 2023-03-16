@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,6 +24,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskAlert" customModule="DzienWydzialu_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="backView" destination="dUj-Eu-Wbn" id="5Zd-o0-wcl"/>
+                <outlet property="backgroundImage" destination="SxY-n3-N1j" id="fdl-IM-BQG"/>
+                <outlet property="contentView" destination="kRm-1m-UkE" id="Uhc-K8-Lca"/>
+                <outlet property="descriptionLabel" destination="JbT-DL-11A" id="oIJ-v4-eLk"/>
+                <outlet property="pointsButton" destination="zdn-6Q-3A4" id="QxX-jC-XvP"/>
+                <outlet property="taskCell" destination="xLB-Cu-23k" id="Uom-gL-YvB"/>
+                <outlet property="taskNumber" destination="j5P-Fs-Q6t" id="cCg-y4-zZM"/>
+                <outlet property="titleLabel" destination="3Hm-uT-h8n" id="86I-eu-hFA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,28 +44,29 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRm-1m-UkE" userLabel="Content View">
-                            <rect key="frame" x="21.666666666666657" y="316" width="350" height="220"/>
+                            <rect key="frame" x="21.666666666666657" y="301" width="350" height="250"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="78h-OV-fMm">
-                                    <rect key="frame" x="7.3333333333333428" y="7.3333333333333144" width="335" height="205.33333333333334"/>
+                                    <rect key="frame" x="-5026" y="10" width="10401.666666666666" height="230"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You complete the task!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDq-9f-rAz">
-                                            <rect key="frame" x="80.666666666666686" y="0.0" width="174" height="20.333333333333332"/>
+                                            <rect key="frame" x="5114" y="0.0" width="174" height="20.333333333333332"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="backgroundColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableTaskCell" translatesAutoresizingMaskIntoConstraints="NO" id="xLB-Cu-23k" customClass="TaskCell" customModule="DzienWydzialu_iOS" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="25.333333333333371" width="335" height="180"/>
+                                        <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReusableTaskCell" rowHeight="180" id="xLB-Cu-23k">
+                                            <rect key="frame" x="5033.333333333333" y="109.66666666666667" width="0.0" height="0.0"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xLB-Cu-23k" id="pvC-OI-Nfx">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="180"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventCellBackground" translatesAutoresizingMaskIntoConstraints="NO" id="SxY-n3-N1j">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventCellBackground" id="SxY-n3-N1j">
                                                         <rect key="frame" x="8" y="11" width="319" height="158"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nm4-l6-Ijp">
-                                                        <rect key="frame" x="28" y="70.333333333333314" width="90" height="83.666666666666686"/>
+                                                        <rect key="frame" x="28" y="-111.66666666666669" width="90" height="83.666666666666671"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5P-Fs-Q6t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="31" height="12.333333333333334"/>
@@ -98,7 +106,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XSY-pe-dSb">
-                                                        <rect key="frame" x="224.66666666666666" y="39" width="100.33333333333334" height="102"/>
+                                                        <rect key="frame" x="-120.33333333333331" y="-51" width="100.33333333333333" height="102"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VectorqrCodeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="M7W-DU-t5M">
                                                                 <rect key="frame" x="15" y="0.0" width="70" height="70"/>
@@ -131,26 +139,47 @@
                                                     <constraint firstItem="nm4-l6-Ijp" firstAttribute="leading" secondItem="pvC-OI-Nfx" secondAttribute="leadingMargin" constant="20" id="0ge-Ur-Yay"/>
                                                     <constraint firstItem="SxY-n3-N1j" firstAttribute="leading" secondItem="pvC-OI-Nfx" secondAttribute="leadingMargin" id="Hvq-IC-kQ9"/>
                                                     <constraint firstAttribute="bottomMargin" secondItem="SxY-n3-N1j" secondAttribute="bottom" id="hM9-GM-ucM"/>
-                                                    <constraint firstAttribute="trailing" secondItem="XSY-pe-dSb" secondAttribute="trailing" constant="10" id="kU0-X9-OHN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="XSY-pe-dSb" secondAttribute="trailing" constant="20" id="kU0-X9-OHN"/>
                                                     <constraint firstAttribute="trailingMargin" secondItem="SxY-n3-N1j" secondAttribute="trailing" id="l6b-pT-pWe"/>
-                                                    <constraint firstAttribute="bottomMargin" secondItem="nm4-l6-Ijp" secondAttribute="bottom" constant="15" id="lBm-oj-uaQ"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="nm4-l6-Ijp" secondAttribute="bottom" constant="20" id="lBm-oj-uaQ"/>
                                                     <constraint firstItem="XSY-pe-dSb" firstAttribute="centerY" secondItem="pvC-OI-Nfx" secondAttribute="centerY" id="slX-Si-C0I"/>
                                                     <constraint firstItem="SxY-n3-N1j" firstAttribute="top" secondItem="pvC-OI-Nfx" secondAttribute="topMargin" id="tTm-Q1-kHP"/>
                                                 </constraints>
                                             </tableViewCellContentView>
+                                            <color key="backgroundColor" name="reversedBackgroundColor"/>
+                                            <color key="tintColor" name="reversedBackgroundColor"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                                            </accessibility>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="335" id="3un-Wy-9Ub"/>
                                                 <constraint firstAttribute="height" constant="180" id="xnE-zD-Hp9"/>
                                             </constraints>
                                         </tableViewCell>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJR-4f-fWM" customClass="GradientButton" customModule="DzienWydzialu_iOS" customModuleProvider="target">
+                                            <rect key="frame" x="5133.333333333333" y="198.66666666666669" width="135" height="31.333333333333343"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="135" id="uMd-eN-elQ"/>
+                                            </constraints>
+                                            <color key="tintColor" name="reversedBackgroundColor"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="OK">
+                                                <fontDescription key="titleFontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="okPressed:" destination="-1" eventType="touchUpInside" id="vti-8g-D4z"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" name="reversedBackgroundColor"/>
+                            <color key="tintColor" name="reversedBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="78h-OV-fMm" firstAttribute="centerY" secondItem="kRm-1m-UkE" secondAttribute="centerY" id="K78-BD-lRA"/>
-                                <constraint firstAttribute="height" constant="220" id="p4f-0g-CF5"/>
-                                <constraint firstItem="78h-OV-fMm" firstAttribute="centerX" secondItem="kRm-1m-UkE" secondAttribute="centerX" id="qF8-nN-FPN"/>
+                                <constraint firstAttribute="bottom" secondItem="78h-OV-fMm" secondAttribute="bottom" constant="10" id="cYk-hT-sDn"/>
+                                <constraint firstItem="78h-OV-fMm" firstAttribute="top" secondItem="kRm-1m-UkE" secondAttribute="top" constant="10" id="f9i-5e-z7r"/>
+                                <constraint firstItem="78h-OV-fMm" firstAttribute="centerX" secondItem="kRm-1m-UkE" secondAttribute="centerX" id="mIA-pJ-og2"/>
+                                <constraint firstAttribute="height" constant="250" id="p4f-0g-CF5"/>
                                 <constraint firstAttribute="width" constant="350" id="v0F-5c-tNY"/>
                             </constraints>
                         </view>
@@ -182,8 +211,5 @@
         <namedColor name="reversedBackgroundColor">
             <color red="0.99599999189376831" green="0.99599999189376831" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

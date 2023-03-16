@@ -184,8 +184,8 @@
 		29257A2729A103AF00FD5C3A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				29A9600E29C3A87E00AEF86D /* TaskAlert */,
 				297E7141299FABF00053E32E /* Main.storyboard */,
+				29A9600E29C3A87E00AEF86D /* TaskAlert */,
 				299EF2E529C0FEE000CAFA95 /* Alert */,
 				299EF2E429C0FED300CAFA95 /* TaskCollection */,
 				299EF2E329C0FEC600CAFA95 /* TaskTableView */,

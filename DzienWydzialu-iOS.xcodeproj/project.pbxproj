@@ -77,6 +77,8 @@
 		299EE35729BC9E0D00DD3583 /* TaskCellCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299EE35629BC9E0D00DD3583 /* TaskCellCollection.xib */; };
 		299EF2EC29C0FFBF00CAFA95 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299EF2EA29C0FFBF00CAFA95 /* AlertViewController.swift */; };
 		299EF2ED29C0FFBF00CAFA95 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299EF2EB29C0FFBF00CAFA95 /* AlertViewController.xib */; };
+		29A9601129C3A89D00AEF86D /* TaskAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A9600F29C3A89D00AEF86D /* TaskAlert.swift */; };
+		29A9601229C3A89D00AEF86D /* TaskAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29A9601029C3A89D00AEF86D /* TaskAlert.xib */; };
 		29FDF72C29BFB699003D84E6 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FDF72B29BFB699003D84E6 /* GradientButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +128,8 @@
 		299EE35629BC9E0D00DD3583 /* TaskCellCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCellCollection.xib; sourceTree = "<group>"; };
 		299EF2EA29C0FFBF00CAFA95 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		299EF2EB29C0FFBF00CAFA95 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
+		29A9600F29C3A89D00AEF86D /* TaskAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAlert.swift; sourceTree = "<group>"; };
+		29A9601029C3A89D00AEF86D /* TaskAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskAlert.xib; sourceTree = "<group>"; };
 		29FDF72B29BFB699003D84E6 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,11 +174,9 @@
 		29257A2629A103A700FD5C3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				293CAF6929A6632700D75D48 /* Events.swift */,
-				293CAF9C29A8243D00D75D48 /* Tasks.swift */,
+				29A9600529C3A55200AEF86D /* TaskModels */,
+				29A9600429C3A54500AEF86D /* EventModels */,
 				29FDF72B29BFB699003D84E6 /* GradientButton.swift */,
-				292501CC29C27E79000C5DC7 /* EventCreator.swift */,
-				292501CE29C27FCD000C5DC7 /* TaskCreator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +184,7 @@
 		29257A2729A103AF00FD5C3A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				29A9600E29C3A87E00AEF86D /* TaskAlert */,
 				297E7141299FABF00053E32E /* Main.storyboard */,
 				299EF2E529C0FEE000CAFA95 /* Alert */,
 				299EF2E429C0FED300CAFA95 /* TaskCollection */,
@@ -307,6 +310,33 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		29A9600429C3A54500AEF86D /* EventModels */ = {
+			isa = PBXGroup;
+			children = (
+				293CAF6929A6632700D75D48 /* Events.swift */,
+				292501CC29C27E79000C5DC7 /* EventCreator.swift */,
+			);
+			path = EventModels;
+			sourceTree = "<group>";
+		};
+		29A9600529C3A55200AEF86D /* TaskModels */ = {
+			isa = PBXGroup;
+			children = (
+				293CAF9C29A8243D00D75D48 /* Tasks.swift */,
+				292501CE29C27FCD000C5DC7 /* TaskCreator.swift */,
+			);
+			path = TaskModels;
+			sourceTree = "<group>";
+		};
+		29A9600E29C3A87E00AEF86D /* TaskAlert */ = {
+			isa = PBXGroup;
+			children = (
+				29A9600F29C3A89D00AEF86D /* TaskAlert.swift */,
+				29A9601029C3A89D00AEF86D /* TaskAlert.xib */,
+			);
+			path = TaskAlert;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -410,6 +440,7 @@
 				293CAF9929A81A8900D75D48 /* Montserrat-VariableFont_wght.ttf in Resources */,
 				299EF2ED29C0FFBF00CAFA95 /* AlertViewController.xib in Resources */,
 				297E7150299FAD800053E32E /* GoogleService-Info.plist in Resources */,
+				29A9601229C3A89D00AEF86D /* TaskAlert.xib in Resources */,
 				293CAF8C29A81A8900D75D48 /* Montserrat-ExtraBold.ttf in Resources */,
 				293CAF8D29A81A8900D75D48 /* Montserrat-ExtraLight.ttf in Resources */,
 				29257A2B29A10D6D00FD5C3A /* Assets.xcassets in Resources */,
@@ -435,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				297E7140299FABF00053E32E /* WelcomeViewController.swift in Sources */,
+				29A9601129C3A89D00AEF86D /* TaskAlert.swift in Sources */,
 				291D371029A5219B00577E78 /* EventsViewController.swift in Sources */,
 				291DA18D29A56DE00087E1D8 /* TasksViewController.swift in Sources */,
 				292501CF29C27FCD000C5DC7 /* TaskCreator.swift in Sources */,

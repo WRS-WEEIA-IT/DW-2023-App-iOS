@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskAlert" customModule="DzienWydzialu_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUj-Eu-Wbn" userLabel="Back View">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRm-1m-UkE" userLabel="Content View">
+                            <rect key="frame" x="29" y="316" width="335" height="220"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="78h-OV-fMm">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="220"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations! You complete the task!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDq-9f-rAz">
+                                            <rect key="frame" x="15.666666666666657" y="0.0" width="304" height="22.333333333333332"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableTaskCell" translatesAutoresizingMaskIntoConstraints="NO" id="xLB-Cu-23k">
+                                            <rect key="frame" x="0.0" y="22.333333333333314" width="335" height="197.66666666666666"/>
+                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xLB-Cu-23k" id="pvC-OI-Nfx">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="197.66666666666666"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </tableViewCellContentView>
+                                            <color key="backgroundColor" name="AccentColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="335" id="3un-Wy-9Ub"/>
+                                                <constraint firstAttribute="height" constant="180" id="xnE-zD-Hp9"/>
+                                            </constraints>
+                                        </tableViewCell>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="78h-OV-fMm" secondAttribute="bottom" id="Brp-uO-Sdg"/>
+                                <constraint firstItem="78h-OV-fMm" firstAttribute="top" secondItem="kRm-1m-UkE" secondAttribute="top" id="RGO-mk-IJD"/>
+                                <constraint firstAttribute="trailing" secondItem="78h-OV-fMm" secondAttribute="trailing" id="YMo-dR-EWX"/>
+                                <constraint firstItem="78h-OV-fMm" firstAttribute="leading" secondItem="kRm-1m-UkE" secondAttribute="leading" id="ccH-PC-Om8"/>
+                                <constraint firstAttribute="height" constant="220" id="p4f-0g-CF5"/>
+                                <constraint firstAttribute="width" constant="335" id="v0F-5c-tNY"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="kRm-1m-UkE" firstAttribute="centerY" secondItem="dUj-Eu-Wbn" secondAttribute="centerY" id="Z4a-TU-IBn"/>
+                        <constraint firstItem="kRm-1m-UkE" firstAttribute="centerX" secondItem="dUj-Eu-Wbn" secondAttribute="centerX" id="dAk-4O-dd3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="backgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dUj-Eu-Wbn" secondAttribute="trailing" id="0t6-51-v9S"/>
+                <constraint firstItem="dUj-Eu-Wbn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7tc-4T-LUx"/>
+                <constraint firstAttribute="bottom" secondItem="dUj-Eu-Wbn" secondAttribute="bottom" id="IZN-KV-P3U"/>
+                <constraint firstItem="dUj-Eu-Wbn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aEO-YT-1gs"/>
+            </constraints>
+            <point key="canvasLocation" x="0.76335877862595414" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.5" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundColor">
+            <color red="0.050999999046325684" green="0.050999999046325684" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

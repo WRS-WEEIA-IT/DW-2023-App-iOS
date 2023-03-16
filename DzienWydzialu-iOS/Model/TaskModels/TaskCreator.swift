@@ -9,7 +9,7 @@ import UIKit
 
 struct TaskCreator {
     func createTask(documentData : [String : Any]) -> Tasks? {
-        if let newTitle = documentData[K.tasks.title] as? String, let newDescription = documentData[K.tasks.description] as? String, let newImageSource = documentData[K.tasks.imageSource] as? String, let newPoints = documentData[K.tasks.points] as? Int, let newQrCode = documentData[K.tasks.qrCode] as? String, let newTaskNumber = documentData[K.tasks.taskNumber] as? Int{
+        if let newTitle = documentData[K.tasks.title] as? String, let newDescription = documentData[K.tasks.description] as? String, let newImageSource = documentData[K.tasks.imageSource] as? String, let newPoints = documentData[K.tasks.points] as? Int, let newQrCode = documentData[K.tasks.qrCode] as? String, let newTaskNumber = documentData[K.tasks.taskNumber] as? Int {
             
             let newDone = checkTaskWithLocal(qrcode: newQrCode, newPoints: newPoints)
             

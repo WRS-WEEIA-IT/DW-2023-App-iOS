@@ -17,6 +17,7 @@ class QrViewController: UIViewController {
     let db = Firestore.firestore()
                     
     let alert = AlertViewController()
+    let taskCreator = TaskCreator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -198,8 +199,8 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                 if let snapshotDocuments = snapshot?.documents {
                     for document in snapshotDocuments {
                         let documentData = document.data()
-                        if let taskQrCode = documentData[K.tasks.qrCode] as? String {
-                            if codeString == taskQrCode {
+                        if let newTask = self.taskCreator.createTask(documentData: documentData) {
+                            if newTask.qrCode == codeString {
                                 codeArray.append(codeString)
                                 K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
                                 self.foundVibration()

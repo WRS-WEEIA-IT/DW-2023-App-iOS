@@ -38,7 +38,7 @@
                         <color key="backgroundColor" name="backgroundColor"/>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="13S-7n-QSX">
-                        <rect key="frame" x="20" y="80" width="130" height="85"/>
+                        <rect key="frame" x="20" y="80" width="150" height="85"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EE-7f-ACV">
                                 <rect key="frame" x="0.0" y="0.0" width="31" height="12.333333333333334"/>
@@ -47,7 +47,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXX-4w-4U8">
-                                <rect key="frame" x="0.0" y="17.333333333333329" width="61.333333333333336" height="14.666666666666664"/>
+                                <rect key="frame" x="0.0" y="17.333333333333329" width="150" height="14.666666666666664"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="YEP-38-1r1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" name="reversedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,7 +58,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RSZ-H7-n7w">
                                 <rect key="frame" x="0.0" y="37" width="130" height="48"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will find the code.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45E-wL-NRm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will find the code.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="45E-wL-NRm">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="1r7-o9-7Bm"/>

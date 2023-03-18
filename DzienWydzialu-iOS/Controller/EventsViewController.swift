@@ -27,8 +27,8 @@ class EventsViewController: UIViewController {
         eventLabel.textColor = UIColor(named: K.buttonColor)
         
         eventTableView.dataSource = self
-        eventTableView.rowHeight = K.rowHeight
         eventTableView.register(UINib(nibName: K.eventNibName, bundle: nil), forCellReuseIdentifier: K.eventCellIdentifier)
+        eventTableView.rowHeight = K.rowHeight
         
     }
     

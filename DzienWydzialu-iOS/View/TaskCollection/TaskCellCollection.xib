@@ -88,7 +88,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="74X-fe-fkO">
                                 <rect key="frame" x="15.333333333333314" y="0.0" width="70" height="140"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmarkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mAU-a5-usg">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VectorcheckmarkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mAU-a5-usg">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="60"/>
                                         <color key="tintColor" name="reversedBackgroundColor"/>
                                         <constraints>
@@ -155,8 +155,8 @@
     </objects>
     <resources>
         <image name="EventCellBackground" width="331" height="150"/>
-        <image name="VectorqrCodeIcon" width="66" height="66"/>
-        <image name="checkmarkIcon" width="66" height="50"/>
+        <image name="VectorcheckmarkIcon" width="264" height="198"/>
+        <image name="VectorqrCodeIcon" width="264" height="264"/>
         <namedColor name="backgroundColor">
             <color red="0.050999999046325684" green="0.050999999046325684" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

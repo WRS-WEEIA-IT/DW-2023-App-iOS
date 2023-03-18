@@ -73,7 +73,7 @@ extension EventsViewController {
     }
 
     func loadEvent(collectionType: String) {
-        db.collection(collectionType).addSnapshotListener { snapshot, error in
+        db.collection(collectionType).whereField(K.events.timeEnd, isGreaterThanOrEqualTo: Timestamp.init()).addSnapshotListener { snapshot, error in
 
             if error != nil {
                 print("Error with loading data from firebase!")

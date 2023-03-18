@@ -30,6 +30,9 @@ class EventsViewController: UIViewController {
         eventTableView.rowHeight = K.rowHeight
         eventTableView.register(UINib(nibName: K.eventNibName, bundle: nil), forCellReuseIdentifier: K.eventCellIdentifier)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         loadAllEvents()
     }
 
@@ -47,6 +50,9 @@ extension EventsViewController : UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.eventCellIdentifier, for: indexPath) as! EventCell
         
+        if UIImage(named: event.imageSource) != nil {
+            cell.backgroundImage.image = UIImage(named: event.imageSource)
+        }
         cell.dateLabel.text = event.time
         cell.eventSubject.text = event.title
         cell.eventType.text = event.eventType

@@ -59,7 +59,10 @@ extension WelcomeViewController: UICollectionViewDelegate {
         let taskCell = collectionView.dequeueReusableCell(withReuseIdentifier: K.taskCellCollectionIdentifier, for: indexPath) as! TaskCellCollection
         
         let task = tasksArray[indexPath.row]
-            
+        
+        if UIImage(named: task.imageSource) != nil {
+            taskCell.backgroundImage.image = UIImage(named: task.imageSource)
+        }
         taskCell.titleLabel.text = task.title
         taskCell.descriptionLabel.text = task.description
         taskCell.taskNumberLabel.text = "Task \(task.numberOfTask)"
@@ -104,6 +107,9 @@ extension WelcomeViewController : UITableViewDataSource {
         if !eventsArray.isEmpty {
             let event = eventsArray[0]
                         
+            if UIImage(named: event.imageSource) != nil {
+                cell.backgroundImage.image = UIImage(named: event.imageSource)
+            }
             cell.dateLabel.text = event.time
             cell.eventSubject.text = event.title
             cell.eventType.text = event.eventType

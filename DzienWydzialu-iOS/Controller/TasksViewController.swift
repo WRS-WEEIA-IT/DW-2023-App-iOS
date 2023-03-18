@@ -53,6 +53,9 @@ extension TasksViewController : UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.taskCellIdentifier, for: indexPath) as! TaskCell
         
+        if UIImage(named: task.imageSource) != nil {
+            cell.backgroundImage.image = UIImage(named: task.imageSource)
+        }
         cell.titleLabel.text = task.title
         cell.descriptionLabel.text = task.description
         cell.taskNumberLabel.text = "Task \(task.numberOfTask)"

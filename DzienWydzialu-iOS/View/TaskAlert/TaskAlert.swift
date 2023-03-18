@@ -12,7 +12,6 @@ class TaskAlert: UIViewController {
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var contentView: UIView!
     
-    @IBOutlet weak var taskCell: UITableViewCell!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var taskNumber: UILabel!
     @IBOutlet weak var titleLabel: UILabel!

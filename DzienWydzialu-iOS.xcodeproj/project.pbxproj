@@ -78,7 +78,7 @@
 		299EF2EC29C0FFBF00CAFA95 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299EF2EA29C0FFBF00CAFA95 /* AlertViewController.swift */; };
 		299EF2ED29C0FFBF00CAFA95 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299EF2EB29C0FFBF00CAFA95 /* AlertViewController.xib */; };
 		29A9601129C3A89D00AEF86D /* TaskAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A9600F29C3A89D00AEF86D /* TaskAlert.swift */; };
-		29A9601229C3A89D00AEF86D /* TaskAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29A9601029C3A89D00AEF86D /* TaskAlert.xib */; };
+		29FBA3FB29C48E30005A0EAC /* TaskAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29FBA3FA29C48E30005A0EAC /* TaskAlert.xib */; };
 		29FDF72C29BFB699003D84E6 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FDF72B29BFB699003D84E6 /* GradientButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -129,7 +129,7 @@
 		299EF2EA29C0FFBF00CAFA95 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		299EF2EB29C0FFBF00CAFA95 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		29A9600F29C3A89D00AEF86D /* TaskAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAlert.swift; sourceTree = "<group>"; };
-		29A9601029C3A89D00AEF86D /* TaskAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskAlert.xib; sourceTree = "<group>"; };
+		29FBA3FA29C48E30005A0EAC /* TaskAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskAlert.xib; sourceTree = "<group>"; };
 		29FDF72B29BFB699003D84E6 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -332,7 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				29A9600F29C3A89D00AEF86D /* TaskAlert.swift */,
-				29A9601029C3A89D00AEF86D /* TaskAlert.xib */,
+				29FBA3FA29C48E30005A0EAC /* TaskAlert.xib */,
 			);
 			path = TaskAlert;
 			sourceTree = "<group>";
@@ -440,7 +440,7 @@
 				293CAF9929A81A8900D75D48 /* Montserrat-VariableFont_wght.ttf in Resources */,
 				299EF2ED29C0FFBF00CAFA95 /* AlertViewController.xib in Resources */,
 				297E7150299FAD800053E32E /* GoogleService-Info.plist in Resources */,
-				29A9601229C3A89D00AEF86D /* TaskAlert.xib in Resources */,
+				29FBA3FB29C48E30005A0EAC /* TaskAlert.xib in Resources */,
 				293CAF8C29A81A8900D75D48 /* Montserrat-ExtraBold.ttf in Resources */,
 				293CAF8D29A81A8900D75D48 /* Montserrat-ExtraLight.ttf in Resources */,
 				29257A2B29A10D6D00FD5C3A /* Assets.xcassets in Resources */,

@@ -41,7 +41,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qTO-tQ-LNP" userLabel="Back View">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2n-IB-TEk" userLabel="Content View">
@@ -52,9 +52,9 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task completed!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWf-YS-8O1">
                                     <rect key="frame" x="103" y="0.0" width="125" height="18.333333333333332"/>
-                                    <color key="tintColor" name="backgroundColor"/>
+                                    <color key="tintColor" name="reversedBackgroundColor"/>
                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
-                                    <color key="textColor" name="backgroundColor"/>
+                                    <color key="textColor" name="reversedBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoP-fE-dM0" userLabel="Cell View">
@@ -62,26 +62,26 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventCellBackground" translatesAutoresizingMaskIntoConstraints="NO" id="uIF-6U-1T8">
                                             <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="150"/>
-                                            <color key="backgroundColor" name="reversedBackgroundColor"/>
-                                            <color key="tintColor" name="reversedBackgroundColor"/>
+                                            <color key="backgroundColor" name="backgroundColor"/>
+                                            <color key="tintColor" name="backgroundColor"/>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pfx-X8-yOs">
-                                            <rect key="frame" x="20" y="36" width="130" height="99"/>
+                                            <rect key="frame" x="20" y="47" width="130" height="88"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofl-Bk-pe5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="31" height="14.333333333333334"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="31" height="12.666666666666666"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
                                                     <color key="textColor" name="reversedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75q-hJ-TWZ">
-                                                    <rect key="frame" x="0.0" y="19.333333333333314" width="61.333333333333336" height="17"/>
+                                                    <rect key="frame" x="0.0" y="17.666666666666686" width="61.333333333333336" height="15"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
                                                     <color key="textColor" name="reversedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will find the code near the ZF " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OW-0x-1fh">
-                                                    <rect key="frame" x="0.0" y="41.333333333333314" width="130" height="22.666666666666671"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will find the code near the ZF " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9OW-0x-1fh">
+                                                    <rect key="frame" x="0.0" y="37.666666666666686" width="130" height="20.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="130" id="i8X-xv-bHK"/>
                                                     </constraints>
@@ -90,10 +90,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcH-mE-AAg" customClass="GradientButton" customModule="DzienWydzialu_iOS" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="69" width="90" height="30"/>
+                                                    <rect key="frame" x="0.0" y="63" width="80" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="Nds-La-t1o"/>
-                                                        <constraint firstAttribute="height" constant="30" id="opq-sE-gi4"/>
+                                                        <constraint firstAttribute="width" constant="80" id="Nds-La-t1o"/>
+                                                        <constraint firstAttribute="height" constant="25" id="opq-sE-gi4"/>
                                                     </constraints>
                                                     <color key="tintColor" name="reversedBackgroundColor"/>
                                                     <state key="normal" title="Button"/>
@@ -129,8 +129,8 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" name="reversedBackgroundColor"/>
-                                    <color key="tintColor" name="reversedBackgroundColor"/>
+                                    <color key="backgroundColor" name="backgroundColor"/>
+                                    <color key="tintColor" name="backgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="uIF-6U-1T8" secondAttribute="trailing" id="8aO-8e-2O4"/>
                                         <constraint firstItem="uIF-6U-1T8" firstAttribute="leading" secondItem="KoP-fE-dM0" secondAttribute="leading" id="DkM-lb-XLP"/>
@@ -157,8 +157,8 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" name="reversedBackgroundColor"/>
-                    <color key="tintColor" name="reversedBackgroundColor"/>
+                    <color key="backgroundColor" name="backgroundColor"/>
+                    <color key="tintColor" name="backgroundColor"/>
                     <constraints>
                         <constraint firstItem="SNs-ye-LwD" firstAttribute="centerX" secondItem="i2n-IB-TEk" secondAttribute="centerX" id="4g8-pB-oJW"/>
                         <constraint firstItem="SNs-ye-LwD" firstAttribute="top" secondItem="i2n-IB-TEk" secondAttribute="top" constant="15" id="6hn-WC-CFa"/>
@@ -178,8 +178,8 @@
                 <constraint firstItem="qTO-tQ-LNP" firstAttribute="leading" secondItem="4C7-Q1-iVy" secondAttribute="leading" id="0Fb-u5-wav"/>
                 <constraint firstItem="i2n-IB-TEk" firstAttribute="centerX" secondItem="WiD-b2-5G8" secondAttribute="centerX" id="GfC-xs-qGn"/>
                 <constraint firstItem="qTO-tQ-LNP" firstAttribute="trailing" secondItem="4C7-Q1-iVy" secondAttribute="trailing" id="QsC-vj-DQg"/>
-                <constraint firstItem="qTO-tQ-LNP" firstAttribute="bottom" secondItem="4C7-Q1-iVy" secondAttribute="bottom" id="TuX-h7-eai"/>
-                <constraint firstItem="qTO-tQ-LNP" firstAttribute="top" secondItem="4C7-Q1-iVy" secondAttribute="top" id="huJ-wn-YWb"/>
+                <constraint firstItem="qTO-tQ-LNP" firstAttribute="bottom" secondItem="WiD-b2-5G8" secondAttribute="bottom" id="TuX-h7-eai"/>
+                <constraint firstItem="qTO-tQ-LNP" firstAttribute="top" secondItem="WiD-b2-5G8" secondAttribute="top" id="huJ-wn-YWb"/>
                 <constraint firstItem="i2n-IB-TEk" firstAttribute="centerY" secondItem="WiD-b2-5G8" secondAttribute="centerY" id="mb0-DW-gKA"/>
             </constraints>
             <point key="canvasLocation" x="-3043.5114503816794" y="-480.28169014084511"/>

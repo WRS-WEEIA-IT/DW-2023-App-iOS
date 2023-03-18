@@ -58,7 +58,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task already done!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jng-6g-wv6">
                                     <rect key="frame" x="0.0" y="184" width="135" height="17.333333333333343"/>
                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
-                                    <color key="textColor" name="backgroundColor"/>
+                                    <color key="textColor" name="reversedBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMg-4c-GKn" userLabel="Red OK">
@@ -91,7 +91,7 @@
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" name="reversedBackgroundColor"/>
+                    <color key="backgroundColor" name="backgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="240" id="BBq-Fs-psI"/>
                         <constraint firstItem="guB-g6-Kwc" firstAttribute="centerY" secondItem="ymC-YK-lm5" secondAttribute="centerY" id="F8m-RH-cgX"/>

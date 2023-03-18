@@ -198,14 +198,18 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                         for document in snapshotDocuments {
                             let documentData = document.data()
                             if let newTask = self.taskCreator.createTask(documentData: documentData) {
-                                taskFound = true
-                                codeArray.append(codeString)
-                                K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
-                                let alert = TaskAlert()
-                                alert.parentVC = self
-                                alert.task = newTask
-                                alert.appear(sender: self)
-                                break
+                                if newTask.qrCode == codeString {
+                                    taskFound = true
+                                    codeArray.append(codeString)
+                                    K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
+                                    self.foundVibration()
+                                    
+                                    let alert = TaskAlert()
+                                    alert.parentVC = self
+                                    alert.task = newTask
+                                    alert.appear(sender: self)
+                                    break
+                                }
                             } else {
                                 print("Failed to fetch task's qrCode")
                             }

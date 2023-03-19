@@ -44,7 +44,13 @@ struct K {
     
     struct defaults {
         static let codeArray = "qrCodes"
+        static let codeId = "idCode"
         static let sharedUserDefaults = UserDefaults.standard
+    }
+    
+    struct users {
+        static let id = "id"
+        static let winner = "winner"
     }
     
     struct events {

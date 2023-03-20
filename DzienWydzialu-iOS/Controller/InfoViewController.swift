@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class InfoViewController : UIViewController {
     
@@ -13,7 +14,6 @@ class InfoViewController : UIViewController {
     @IBOutlet weak var appIdLabel: UILabel!
     @IBOutlet weak var settingsIcon: UIImageView!
     @IBOutlet weak var settingsLabel: UILabel!
-    @IBOutlet weak var contactButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,10 @@ class InfoViewController : UIViewController {
         update()
     }
     
+    
 }
+
+//MARK: - Update
 
 extension InfoViewController {
     func update() {
@@ -36,5 +39,30 @@ extension InfoViewController {
         
         let points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
         pointsButton.setTitle("You have \(points) points", for: .normal)
+    }
+}
+
+//MARK: - Contact email
+
+extension InfoViewController: MFMailComposeViewControllerDelegate {
+    @IBAction func contactUsPressed(_ sender: Any) {
+        if MFMailComposeViewController.canSendMail() {
+            let mailComposer = MFMailComposeViewController()
+            mailComposer.mailComposeDelegate = self
+            mailComposer.setToRecipients(["dzien.weeia@samorzad.p.lodz.pl"])
+            mailComposer.setSubject("")
+                    
+            if let fileUrl = Bundle.main.url(forResource: "document", withExtension: "pdf") {
+                if let fileData = try? Data(contentsOf: fileUrl) {
+                    mailComposer.addAttachmentData(fileData, mimeType: "application/pdf", fileName: "document.pdf")
+                }
+            }
+                    
+            present(mailComposer, animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 }

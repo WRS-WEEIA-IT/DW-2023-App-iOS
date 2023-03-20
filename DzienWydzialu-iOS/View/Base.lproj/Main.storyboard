@@ -1197,6 +1197,9 @@
                                                                 <state key="normal" title="CONTACT US">
                                                                     <color key="titleColor" name="reversedBackgroundColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="contactUsPressed:" destination="nQq-To-3F6" eventType="touchUpInside" id="JAK-58-YhA"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -1486,7 +1489,6 @@
                     </view>
                     <connections>
                         <outlet property="appIdLabel" destination="NCi-8a-raP" id="okm-tf-GVJ"/>
-                        <outlet property="contactButton" destination="Awb-vm-jcS" id="QzL-UB-je1"/>
                         <outlet property="pointsButton" destination="aF1-mH-a9O" id="Qk0-A9-LBJ"/>
                         <outlet property="settingsIcon" destination="AUy-4S-Wd5" id="fET-e0-nMC"/>
                         <outlet property="settingsLabel" destination="hbd-34-GB6" id="Gum-LE-8oi"/>

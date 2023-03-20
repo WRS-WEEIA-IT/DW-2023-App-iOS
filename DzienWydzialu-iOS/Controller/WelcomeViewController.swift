@@ -59,7 +59,7 @@ extension WelcomeViewController {
             return
         }
 
-        let id = Int.random(in: 10000...99999)
+        let id = Int.random(in: 1...999999)
         
         db.collection("users").whereField("id", isEqualTo: id).getDocuments { snapshot, error in
             if error != nil {
@@ -95,9 +95,7 @@ extension WelcomeViewController: UICollectionViewDelegate {
         taskCell.titleLabel.text = task.title
         taskCell.descriptionLabel.text = task.description
         taskCell.taskNumberLabel.text = "Task \(task.numberOfTask)"
-        if taskCell.pointsButton.titleLabel?.text != nil {
-            taskCell.pointsButton.titleLabel!.text = "\(task.points) POINTS"
-        }
+        taskCell.pointsButton.setTitle("\(task.points) POINTS", for: .normal)
         
         taskCell.checkmarkImage.isHidden = true
         taskCell.downTextLabel.isHidden = false

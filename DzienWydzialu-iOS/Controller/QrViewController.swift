@@ -204,12 +204,7 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                                     K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
                                     self.foundVibration()
                                     
-                                    var points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
-                                    points += newTask.points
-                                    K.defaults.sharedUserDefaults.set(points, forKey: K.defaults.points)
-                                    if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
-                                        self.db.collection("users").document(id).updateData(["points" : points])
-                                    }
+                                    self.updatePoints(task: newTask)
                                     
                                     let alert = TaskAlert()
                                     alert.parentVC = self
@@ -247,5 +242,14 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
     
     func foundVibration() {
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+    }
+    
+    func updatePoints(task: Tasks) {
+        var points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
+        points += task.points
+        K.defaults.sharedUserDefaults.set(points, forKey: K.defaults.points)
+        if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
+            self.db.collection("users").document(id).updateData(["points" : points])
+        }
     }
 }

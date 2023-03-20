@@ -204,6 +204,13 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                                     K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
                                     self.foundVibration()
                                     
+                                    var points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
+                                    points += newTask.points
+                                    K.defaults.sharedUserDefaults.set(points, forKey: K.defaults.points)
+                                    if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
+                                        self.db.collection("users").document(id).updateData(["points" : points])
+                                    }
+                                    
                                     let alert = TaskAlert()
                                     alert.parentVC = self
                                     alert.task = newTask

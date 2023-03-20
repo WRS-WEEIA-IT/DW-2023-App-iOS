@@ -38,6 +38,7 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
         
         taskCollectionView.dataSource = self
         taskCollectionView.register(UINib(nibName: K.taskCollectionNibName, bundle: nil), forCellWithReuseIdentifier: K.taskCellCollectionIdentifier)
+        
         DispatchQueue.main.async {
             self.timer = Timer.scheduledTimer(timeInterval: K.scrollTimeInterval, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
@@ -65,7 +66,7 @@ extension WelcomeViewController {
                 print(error!)
             } else {
                 if snapshot?.count == 0 {
-                    self.db.collection("users").addDocument(data: ["id": id, "winner": false])
+                    self.db.collection("users").document("\(id)").setData(["id": id, "winner": false, "points": 0])
                     let stringId = String(id)
                     K.defaults.sharedUserDefaults.set(stringId, forKey: K.defaults.codeId)
                     return

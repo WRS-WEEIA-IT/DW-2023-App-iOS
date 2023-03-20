@@ -19,9 +19,7 @@ class TasksViewController: UIViewController {
     
     let db = Firestore.firestore()
     let taskCreator = TaskCreator()
-    
-    var points = 0
-            
+                
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,14 +42,9 @@ class TasksViewController: UIViewController {
 
 extension TasksViewController {
     func update() {
-        points = 0
-        loadTasks()
-    }
-    
-    func addPoints(task: Tasks) {
-        points += task.points
+        let points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
         pointsLabel.text = "Currently you have \(points) points!"
-        K.defaults.sharedUserDefaults.set(points, forKey: K.defaults.points)
+        loadTasks()
     }
 }
 
@@ -113,9 +106,6 @@ extension TasksViewController {
                         let documentData = document.data()
                         if let newTask = self.taskCreator.createTask(documentData: documentData) {
                             self.tasksArray.append(newTask)
-                            if newTask.done {
-                                self.addPoints(task: newTask)
-                            }
                             
                             DispatchQueue.main.async {
                                 self.tasksTableView.reloadData()

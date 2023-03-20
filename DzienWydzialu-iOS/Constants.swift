@@ -43,9 +43,10 @@ struct K {
     }
     
     struct defaults {
+        static let sharedUserDefaults = UserDefaults.standard
         static let codeArray = "qrCodes"
         static let codeId = "idCode"
-        static let sharedUserDefaults = UserDefaults.standard
+        static let points = "points"
     }
     
     struct users {

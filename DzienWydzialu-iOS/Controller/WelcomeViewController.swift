@@ -28,7 +28,7 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         homeLabel.textColor = UIColor(named: K.buttonColor)
         houseIcon.tintColor = UIColor(named: K.buttonColor)
         
@@ -49,28 +49,27 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
 
 }
 
-//MARK: - Create ID
+//MARK: - ID and Points
 
-extension WelcomeViewController {
+extension WelcomeViewController {    
     func checkID() {
         if K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) != nil {
+            print("defaults cancelled id!")
             return
-        } else {
-            var id = Int.random(in: 10000...99999)
-                
-            db.collection("users").whereField("id", isEqualTo: id).getDocuments { snapshot, error in
-                if error != nil {
-                    print(error!)
-                } else {
-                    if snapshot?.count == 0 {
-                        self.db.collection("users").addDocument(data: ["id": id, "winner": false])
-                        let stringId = String(id)
-                        K.defaults.sharedUserDefaults.set(stringId, forKey: K.defaults.codeId)
-                        return
-                    } else {
-                        id = Int.random(in: 10000...99999)
-                        self.checkID()
-                    }
+        }
+
+        let id = Int.random(in: 10000...99999)
+        let points = 0
+        
+        db.collection("users").whereField("id", isEqualTo: id).getDocuments { snapshot, error in
+            if error != nil {
+                print(error!)
+            } else {
+                if snapshot?.count == 0 {
+                    self.db.collection("users").addDocument(data: ["id": id, "winner": false])
+                    let stringId = String(id)
+                    K.defaults.sharedUserDefaults.set(stringId, forKey: K.defaults.codeId)
+                    return
                 }
             }
         }

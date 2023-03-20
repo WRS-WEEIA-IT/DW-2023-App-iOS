@@ -37,8 +37,20 @@ class TasksViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         points = 0
         loadTasks()
+        pointsLabel.text = "Currently you have \(points) points!"
     }
 
+}
+
+//MARK: - Update
+
+extension TasksViewController {
+    func update() {
+        points = 0
+        loadTasks()
+        pointsLabel.text = "Currently you have \(points) points!"
+        K.defaults.sharedUserDefaults.set(points, forKey: K.defaults.points)
+    }
 }
 
 //MARK: - TableView
@@ -101,6 +113,9 @@ extension TasksViewController {
                         let documentData = document.data()
                         if let newTask = self.taskCreator.createTask(documentData: documentData) {
                             self.tasksArray.append(newTask)
+                            if newTask.done {
+                                self.points += newTask.points
+                            }
                             
                             DispatchQueue.main.async {
                                 self.tasksTableView.reloadData()

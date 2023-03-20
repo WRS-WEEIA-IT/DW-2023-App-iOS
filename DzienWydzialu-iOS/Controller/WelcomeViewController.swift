@@ -59,7 +59,6 @@ extension WelcomeViewController {
         }
 
         let id = Int.random(in: 10000...99999)
-        let points = 0
         
         db.collection("users").whereField("id", isEqualTo: id).getDocuments { snapshot, error in
             if error != nil {

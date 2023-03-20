@@ -35,19 +35,21 @@ class TasksViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        points = 0
-        loadTasks()
-        pointsLabel.text = "Currently you have \(points) points!"
+        update()
     }
 
 }
 
-//MARK: - Update
+//MARK: - Points and Update
 
 extension TasksViewController {
     func update() {
         points = 0
         loadTasks()
+    }
+    
+    func addPoints(task: Tasks) {
+        points += task.points
         pointsLabel.text = "Currently you have \(points) points!"
         K.defaults.sharedUserDefaults.set(points, forKey: K.defaults.points)
     }
@@ -114,7 +116,7 @@ extension TasksViewController {
                         if let newTask = self.taskCreator.createTask(documentData: documentData) {
                             self.tasksArray.append(newTask)
                             if newTask.done {
-                                self.points += newTask.points
+                                self.addPoints(task: newTask)
                             }
                             
                             DispatchQueue.main.async {

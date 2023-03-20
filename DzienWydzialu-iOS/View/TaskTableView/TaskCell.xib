@@ -38,7 +38,7 @@
                         <color key="backgroundColor" name="backgroundColor"/>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="13S-7n-QSX">
-                        <rect key="frame" x="20" y="80" width="150" height="85"/>
+                        <rect key="frame" x="20" y="80" width="130" height="85"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EE-7f-ACV">
                                 <rect key="frame" x="0.0" y="0.0" width="31" height="12.333333333333334"/>
@@ -47,10 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXX-4w-4U8">
-                                <rect key="frame" x="0.0" y="17.333333333333329" width="150" height="14.666666666666664"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="YEP-38-1r1"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="17.333333333333329" width="61.333333333333336" height="14.666666666666664"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" name="reversedBackgroundColor"/>
                                 <nil key="highlightedColor"/>

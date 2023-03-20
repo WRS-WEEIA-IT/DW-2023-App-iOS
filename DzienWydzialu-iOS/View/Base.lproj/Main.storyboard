@@ -1059,10 +1059,10 @@
             </objects>
             <point key="canvasLocation" x="2636" y="-4.4334975369458132"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="dbg-dU-cOP">
             <objects>
-                <viewController id="nQq-To-3F6" customClass="SettingsViewController" customModule="DzienWydzialu_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nQq-To-3F6" customClass="InfoViewController" customModule="DzienWydzialu_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B8C-NO-8v7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1485,7 +1485,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appIdLabel" destination="NCi-8a-raP" id="okm-tf-GVJ"/>
                         <outlet property="contactButton" destination="Awb-vm-jcS" id="QzL-UB-je1"/>
+                        <outlet property="pointsButton" destination="aF1-mH-a9O" id="Qk0-A9-LBJ"/>
                         <outlet property="settingsIcon" destination="AUy-4S-Wd5" id="fET-e0-nMC"/>
                         <outlet property="settingsLabel" destination="hbd-34-GB6" id="Gum-LE-8oi"/>
                     </connections>
@@ -1512,11 +1514,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="biX-cT-uk2"/>
+        <segue reference="luv-L0-sIU"/>
         <segue reference="KgP-0y-cye"/>
-        <segue reference="Iiw-DK-qep"/>
-        <segue reference="JwW-lE-tKu"/>
-        <segue reference="2a4-1k-zv2"/>
+        <segue reference="hM6-bZ-oYj"/>
+        <segue reference="cQS-fp-ZgJ"/>
+        <segue reference="vmf-6z-G4u"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FluidShadow_home_page" width="317" height="310"/>

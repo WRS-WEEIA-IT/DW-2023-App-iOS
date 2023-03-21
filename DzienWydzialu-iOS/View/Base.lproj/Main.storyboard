@@ -1096,19 +1096,19 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP ID: #1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCi-8a-raP">
                                                                 <rect key="frame" x="75" y="0.0" width="95" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="reversedBackgroundColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi! Welcome in DW APP!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6is-JT-tg6">
                                                                 <rect key="frame" x="15.5" y="32.5" width="214" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="reversedBackgroundColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are some information about event,  app and your profile." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-8H-IKD">
                                                                 <rect key="frame" x="0.0" y="68.5" width="245.5" height="29.5"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="reversedBackgroundColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF1-mH-a9O" customClass="GradientButton" customModule="DzienWydzialu_iOS" customModuleProvider="target">
@@ -1535,11 +1535,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2se-Oe-g3R"/>
+        <segue reference="luv-L0-sIU"/>
         <segue reference="v0a-fK-3bE"/>
         <segue reference="hM6-bZ-oYj"/>
-        <segue reference="eDS-EC-aJ0"/>
-        <segue reference="0QJ-6B-PgX"/>
+        <segue reference="cQS-fp-ZgJ"/>
+        <segue reference="vmf-6z-G4u"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FluidShadow_home_page" width="317" height="310"/>

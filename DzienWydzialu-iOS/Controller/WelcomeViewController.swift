@@ -66,7 +66,7 @@ extension WelcomeViewController {
                 print(error!)
             } else {
                 if snapshot?.count == 0 {
-                    self.db.collection("users").document("\(id)").setData(["id": id, "winner": false, "points": 0])
+                    self.db.collection("users").document("\(id)").setData(["id": id, "winner": false, "points": 0, "time": Timestamp.init()])
                     let stringId = String(id)
                     K.defaults.sharedUserDefaults.set(stringId, forKey: K.defaults.codeId)
                     return

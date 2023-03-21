@@ -192,7 +192,7 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
         DispatchQueue.main.async {
             self.db.collection("tasks").getDocuments { snapshot, error in
                 if error != nil {
-                    print("Error fetching data from Firebase!")
+                    return
                 } else {
                     if let snapshotDocuments = snapshot?.documents {
                         for document in snapshotDocuments {
@@ -212,8 +212,6 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                                     alert.appear(sender: self)
                                     break
                                 }
-                            } else {
-                                print("Failed to fetch task's qrCode")
                             }
                         }
                         if !taskFound {

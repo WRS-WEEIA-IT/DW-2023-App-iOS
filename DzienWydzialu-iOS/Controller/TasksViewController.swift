@@ -99,7 +99,7 @@ extension TasksViewController {
             self.tasksArray = []
             
             if error != nil {
-                print("Error fetching tasks from Firebase!")
+                return
             } else {
                 if let snapshotDocuments = snapshot?.documents {
                     for document in snapshotDocuments {

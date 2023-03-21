@@ -79,7 +79,7 @@ extension InfoViewController {
         if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
             db.collection("users").document(id).getDocument { snapshot, error in
                 if error != nil {
-                    print(error!)
+                    return
                 } else {
                     if let data = snapshot?.data() {
                         if let winner = data["winner"] as? Bool {

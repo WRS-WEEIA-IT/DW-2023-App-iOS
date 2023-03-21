@@ -55,7 +55,6 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
 extension WelcomeViewController {    
     func checkID() {
         if K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) != nil {
-            print("defaults cancelled id!")
             return
         }
 
@@ -63,7 +62,7 @@ extension WelcomeViewController {
         
         db.collection("users").whereField("id", isEqualTo: id).getDocuments { snapshot, error in
             if error != nil {
-                print(error!)
+                return
             } else {
                 if snapshot?.count == 0 {
                     self.db.collection("users").document("\(id)").setData(["id": id, "winner": false, "points": 0, "time": Timestamp.init()])
@@ -161,7 +160,7 @@ extension WelcomeViewController {
         db.collection(collectionType).whereField(K.events.timeEnd, isGreaterThanOrEqualTo: Timestamp.init()).addSnapshotListener { snapshot, error in
             
             if error != nil {
-                print("Error with loading data from firebase!")
+                return
             } else {
                 if let snapshotDocuments = snapshot?.documents {
                     for document in snapshotDocuments {
@@ -191,7 +190,7 @@ extension WelcomeViewController {
             self.tasksArray = []
             
             if error != nil {
-                print("Error fetching tasks from Firebase!")
+                return
             } else {
                 if let snapshotDocuments = snapshot?.documents {
                     for document in snapshotDocuments {

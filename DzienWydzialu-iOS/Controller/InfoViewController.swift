@@ -7,6 +7,7 @@
 
 import UIKit
 import MessageUI
+import FirebaseFirestore
 
 class InfoViewController : UIViewController {
     
@@ -14,6 +15,9 @@ class InfoViewController : UIViewController {
     @IBOutlet weak var appIdLabel: UILabel!
     @IBOutlet weak var settingsIcon: UIImageView!
     @IBOutlet weak var settingsLabel: UILabel!
+    @IBOutlet weak var awardStackView: UIStackView!
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,7 @@ class InfoViewController : UIViewController {
         settingsIcon.tintColor = UIColor(named: K.buttonColor)
         settingsLabel.textColor = UIColor(named: K.buttonColor)
         update()
+        checkWinner()
     }
     
     
@@ -64,5 +69,27 @@ extension InfoViewController: MFMailComposeViewControllerDelegate {
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
+    }
+}
+
+//MARK: - Check winner
+
+extension InfoViewController {
+    func checkWinner() {
+        if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
+            db.collection("users").document(id).getDocument { snapshot, error in
+                if error != nil {
+                    print(error!)
+                } else {
+                    if let data = snapshot?.data() {
+                        if let winner = data["winner"] as? Bool {
+                            if winner == true {
+                                self.awardStackView.isHidden = false
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

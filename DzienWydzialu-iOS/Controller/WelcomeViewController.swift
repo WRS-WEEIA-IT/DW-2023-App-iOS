@@ -46,6 +46,7 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
         loadAllEvents()
         loadTasks()
         checkID()
+        checkWinner()
     }
 
 }
@@ -69,6 +70,32 @@ extension WelcomeViewController {
                     let stringId = String(id)
                     K.defaults.sharedUserDefaults.set(stringId, forKey: K.defaults.codeId)
                     return
+                }
+            }
+        }
+    }
+}
+
+//MARK: - Check Winner
+
+extension WelcomeViewController {
+    func checkWinner() {
+        if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
+            db.collection("users").document(id).getDocument { snapshot, error in
+                if error != nil {
+                    return
+                } else {
+                    if let data = snapshot?.data() {
+                        if let winner = data["winner"] as? Bool {
+                            if winner == true {
+                                let alert = AlertViewController()
+                                alert.parentVC = self
+                                alert.isWinner = true
+                                alert.homeAlert = true
+                                alert.appear(sender: self)
+                            }
+                        }
+                    }
                 }
             }
         }

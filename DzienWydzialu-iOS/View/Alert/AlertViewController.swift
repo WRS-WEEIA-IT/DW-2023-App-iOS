@@ -11,16 +11,25 @@ class AlertViewController: UIViewController {
 
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var contentView: UIView!
+  
     
+    @IBOutlet weak var checkmarkIcon: UIImageView!
     @IBOutlet weak var exclamationIcon: UIImageView!
     @IBOutlet weak var wrongIcon: UIImageView!
     
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var officeTextLabel: UILabel!
+    
+    
+    @IBOutlet weak var okGreenButton: UIButton!
     @IBOutlet weak var okRedButton: UIButton!
     @IBOutlet weak var okYellowButton: UIButton!
     
     var parentVC: UIViewController = UIViewController()
+    
     var isWrong: Bool = true
+    var isWinner: Bool = false
+    var homeAlert: Bool = false
     
     init() {
         super.init(nibName: K.alertNibName, bundle: nil)
@@ -38,27 +47,56 @@ class AlertViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if isWrong {
-            changeToWrong()
+        if homeAlert {
+            if isWinner {
+                changeToWinner()
+            }
         } else {
-            changeToLocal()
+            if isWrong {
+                changeToWrong()
+            } else {
+                changeToLocal()
+            }
         }
+    }
+    
+    func changeToWinner() {
+        self.wrongIcon.isHidden = true
+        self.exclamationIcon.isHidden = true
+        self.checkmarkIcon.isHidden = false
+        
+        self.textLabel.text = "You won an award!"
+        self.officeTextLabel.isHidden = false
+        
+        self.okRedButton.isHidden = true
+        self.okYellowButton.isHidden = true
+        self.okGreenButton.isHidden = false
     }
     
     func changeToLocal() {
         self.wrongIcon.isHidden = true
         self.exclamationIcon.isHidden = false
+        self.checkmarkIcon.isHidden = true
+        
         self.textLabel.text = "Task already done!"
+        self.officeTextLabel.isHidden = true
+        
         self.okRedButton.isHidden = true
         self.okYellowButton.isHidden = false
+        self.okGreenButton.isHidden = true
     }
     
     func changeToWrong() {
         self.wrongIcon.isHidden = false
         self.exclamationIcon.isHidden = true
+        self.checkmarkIcon.isHidden = true
+        
         self.textLabel.text = "Wrong code!"
+        self.officeTextLabel.isHidden = true
+        
         self.okRedButton.isHidden = false
         self.okYellowButton.isHidden = true
+        self.okGreenButton.isHidden = true
     }
     
     func applyConfig() {
@@ -89,7 +127,9 @@ class AlertViewController: UIViewController {
             self.dismiss(animated: false)
             self.removeFromParent()
         }
-        parentVC.dismiss(animated: true)
+        if !homeAlert {
+            parentVC.dismiss(animated: true)
+        }
     }
     
     @IBAction func donePressed(_ sender: GradientButton) {

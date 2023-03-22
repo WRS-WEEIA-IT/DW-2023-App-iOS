@@ -180,6 +180,7 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                 let alert = AlertViewController()
                 alert.parentVC = self
                 alert.isWrong = false
+                alert.homeAlert = false
                 alert.appear(sender: self)
                 return
             } else {
@@ -218,6 +219,7 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                             let alert = AlertViewController()
                             alert.parentVC = self
                             alert.isWrong = true
+                            alert.homeAlert = false
                             alert.appear(sender: self)
                         }
                     }

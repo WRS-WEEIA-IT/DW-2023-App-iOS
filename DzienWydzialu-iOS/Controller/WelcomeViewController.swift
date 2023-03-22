@@ -80,25 +80,38 @@ extension WelcomeViewController {
 
 extension WelcomeViewController {
     func checkWinner() {
-        if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
-            db.collection("users").document(id).getDocument { snapshot, error in
-                if error != nil {
+                
+        db.collection("contestTime").whereField(K.contestTime.endTime, isLessThan: Timestamp.init()).getDocuments { snapshot, error in
+            if error != nil {
+                return
+            } else {
+                if snapshot?.documents.count == 0 {
                     return
                 } else {
-                    if let data = snapshot?.data() {
-                        if let winner = data["winner"] as? Bool {
-                            if winner == true {
-                                let alert = AlertViewController()
-                                alert.parentVC = self
-                                alert.isWinner = true
-                                alert.homeAlert = true
-                                alert.appear(sender: self)
+                    if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
+                        self.db.collection("users").document(id).getDocument { snapshot, error in
+                            if error != nil {
+                                return
+                            } else {
+                                if let data = snapshot?.data() {
+                                    if let winner = data["winner"] as? Bool {
+                                        if winner == true {
+                                            let alert = AlertViewController()
+                                            alert.parentVC = self
+                                            alert.isWinner = true
+                                            alert.homeAlert = true
+                                            alert.appear(sender: self)
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
         }
+        
+        
     }
 }
 

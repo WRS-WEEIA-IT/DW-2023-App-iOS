@@ -42,6 +42,10 @@ struct K {
         static let crossColor = UIColor.white
     }
     
+    struct contestTime {
+        static let endTime = "endTime"
+    }
+    
     struct defaults {
         static let sharedUserDefaults = UserDefaults.standard
         static let codeArray = "qrCodes"

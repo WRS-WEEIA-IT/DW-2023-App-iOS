@@ -12,14 +12,12 @@ class AlertViewController: UIViewController {
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var contentView: UIView!
   
-    
     @IBOutlet weak var checkmarkIcon: UIImageView!
     @IBOutlet weak var exclamationIcon: UIImageView!
     @IBOutlet weak var wrongIcon: UIImageView!
     
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var officeTextLabel: UILabel!
-    
     
     @IBOutlet weak var okGreenButton: UIButton!
     @IBOutlet weak var okRedButton: UIButton!
@@ -50,6 +48,8 @@ class AlertViewController: UIViewController {
         if homeAlert {
             if isWinner {
                 changeToWinner()
+            } else {
+                changeToLoser()
             }
         } else {
             if isWrong {
@@ -58,6 +58,19 @@ class AlertViewController: UIViewController {
                 changeToLocal()
             }
         }
+    }
+    
+    func changeToLoser() {
+        self.wrongIcon.isHidden = false
+        self.exclamationIcon.isHidden = true
+        self.checkmarkIcon.isHidden = true
+        
+        self.textLabel.text = "You didn't win! :("
+        self.officeTextLabel.isHidden = true
+        
+        self.okRedButton.isHidden = false
+        self.okYellowButton.isHidden = true
+        self.okGreenButton.isHidden = true
     }
     
     func changeToWinner() {

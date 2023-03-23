@@ -76,7 +76,6 @@ extension InfoViewController: MFMailComposeViewControllerDelegate {
 
 extension InfoViewController {
     func checkWinner() {
-        
         db.collection("contestTime").whereField(K.contestTime.endTime, isLessThan: Timestamp.init()).getDocuments { snapshot, error in
             if error != nil {
                 return

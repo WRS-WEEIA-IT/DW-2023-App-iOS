@@ -95,13 +95,17 @@ extension WelcomeViewController {
                             } else {
                                 if let data = snapshot?.data() {
                                     if let winner = data["winner"] as? Bool {
+                                        let alert = AlertViewController()
+                                        alert.parentVC = self
+                                        
                                         if winner == true {
-                                            let alert = AlertViewController()
-                                            alert.parentVC = self
                                             alert.isWinner = true
                                             alert.homeAlert = true
-                                            alert.appear(sender: self)
+                                        } else {
+                                            alert.isWinner = false
+                                            alert.homeAlert = true
                                         }
+                                        alert.appear(sender: self)
                                     }
                                 }
                             }

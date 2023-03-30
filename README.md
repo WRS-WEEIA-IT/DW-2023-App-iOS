@@ -7,7 +7,7 @@
 </p>
 
 <div align="center">
-  <p>iOS Mobile App created fully in Swift about our university's department day</p>
+  <p>iOS Mobile App created fully in Swift about our university's department day that enables scanning QR-codes in order to complete tasks. The app also enables signing up for events as well as contact with organizers.</p>
 </div>
 
 # Stack

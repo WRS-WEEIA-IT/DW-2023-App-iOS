@@ -15,6 +15,12 @@
 - UIKit with storyboard
 - UserDefaults
 
+During the project I also learned how to use:
+- Bottom Navigation Bar
+- Email Intent
+- Device vibrations
+- Alerts
+
 # Screens
 
 

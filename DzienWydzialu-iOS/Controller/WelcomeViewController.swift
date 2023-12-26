@@ -9,7 +9,6 @@ import UIKit
 import FirebaseFirestore
 
 class WelcomeViewController: UIViewController, UICollectionViewDataSource {
-    
     @IBOutlet weak var houseIcon: UIImageView!
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var eventTableView: UITableView!
@@ -22,9 +21,6 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
     
     var timer = Timer()
     var counter = 0
-    
-    let eventCreator = EventCreator()
-    let taskCreator = TaskCreator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,29 +44,23 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
         checkID()
         checkWinner()
     }
-
 }
 
 //MARK: - ID and Points
 
 extension WelcomeViewController {    
     func checkID() {
-        if K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) != nil {
-            return
-        }
+        if K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) != nil { return }
 
         let id = Int.random(in: 1...999999)
         
         db.collection("users").whereField("id", isEqualTo: id).getDocuments { snapshot, error in
-            if error != nil {
+            if error != nil { return }
+            if snapshot?.count == 0 {
+                self.db.collection("users").document("\(id)").setData(["id": id, "winner": false, "points": 0, "time": Timestamp.init()])
+                let stringId = String(id)
+                K.defaults.sharedUserDefaults.set(stringId, forKey: K.defaults.codeId)
                 return
-            } else {
-                if snapshot?.count == 0 {
-                    self.db.collection("users").document("\(id)").setData(["id": id, "winner": false, "points": 0, "time": Timestamp.init()])
-                    let stringId = String(id)
-                    K.defaults.sharedUserDefaults.set(stringId, forKey: K.defaults.codeId)
-                    return
-                }
             }
         }
     }
@@ -80,42 +70,29 @@ extension WelcomeViewController {
 
 extension WelcomeViewController {
     func checkWinner() {
-                
         db.collection("contestTime").whereField(K.contestTime.endTime, isLessThan: Timestamp.init()).getDocuments { snapshot, error in
-            if error != nil {
-                return
-            } else {
-                if snapshot?.documents.count == 0 {
-                    return
-                } else {
-                    if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
-                        self.db.collection("users").document(id).getDocument { snapshot, error in
-                            if error != nil {
-                                return
-                            } else {
-                                if let data = snapshot?.data() {
-                                    if let winner = data["winner"] as? Bool {
-                                        let alert = AlertViewController()
-                                        alert.parentVC = self
-                                        
-                                        if winner == true {
-                                            alert.isWinner = true
-                                            alert.homeAlert = true
-                                        } else {
-                                            alert.isWinner = false
-                                            alert.homeAlert = true
-                                        }
-                                        alert.appear(sender: self)
-                                    }
-                                }
-                            }
-                        }
+            if error != nil || snapshot?.documents.count == 0 { return }
+            guard let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) else { return }
+            
+            self.db.collection("users").document(id).getDocument { snapshot, error in
+                if error != nil { return }
+                guard let data = snapshot?.data() else { return }
+                
+                if let winner = data["winner"] as? Bool {
+                    let alert = AlertViewController()
+                    alert.parentVC = self
+                    
+                    if winner == true {
+                        alert.isWinner = true
+                        alert.homeAlert = true
+                    } else {
+                        alert.isWinner = false
+                        alert.homeAlert = true
                     }
+                    alert.appear(sender: self)
                 }
             }
         }
-        
-        
     }
 }
 
@@ -160,7 +137,6 @@ extension WelcomeViewController: UICollectionViewDelegate {
             self.taskCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
         }
     }
-    
 }
 
 //MARK: - Manage events
@@ -186,9 +162,7 @@ extension WelcomeViewController : UITableViewDataSource {
         }
         
         return cell
-        }
-    
-    
+    }
 }
 
 //MARK: - Loading Events
@@ -201,28 +175,23 @@ extension WelcomeViewController {
     }
     
     func loadEvent(collectionType: String) {
-        db.collection(collectionType).whereField(K.events.timeEnd, isGreaterThanOrEqualTo: Timestamp.init()).addSnapshotListener { snapshot, error in
+        db.collection(collectionType).whereField(K.Events.timeEnd, isGreaterThanOrEqualTo: Timestamp.init()).addSnapshotListener { snapshot, error in
+            if error != nil { return }
+            guard let snapshotDocuments = snapshot?.documents else { return }
             
-            if error != nil {
-                return
-            } else {
-                if let snapshotDocuments = snapshot?.documents {
-                    for document in snapshotDocuments {
-                        let documentData = document.data()
-                        if let newEvent = self.eventCreator.createEvent(documentData: documentData, collectionType: collectionType) {
-                            self.eventsArray.append(newEvent)
-                            self.eventsArray.sort { $0.time < $1.time }
-                            
-                            DispatchQueue.main.async {
-                                self.eventTableView.reloadData()
-                            }
-                        }
+            for document in snapshotDocuments {
+                let documentData = document.data()
+                if let newEvent = EventCreator.createEvent(documentData: documentData, collectionType: collectionType) {
+                    self.eventsArray.append(newEvent)
+                    self.eventsArray.sort { $0.time < $1.time }
+                    
+                    DispatchQueue.main.async {
+                        self.eventTableView.reloadData()
                     }
                 }
             }
         }
     }
-    
 }
 
 //MARK: - Loading Tasks
@@ -230,28 +199,22 @@ extension WelcomeViewController {
 extension WelcomeViewController {
     func loadTasks() {
         db.collection("tasks").addSnapshotListener { snapshot , error in
-            
+            if error != nil { return }
+            guard let snapshotDocuments = snapshot?.documents else { return }
             self.tasksArray = []
-            
-            if error != nil {
-                return
-            } else {
-                if let snapshotDocuments = snapshot?.documents {
-                    for document in snapshotDocuments {
-                        let documentData = document.data()
-                        if let newTask = self.taskCreator.createTask(documentData: documentData) {
-                            if !newTask.done {
-                                self.tasksArray.append(newTask)
-                                DispatchQueue.main.async {
-                                    self.taskCollectionView.reloadData()
-                                }
-                            }
+
+            for document in snapshotDocuments {
+                let documentData = document.data()
+                if let newTask = TaskCreator.createTask(documentData: documentData) {
+                    if !newTask.done {
+                        self.tasksArray.append(newTask)
+
+                        DispatchQueue.main.async {
+                            self.taskCollectionView.reloadData()
                         }
                     }
                 }
             }
         }
     }
-    
 }
-

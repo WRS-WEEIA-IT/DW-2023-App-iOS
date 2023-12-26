@@ -11,13 +11,10 @@ import FirebaseFirestore
 import FirebaseDatabase
 
 class QrViewController: UIViewController {
-    
     var avCaptureSession: AVCaptureSession!
     var avPreviewLayer: AVCaptureVideoPreviewLayer!
             
     let db = Firestore.firestore()
-                        
-    let taskCreator = TaskCreator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,11 +113,12 @@ class QrViewController: UIViewController {
         }
     }
     
-    
     func failed() {
         let ac = UIAlertController(title: "Scanner not supported", message: "Please use a device with a camera. Because this device does not support scanning a code", preferredStyle: .alert)
-        DispatchQueue.global(qos: .background).async {
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
+        DispatchQueue.main.async {
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                self.dismiss(animated: true)
+            }))
             self.present(ac, animated: true)
             self.avCaptureSession = nil
         }
@@ -156,7 +154,6 @@ class QrViewController: UIViewController {
     @objc func dismissViewController() {
         dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
@@ -174,55 +171,52 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
     
     func manageCode(codeString: String) {
         var codeArray: [String] = []
-        if let currentCodeArray: [String] = K.defaults.sharedUserDefaults.stringArray(forKey: K.defaults.codeArray) {
-            if currentCodeArray.contains(codeString) {
-                self.errorVibration()
-                let alert = AlertViewController()
-                alert.parentVC = self
-                alert.isWrong = false
-                alert.homeAlert = false
-                alert.appear(sender: self)
-                return
-            } else {
-                codeArray = currentCodeArray
-            }
+        guard let currentCodeArray = K.defaults.sharedUserDefaults.stringArray(forKey: K.defaults.codeArray) else { return
+        }
+        if currentCodeArray.contains(codeString) {
+            self.errorVibration()
+            let alert = AlertViewController()
+            alert.parentVC = self
+            alert.isWrong = false
+            alert.homeAlert = false
+            alert.appear(sender: self)
+            return
+        } else {
+            codeArray = currentCodeArray
         }
         
         var taskFound = false
         
         DispatchQueue.main.async {
             self.db.collection("tasks").getDocuments { snapshot, error in
-                if error != nil {
-                    return
-                } else {
-                    if let snapshotDocuments = snapshot?.documents {
-                        for document in snapshotDocuments {
-                            let documentData = document.data()
-                            if let newTask = self.taskCreator.createTask(documentData: documentData) {
-                                if newTask.qrCode == codeString {
-                                    taskFound = true
-                                    codeArray.append(codeString)
-                                    K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
-                                    self.foundVibration()
-                                    
-                                    self.updatePoints(task: newTask)
-                                    
-                                    let alert = TaskAlert()
-                                    alert.parentVC = self
-                                    alert.task = newTask
-                                    alert.appear(sender: self)
-                                    break
-                                }
-                            }
-                        }
-                        if !taskFound {
-                            let alert = AlertViewController()
-                            alert.parentVC = self
-                            alert.isWrong = true
-                            alert.homeAlert = false
-                            alert.appear(sender: self)
-                        }
+                if error != nil { return }
+                guard let snapshotDocuments = snapshot?.documents else { return }
+                
+                for document in snapshotDocuments {
+                    let documentData = document.data()
+                    guard let newTask = TaskCreator.createTask(documentData: documentData) else { continue }
+                    
+                    if newTask.qrCode == codeString {
+                        taskFound = true
+                        codeArray.append(codeString)
+                        K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
+                        self.foundVibration()
+                        
+                        self.updatePoints(task: newTask)
+                        
+                        let alert = TaskAlert()
+                        alert.parentVC = self
+                        alert.task = newTask
+                        alert.appear(sender: self)
+                        break
                     }
+                }
+                if !taskFound {
+                    let alert = AlertViewController()
+                    alert.parentVC = self
+                    alert.isWrong = true
+                    alert.homeAlert = false
+                    alert.appear(sender: self)
                 }
             }
         }

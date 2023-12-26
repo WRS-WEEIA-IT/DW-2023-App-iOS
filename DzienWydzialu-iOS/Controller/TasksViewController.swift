@@ -9,16 +9,13 @@ import UIKit
 import FirebaseFirestore
 
 class TasksViewController: UIViewController {
-
     @IBOutlet weak var taskIcon: UIImageView!
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var tasksTableView: UITableView!
     @IBOutlet weak var pointsLabel: UILabel!
     
-    var tasksArray : [Tasks] = []
-    
     let db = Firestore.firestore()
-    let taskCreator = TaskCreator()
+    var tasksArray : [Tasks] = []
                 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +26,11 @@ class TasksViewController: UIViewController {
         tasksTableView.dataSource = self
         tasksTableView.rowHeight = K.rowHeight
         tasksTableView.register(UINib(nibName: K.taskNibName, bundle: nil), forCellReuseIdentifier: K.taskCellIdentifier)
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         update()
     }
-
 }
 
 //MARK: - Points and Update
@@ -85,37 +80,27 @@ extension TasksViewController : UITableViewDataSource {
         
         return cell
     }
-    
 }
-
 
 //MARK: - LOADING TASKS
 
 extension TasksViewController {
-    
     func loadTasks() {
         db.collection("tasks").addSnapshotListener { snapshot , error in
-            
+            if error != nil { return }
+            guard let snapshotDocuments = snapshot?.documents else { return }
             self.tasksArray = []
-            
-            if error != nil {
-                return
-            } else {
-                if let snapshotDocuments = snapshot?.documents {
-                    for document in snapshotDocuments {
-                        let documentData = document.data()
-                        if let newTask = self.taskCreator.createTask(documentData: documentData) {
-                            self.tasksArray.append(newTask)
-                            
-                            DispatchQueue.main.async {
-                                self.tasksTableView.reloadData()
-                            }
-                        }
+
+            for document in snapshotDocuments {
+                let documentData = document.data()
+                if let newTask = TaskCreator.createTask(documentData: documentData) {
+                    self.tasksArray.append(newTask)
+
+                    DispatchQueue.main.async {
+                        self.tasksTableView.reloadData()
                     }
                 }
             }
         }
     }
-    
 }
-    

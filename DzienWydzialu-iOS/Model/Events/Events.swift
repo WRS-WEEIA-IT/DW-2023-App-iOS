@@ -8,11 +8,9 @@
 import Foundation
 
 struct Events {
-    let eventType : String
-    
-    let time : String
-    let title : String
-    let partner : String
-    let imageSource : String
+    let eventType: String
+    let time: String
+    let title: String
+    let partner: String
+    let imageSource: String
 }
-

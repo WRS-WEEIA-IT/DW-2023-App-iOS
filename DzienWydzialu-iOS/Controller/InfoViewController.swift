@@ -27,8 +27,6 @@ class InfoViewController : UIViewController {
         update()
         checkWinner()
     }
-    
-    
 }
 
 //MARK: - Update
@@ -77,25 +75,15 @@ extension InfoViewController: MFMailComposeViewControllerDelegate {
 extension InfoViewController {
     func checkWinner() {
         db.collection("contestTime").whereField(K.contestTime.endTime, isLessThan: Timestamp.init()).getDocuments { snapshot, error in
-            if error != nil {
-                return
-            } else {
-                if snapshot?.documents.count == 0 {
-                    return
-                } else {
-                    if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
-                        self.db.collection("users").document(id).getDocument { snapshot, error in
-                            if error != nil {
-                                return
-                            } else {
-                                if let data = snapshot?.data() {
-                                    if let winner = data["winner"] as? Bool {
-                                        if winner == true {
-                                            self.awardStackView.isHidden = false
-                                        }
-                                    }
-                                }
-                            }
+            if error != nil || snapshot?.documents.count == 0 { return }
+            guard let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) else { return }
+            
+            self.db.collection("users").document(id).getDocument { snapshot, error in
+                if error != nil { return }
+                if let data = snapshot?.data() {
+                    if let winner = data["winner"] as? Bool {
+                        if winner == true {
+                            self.awardStackView.isHidden = false
                         }
                     }
                 }

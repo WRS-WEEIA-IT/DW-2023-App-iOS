@@ -9,16 +9,12 @@ import UIKit
 import FirebaseFirestore
 
 class EventsViewController: UIViewController {
-        
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var eventIcon: UIImageView!
     @IBOutlet weak var eventLabel: UILabel!
     
-    var eventsArray: [Events] = []
-    
-    let eventCreator = EventCreator()
-        
     let db = Firestore.firestore()
+    var eventsArray: [Events] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +25,11 @@ class EventsViewController: UIViewController {
         eventTableView.dataSource = self
         eventTableView.register(UINib(nibName: K.eventNibName, bundle: nil), forCellReuseIdentifier: K.eventCellIdentifier)
         eventTableView.rowHeight = K.rowHeight
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         loadAllEvents()
     }
-
 }
 
 //MARK: - TableViewDataSource
@@ -59,7 +53,6 @@ extension EventsViewController : UITableViewDataSource {
         
         return cell
     }
-
 }
 
 //MARK: - Firebase
@@ -72,26 +65,21 @@ extension EventsViewController {
     }
 
     func loadEvent(collectionType: String) {
-        db.collection(collectionType).whereField(K.events.timeEnd, isGreaterThanOrEqualTo: Timestamp.init()).addSnapshotListener { snapshot, error in
+        db.collection(collectionType).whereField(K.Events.timeEnd, isGreaterThanOrEqualTo: Timestamp.init()).addSnapshotListener { snapshot, error in
+            if error != nil { return }
+            guard let snapshotDocuments = snapshot?.documents else { return }
+            
+            for document in snapshotDocuments {
+                let documentData = document.data()
+                if let newEvent = EventCreator.createEvent(documentData: documentData, collectionType: collectionType) {
+                    self.eventsArray.append(newEvent)
+                    self.eventsArray.sort { $0.time < $1.time }
 
-            if error != nil {
-                return
-            } else {
-                if let snapshotDocuments = snapshot?.documents {
-                    for document in snapshotDocuments {
-                        let documentData = document.data()
-                        if let newEvent = self.eventCreator.createEvent(documentData: documentData, collectionType: collectionType){
-                            self.eventsArray.append(newEvent)
-                            self.eventsArray.sort { $0.time < $1.time }
-
-                            DispatchQueue.main.async {
-                                self.eventTableView.reloadData()
-                            }
-                        }
+                    DispatchQueue.main.async {
+                        self.eventTableView.reloadData()
                     }
                 }
             }
         }
     }
-    
 }

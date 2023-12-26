@@ -174,8 +174,8 @@
 		29257A2629A103A700FD5C3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				29A9600529C3A55200AEF86D /* TaskModels */,
-				29A9600429C3A54500AEF86D /* EventModels */,
+				29A9600529C3A55200AEF86D /* Tasks */,
+				29A9600429C3A54500AEF86D /* Events */,
 				29FDF72B29BFB699003D84E6 /* GradientButton.swift */,
 			);
 			path = Model;
@@ -185,11 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				297E7141299FABF00053E32E /* Main.storyboard */,
-				29A9600E29C3A87E00AEF86D /* TaskAlert */,
-				299EF2E529C0FEE000CAFA95 /* Alert */,
-				299EF2E429C0FED300CAFA95 /* TaskCollection */,
-				299EF2E329C0FEC600CAFA95 /* TaskTableView */,
-				299EF2E229C0FEB200CAFA95 /* Event */,
+				298154D82B3B37E9006129C7 /* alerts */,
+				298154D72B3B37D5006129C7 /* cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,6 +271,25 @@
 			path = "DzienWydzialu-iOS";
 			sourceTree = "<group>";
 		};
+		298154D72B3B37D5006129C7 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				299EF2E429C0FED300CAFA95 /* TaskCollection */,
+				299EF2E329C0FEC600CAFA95 /* TaskTableView */,
+				299EF2E229C0FEB200CAFA95 /* Event */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		298154D82B3B37E9006129C7 /* alerts */ = {
+			isa = PBXGroup;
+			children = (
+				29A9600E29C3A87E00AEF86D /* TaskAlert */,
+				299EF2E529C0FEE000CAFA95 /* Alert */,
+			);
+			path = alerts;
+			sourceTree = "<group>";
+		};
 		299EF2E229C0FEB200CAFA95 /* Event */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,22 +326,22 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
-		29A9600429C3A54500AEF86D /* EventModels */ = {
+		29A9600429C3A54500AEF86D /* Events */ = {
 			isa = PBXGroup;
 			children = (
 				293CAF6929A6632700D75D48 /* Events.swift */,
 				292501CC29C27E79000C5DC7 /* EventCreator.swift */,
 			);
-			path = EventModels;
+			path = Events;
 			sourceTree = "<group>";
 		};
-		29A9600529C3A55200AEF86D /* TaskModels */ = {
+		29A9600529C3A55200AEF86D /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
 				293CAF9C29A8243D00D75D48 /* Tasks.swift */,
 				292501CE29C27FCD000C5DC7 /* TaskCreator.swift */,
 			);
-			path = TaskModels;
+			path = Tasks;
 			sourceTree = "<group>";
 		};
 		29A9600E29C3A87E00AEF86D /* TaskAlert */ = {

@@ -18,15 +18,12 @@ class EventCell : UITableViewCell {
     
     override class func awakeFromNib() {
         super.awakeFromNib()
-        
-        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0))
-        
         backgroundImage.layer.cornerRadius = backgroundImage.frame.size.height / 8
     }
     
@@ -35,7 +32,4 @@ class EventCell : UITableViewCell {
                 UIApplication.shared.open(url)
         }
     }
-    
-    
-    
 }

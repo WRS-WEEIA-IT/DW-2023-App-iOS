@@ -1,5 +1,4 @@
-//
-//  K.swift
+//  Constants.swift
 //  DzienWydzialu-iOS
 //
 //  Created by Bartek Chadryś on 22/02/2023.
@@ -36,7 +35,7 @@ struct K {
     
     struct Xcross {
         static let xPositionOfButtonX = 35.0
-        static let yPositionOfButtonX = 30.0
+        static let yPositionOfButtonX = 65.0
         static let crossSize = 20.0
         static let crossLineWidth = 2.0
         static let crossColor = UIColor.white
@@ -58,7 +57,7 @@ struct K {
         static let winner = "winner"
     }
     
-    struct events {
+    struct Events {
         static let eventType = "eventType"
         static let timeStart = "timeStart"
         static let timeEnd = "timeEnd"
@@ -67,7 +66,7 @@ struct K {
         static let imageSource = "imageSource"
     }
     
-    struct tasks {
+    struct Tasks {
         static let title = "title"
         static let imageSource = "imageSource"
         static let description = "description"

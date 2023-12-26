@@ -3,7 +3,6 @@
     <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,12 +25,11 @@
                                 <rect key="frame" x="0.0" y="249" width="375" height="314"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="314" id="acM-uO-0s9"/>
-                                    <constraint firstAttribute="width" constant="375" id="nAF-0w-zt3"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="backgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nJd-0I-4q3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RJb-xU-T8D"/>
                             <constraint firstAttribute="bottom" secondItem="bEx-cy-uuJ" secondAttribute="bottom" id="Tj2-9Z-sja"/>
@@ -53,8 +51,5 @@
         <image name="down_left_fluid" width="213" height="250"/>
         <image name="launchScreenImage" width="375" height="420"/>
         <image name="newfluid 2" width="188" height="178"/>
-        <namedColor name="backgroundColor">
-            <color red="0.99599999189376831" green="0.99599999189376831" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

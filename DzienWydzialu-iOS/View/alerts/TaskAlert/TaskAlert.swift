@@ -18,8 +18,8 @@ class TaskAlert: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pointsButton: GradientButton!
     
-    var parentVC: UIViewController = UIViewController()
-    var task: Tasks? = nil
+    var parentVC = UIViewController()
+    var task: Tasks?
     
     init() {
         super.init(nibName: K.taskAlertNibName, bundle: nil)
@@ -86,5 +86,4 @@ class TaskAlert: UIViewController {
     @IBAction func okPressed(_ sender: GradientButton) {
         hide()
     }
-    
 }

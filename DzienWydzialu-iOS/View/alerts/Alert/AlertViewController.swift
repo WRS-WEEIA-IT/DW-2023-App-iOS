@@ -23,7 +23,7 @@ class AlertViewController: UIViewController {
     @IBOutlet weak var okRedButton: UIButton!
     @IBOutlet weak var okYellowButton: UIButton!
     
-    var parentVC: UIViewController = UIViewController()
+    var parentVC = UIViewController()
     
     var isWrong: Bool = true
     var isWinner: Bool = false
@@ -148,5 +148,4 @@ class AlertViewController: UIViewController {
     @IBAction func donePressed(_ sender: GradientButton) {
         hide()
     }
-    
 }

@@ -15,7 +15,7 @@ class TasksViewController: UIViewController {
     @IBOutlet weak var pointsLabel: UILabel!
     
     let db = Firestore.firestore()
-    var tasksArray : [Tasks] = []
+    var tasksArray : [Tasks] = [Tasks(title: "No tasks available", description: "Wait for incoming event!", points: 0, imageSource: "", qrCode: "", numberOfTask: -1, done: false)]
                 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,9 @@ extension TasksViewController {
         let points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
         pointsLabel.text = "Currently you have \(points) points!"
         loadTasks()
+        if self.tasksArray.count > 1 {
+            self.tasksArray.remove(at: 0)
+        }
     }
 }
 
@@ -52,33 +55,45 @@ extension TasksViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let task = tasksArray[indexPath.row]
+        var cell = tableView.dequeueReusableCell(withIdentifier: K.taskCellIdentifier, for: indexPath) as! TaskCell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.taskCellIdentifier, for: indexPath) as! TaskCell
-        
-        if UIImage(named: task.imageSource) != nil {
-            cell.backgroundImage.image = UIImage(named: task.imageSource)
-        }
-        cell.titleLabel.text = task.title
-        cell.descriptionLabel.text = task.description
-        cell.taskNumberLabel.text = "Task \(task.numberOfTask)"
-        cell.pointsButton.setTitle("\(task.points) POINTS", for: .normal)
-        
-        if task.done {
-            cell.qrcodeImage.isHidden = true
-            cell.upTextLabel.text = "TASK COMPLETED!"
-            cell.downTextLabel.isHidden = true
-            cell.checkmarkImage.isHidden = false
-            cell.filter.alpha = 0.85
+        if task.numberOfTask == -1 {
+            setDefaultTask(taskCell: &cell, task: task)
         } else {
-            cell.checkmarkImage.isHidden = true
-            cell.downTextLabel.isHidden = false
-            cell.qrcodeImage.isHidden = false
-            cell.upTextLabel.text = "SCAN CODE"
-            cell.downTextLabel.text = "TO COMPLETE THE TASK"
-            cell.filter.alpha = 0.55
+            setTask(taskCell: &cell, task: task)
         }
         
         return cell
+    }
+    
+    private func setTask(taskCell: inout TaskCell, task: Tasks) {
+        if UIImage(named: task.imageSource) != nil {
+            taskCell.backgroundImage.image = UIImage(named: task.imageSource)
+        }
+        taskCell.titleLabel.text = task.title
+        taskCell.descriptionLabel.text = task.description
+        taskCell.taskNumberLabel.text = "Task \(task.numberOfTask)"
+        taskCell.pointsButton.setTitle("\(task.points) POINTS", for: .normal)
+        
+        taskCell.checkmarkImage.isHidden = true
+        taskCell.downTextLabel.isHidden = false
+        taskCell.qrcodeImage.isHidden = false
+        taskCell.upTextLabel.text = "SCAN CODE"
+        taskCell.downTextLabel.text = "TO COMPLETE THE TASK"
+        taskCell.filter.alpha = 0.55
+    }
+    
+    private func setDefaultTask(taskCell: inout TaskCell, task: Tasks) {
+        taskCell.backgroundImage.image = nil
+        taskCell.titleLabel.text = task.title
+        taskCell.descriptionLabel.text = task.description
+        taskCell.taskNumberLabel.text = nil
+        taskCell.pointsButton.setTitle("NO TASKS", for: .normal)
+        
+        taskCell.checkmarkImage.isHidden = true
+        taskCell.downTextLabel.isHidden = true
+        taskCell.qrcodeImage.isHidden = true
+        taskCell.upTextLabel.text = nil
     }
 }
 

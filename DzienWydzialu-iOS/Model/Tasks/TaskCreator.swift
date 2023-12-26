@@ -17,8 +17,15 @@ class TaskCreator {
         guard let taskNumber = documentData[K.Tasks.taskNumber] as? Int else { return nil }
         
         let done = checkTaskWithLocal(qrcode: qrCode, newPoints: points)
-        let newTask = Tasks(title: title, description: description, points: points, imageSource: imageSource, qrCode: qrCode, numberOfTask: taskNumber, done: done)
-        
+        let newTask = Tasks(
+            title: title,
+            description: description,
+            points: points,
+            imageSource: imageSource,
+            qrCode: qrCode,
+            numberOfTask: taskNumber,
+            done: done
+        )
         return newTask
     }
     

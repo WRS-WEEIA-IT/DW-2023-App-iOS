@@ -33,7 +33,13 @@ class EventCreator {
             newCollectionType = "Workshop"
         }
 
-        let newEvent = Events(eventType: newCollectionType, time: newTime, title: title, partner: partner, imageSource: imageSource)
+        let newEvent = Events(
+            eventType: newCollectionType,
+            time: newTime,
+            title: title,
+            partner: partner,
+            imageSource: imageSource
+        )
         return newEvent
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskCell : UITableViewCell {
+class TaskCell: UITableViewCell {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var taskNumberLabel: UILabel!

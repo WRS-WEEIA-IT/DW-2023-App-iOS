@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WelcomeViewController.swift
 //  DzienWydzialu-iOS
 //
 //  Created by Bartek Chadryś on 17/02/2023.
@@ -16,8 +16,8 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
     
     let db = Firestore.firestore()
         
-    var eventsArray: [Events] = []
-    var tasksArray: [Tasks] = []
+    var eventsArray: [Events] = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "")]
+    var tasksArray: [Tasks] = [Tasks(title: "No tasks available", description: "Wait for incoming event!", points: 0, imageSource: "", qrCode: "", numberOfTask: -1, done: false)]
     
     var timer = Timer()
     var counter = 0
@@ -81,21 +81,15 @@ extension WelcomeViewController {
                 if let winner = data["winner"] as? Bool {
                     let alert = AlertViewController()
                     alert.parentVC = self
+                    alert.homeAlert = true
+                    alert.isWinner = winner
                     
-                    if winner == true {
-                        alert.isWinner = true
-                        alert.homeAlert = true
-                    } else {
-                        alert.isWinner = false
-                        alert.homeAlert = true
-                    }
                     alert.appear(sender: self)
                 }
             }
         }
     }
 }
-
 
 //MARK: - Manage tasks
 
@@ -105,10 +99,30 @@ extension WelcomeViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let taskCell = collectionView.dequeueReusableCell(withReuseIdentifier: K.taskCellCollectionIdentifier, for: indexPath) as! TaskCellCollection
-        
+        var taskCell = collectionView.dequeueReusableCell(withReuseIdentifier: K.taskCellCollectionIdentifier, for: indexPath) as! TaskCellCollection
+
         let task = tasksArray[indexPath.row]
+        if task.numberOfTask == -1 {
+            setDefaultTask(taskCell: &taskCell, task: task)
+        } else {
+            setTask(taskCell: &taskCell, task: task)
+        }
         
+        return taskCell
+    }
+    
+    @objc func changeImage() {
+        if counter < tasksArray.count {
+            counter += 1
+            if(counter == tasksArray.count) {
+                counter = 0
+            }
+            let index = IndexPath.init(item: counter, section: 0)
+            self.taskCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    private func setTask(taskCell: inout TaskCellCollection, task: Tasks) {
         if UIImage(named: task.imageSource) != nil {
             taskCell.backgroundImage.image = UIImage(named: task.imageSource)
         }
@@ -123,19 +137,19 @@ extension WelcomeViewController: UICollectionViewDelegate {
         taskCell.upTextLabel.text = "SCAN CODE"
         taskCell.downTextLabel.text = "TO COMPLETE THE TASK"
         taskCell.filter.alpha = 0.55
-        
-        return taskCell
     }
     
-    @objc func changeImage() {
-        if counter < tasksArray.count {
-            counter += 1
-            if(counter == tasksArray.count) {
-                counter = 0
-            }
-            let index = IndexPath.init(item: counter, section: 0)
-            self.taskCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-        }
+    private func setDefaultTask(taskCell: inout TaskCellCollection, task: Tasks) {
+        taskCell.backgroundImage.image = nil
+        taskCell.titleLabel.text = task.title
+        taskCell.descriptionLabel.text = task.description
+        taskCell.taskNumberLabel.text = nil
+        taskCell.pointsButton.setTitle("NO TASKS", for: .normal)
+        
+        taskCell.checkmarkImage.isHidden = true
+        taskCell.downTextLabel.isHidden = true
+        taskCell.qrcodeImage.isHidden = true
+        taskCell.upTextLabel.text = nil
     }
 }
 
@@ -155,6 +169,8 @@ extension WelcomeViewController : UITableViewDataSource {
                         
             if UIImage(named: event.imageSource) != nil {
                 cell.backgroundImage.image = UIImage(named: event.imageSource)
+            } else if event.imageSource == "" {
+                cell.backgroundImage.image = nil
             }
             cell.dateLabel.text = event.time
             cell.eventSubject.text = event.title

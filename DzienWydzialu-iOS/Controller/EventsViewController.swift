@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EventsViewController.swift
 //  DzienWydzialu-iOS
 //
 //  Created by Bartek Chadryś on 17/02/2023.
@@ -14,7 +14,7 @@ class EventsViewController: UIViewController {
     @IBOutlet weak var eventLabel: UILabel!
     
     let db = Firestore.firestore()
-    var eventsArray: [Events] = []
+    var eventsArray: [Events] = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "")]
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +46,8 @@ extension EventsViewController : UITableViewDataSource {
         
         if UIImage(named: event.imageSource) != nil {
             cell.backgroundImage.image = UIImage(named: event.imageSource)
+        } else if event.imageSource == "" {
+            cell.backgroundImage.image = nil
         }
         cell.dateLabel.text = event.time
         cell.eventSubject.text = event.title
@@ -62,6 +64,9 @@ extension EventsViewController {
         self.eventsArray = []
         loadEvent(collectionType: K.lectures)
         loadEvent(collectionType: K.workshops)
+        if self.eventsArray.count > 1 {
+            self.eventsArray.remove(at: 0)
+        }
     }
 
     func loadEvent(collectionType: String) {

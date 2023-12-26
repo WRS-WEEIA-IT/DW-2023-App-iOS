@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  InfoViewController.swift
 //  DzienWydzialu-iOS
 //
 //  Created by Bartek Chadryś on 22/02/2023.
@@ -9,8 +9,7 @@ import UIKit
 import MessageUI
 import FirebaseFirestore
 
-class InfoViewController : UIViewController {
-    
+class InfoViewController: UIViewController {
     @IBOutlet weak var pointsButton: GradientButton!
     @IBOutlet weak var appIdLabel: UILabel!
     @IBOutlet weak var settingsIcon: UIImageView!
@@ -33,9 +32,8 @@ class InfoViewController : UIViewController {
 
 extension InfoViewController {
     func update() {
-        let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId)
-        if id != nil {
-            appIdLabel.text = "APP ID: #\(id!)"
+        if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
+            appIdLabel.text = "APP ID: #\(id)"
         } else {
             appIdLabel.text = "NO ID ASSIGNED"
         }

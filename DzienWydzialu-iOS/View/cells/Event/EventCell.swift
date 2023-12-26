@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-class EventCell : UITableViewCell {
+class EventCell: UITableViewCell {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!

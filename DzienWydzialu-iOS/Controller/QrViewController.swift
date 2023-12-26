@@ -8,7 +8,6 @@
 import UIKit
 import AVFoundation
 import FirebaseFirestore
-import FirebaseDatabase
 
 class QrViewController: UIViewController {
     var avCaptureSession: AVCaptureSession!
@@ -116,9 +115,10 @@ class QrViewController: UIViewController {
     func failed() {
         let ac = UIAlertController(title: "Scanner not supported", message: "Please use a device with a camera. Because this device does not support scanning a code", preferredStyle: .alert)
         DispatchQueue.main.async {
-            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            let action = UIAlertAction(title: "OK", style: .default, handler: { _ in
                 self.dismiss(animated: true)
-            }))
+            })
+            ac.addAction(action)
             self.present(ac, animated: true)
             self.avCaptureSession = nil
         }

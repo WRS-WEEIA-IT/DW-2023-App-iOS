@@ -10,6 +10,9 @@
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
         <array key="Montserrat-VariableFont_wght.ttf">
             <string>MontserratRoman-Bold</string>
             <string>MontserratRoman-Medium</string>
@@ -38,6 +41,25 @@
                         <color key="textColor" name="reversedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="g1A-SG-1Ew">
+                        <rect key="frame" x="377" y="104.5" width="41" height="42"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7z-E2-18G">
+                                <rect key="frame" x="1" y="0.0" width="39.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfE-rn-Q4P">
+                                <rect key="frame" x="0.0" y="22.5" width="41" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eqy-Fe-nFf">
                         <rect key="frame" x="20" y="87" width="150" height="77"/>
                         <subviews>
@@ -80,10 +102,12 @@
                     <constraint firstAttribute="bottom" secondItem="R4d-b3-EE7" secondAttribute="bottom" id="82w-5f-TSU"/>
                     <constraint firstItem="DYw-fI-Uhc" firstAttribute="top" secondItem="Jgu-Ni-teQ" secondAttribute="top" id="Evf-Fd-EDK"/>
                     <constraint firstAttribute="bottom" secondItem="DYw-fI-Uhc" secondAttribute="bottom" id="KCP-hg-Y7f"/>
+                    <constraint firstItem="g1A-SG-1Ew" firstAttribute="centerY" secondItem="eqy-Fe-nFf" secondAttribute="centerY" id="Ovr-PP-XQA"/>
                     <constraint firstAttribute="trailing" secondItem="DYw-fI-Uhc" secondAttribute="trailing" id="PZY-LM-YpZ"/>
                     <constraint firstAttribute="bottom" secondItem="eqy-Fe-nFf" secondAttribute="bottom" constant="15" id="d8r-1U-MCj"/>
                     <constraint firstItem="R4d-b3-EE7" firstAttribute="leading" secondItem="Jgu-Ni-teQ" secondAttribute="leading" id="dL9-2D-OVQ"/>
                     <constraint firstAttribute="trailing" secondItem="u6T-QE-gWr" secondAttribute="trailing" constant="20" id="dVj-v8-oNV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="g1A-SG-1Ew" secondAttribute="trailing" constant="20" id="ewv-yi-0ON"/>
                     <constraint firstAttribute="trailing" secondItem="R4d-b3-EE7" secondAttribute="trailing" id="hfh-oO-56a"/>
                     <constraint firstItem="R4d-b3-EE7" firstAttribute="top" secondItem="Jgu-Ni-teQ" secondAttribute="top" id="jaj-ee-MRh"/>
                     <constraint firstItem="eqy-Fe-nFf" firstAttribute="leading" secondItem="Jgu-Ni-teQ" secondAttribute="leading" constant="20" id="yTZ-iT-jMu"/>
@@ -96,6 +120,7 @@
                 <outlet property="dateLabel" destination="u6T-QE-gWr" id="aEV-bJ-fGr"/>
                 <outlet property="eventSubject" destination="hfG-uq-2dT" id="xfT-CF-q0a"/>
                 <outlet property="eventType" destination="YgY-P2-xjD" id="8kL-Si-att"/>
+                <outlet property="place" destination="NfE-rn-Q4P" id="RZ9-O5-ysv"/>
                 <outlet property="signUpButton" destination="s1B-B2-b4a" id="Z1L-iZ-jo9"/>
             </connections>
             <point key="canvasLocation" x="-44.927536231884062" y="77.34375"/>

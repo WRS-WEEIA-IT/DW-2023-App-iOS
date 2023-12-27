@@ -13,4 +13,5 @@ struct Events {
     let title: String
     let partner: String
     let imageSource: String
+    let hall: String
 }

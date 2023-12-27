@@ -15,6 +15,7 @@ class EventCreator {
         guard let imageSource = documentData[K.Events.imageSource] as? String else { return nil }
         guard let timeStart = documentData[K.Events.timeStart] as? Timestamp else { return nil }
         guard let timeEnd = documentData[K.Events.timeEnd] as? Timestamp else { return nil }
+        guard let hall = documentData[K.Events.hall] as? String else { return nil }
         
         let dateFormatter = DateFormatter()
 
@@ -38,7 +39,8 @@ class EventCreator {
             time: newTime,
             title: title,
             partner: partner,
-            imageSource: imageSource
+            imageSource: imageSource,
+            hall: hall
         )
         return newEvent
     }

@@ -64,6 +64,7 @@ struct K {
         static let partner = "partner"
         static let title = "title"
         static let imageSource = "imageSource"
+        static let hall = "hall"
     }
     
     struct Tasks {

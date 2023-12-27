@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
     
     let db = Firestore.firestore()
         
-    var eventsArray: [Events] = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "")]
+    var eventsArray: [Events] = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", hall: "")]
     var tasksArray: [Tasks] = [Tasks(title: "No tasks available", description: "Wait for incoming event!", points: 0, imageSource: "", qrCode: "", numberOfTask: -1, done: false)]
     
     var timer = Timer()
@@ -175,6 +175,7 @@ extension WelcomeViewController : UITableViewDataSource {
             cell.dateLabel.text = event.time
             cell.eventSubject.text = event.title
             cell.eventType.text = event.eventType
+            cell.place.text = event.hall
         }
         
         return cell

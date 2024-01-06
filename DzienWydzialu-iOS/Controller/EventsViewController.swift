@@ -49,10 +49,10 @@ extension EventsViewController : UITableViewDataSource {
         } else if event.imageSource == "" {
             cell.backgroundImage.image = nil
         }
-        cell.dateLabel.text = event.time
+        cell.hourLabel.text = event.time
         cell.eventSubject.text = event.title
         cell.eventType.text = event.eventType
-        cell.place.text = event.hall
+        cell.place.text = "Sala \(event.hall)"
         
         return cell
     }

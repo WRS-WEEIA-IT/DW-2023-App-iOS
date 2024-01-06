@@ -66,6 +66,10 @@
 		293CAF9A29A81A8900D75D48 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 293CAF8329A817DF00D75D48 /* Montserrat-Bold.ttf */; };
 		293CAF9B29A81A8900D75D48 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 293CAF7E29A817DF00D75D48 /* Montserrat-LightItalic.ttf */; };
 		293CAF9D29A8243D00D75D48 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293CAF9C29A8243D00D75D48 /* Tasks.swift */; };
+		295EECB22B49DF0600D89D1A /* CellsStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EECB12B49DF0600D89D1A /* CellsStyles.swift */; };
+		295EECB42B49E1FE00D89D1A /* TaskCellCollection+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EECB32B49E1FE00D89D1A /* TaskCellCollection+Style.swift */; };
+		295EECB62B49E28E00D89D1A /* TaskCell+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EECB52B49E28E00D89D1A /* TaskCell+Style.swift */; };
+		295EECB82B49E30200D89D1A /* EventCell+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EECB72B49E30200D89D1A /* EventCell+Style.swift */; };
 		297C39E729AE062700C62979 /* QrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297C39E629AE062700C62979 /* QrViewController.swift */; };
 		297E713C299FABF00053E32E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E713B299FABF00053E32E /* AppDelegate.swift */; };
 		297E713E299FABF00053E32E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E713D299FABF00053E32E /* SceneDelegate.swift */; };
@@ -115,6 +119,10 @@
 		293CAF8629A817DF00D75D48 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		293CAF8729A817DF00D75D48 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		293CAF9C29A8243D00D75D48 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		295EECB12B49DF0600D89D1A /* CellsStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsStyles.swift; sourceTree = "<group>"; };
+		295EECB32B49E1FE00D89D1A /* TaskCellCollection+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskCellCollection+Style.swift"; sourceTree = "<group>"; };
+		295EECB52B49E28E00D89D1A /* TaskCell+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskCell+Style.swift"; sourceTree = "<group>"; };
+		295EECB72B49E30200D89D1A /* EventCell+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventCell+Style.swift"; sourceTree = "<group>"; };
 		297C39E629AE062700C62979 /* QrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrViewController.swift; sourceTree = "<group>"; };
 		297E7138299FABF00053E32E /* DzienWydzialu-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DzienWydzialu-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		297E713B299FABF00053E32E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -277,6 +285,7 @@
 				299EF2E429C0FED300CAFA95 /* TaskCollection */,
 				299EF2E329C0FEC600CAFA95 /* TaskTableView */,
 				299EF2E229C0FEB200CAFA95 /* Event */,
+				295EECB12B49DF0600D89D1A /* CellsStyles.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -295,6 +304,7 @@
 			children = (
 				293CAF6329A6567900D75D48 /* EventCell.xib */,
 				293CAF6729A6617B00D75D48 /* EventCell.swift */,
+				295EECB72B49E30200D89D1A /* EventCell+Style.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -304,6 +314,7 @@
 			children = (
 				293CAF6F29A7FC4500D75D48 /* TaskCell.xib */,
 				293CAF7129A7FC5000D75D48 /* TaskCell.swift */,
+				295EECB52B49E28E00D89D1A /* TaskCell+Style.swift */,
 			);
 			path = TaskTableView;
 			sourceTree = "<group>";
@@ -313,6 +324,7 @@
 			children = (
 				299EE35629BC9E0D00DD3583 /* TaskCellCollection.xib */,
 				299EE35229BC9CC900DD3583 /* TaskCellCollection.swift */,
+				295EECB32B49E1FE00D89D1A /* TaskCellCollection+Style.swift */,
 			);
 			path = TaskCollection;
 			sourceTree = "<group>";
@@ -482,8 +494,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				297E7140299FABF00053E32E /* WelcomeViewController.swift in Sources */,
+				295EECB22B49DF0600D89D1A /* CellsStyles.swift in Sources */,
 				29A9601129C3A89D00AEF86D /* TaskAlert.swift in Sources */,
 				291D371029A5219B00577E78 /* EventsViewController.swift in Sources */,
+				295EECB42B49E1FE00D89D1A /* TaskCellCollection+Style.swift in Sources */,
 				291DA18D29A56DE00087E1D8 /* TasksViewController.swift in Sources */,
 				292501CF29C27FCD000C5DC7 /* TaskCreator.swift in Sources */,
 				297E713C299FABF00053E32E /* AppDelegate.swift in Sources */,
@@ -494,6 +508,8 @@
 				293CAF9D29A8243D00D75D48 /* Tasks.swift in Sources */,
 				297C39E729AE062700C62979 /* QrViewController.swift in Sources */,
 				292501CD29C27E79000C5DC7 /* EventCreator.swift in Sources */,
+				295EECB62B49E28E00D89D1A /* TaskCell+Style.swift in Sources */,
+				295EECB82B49E30200D89D1A /* EventCell+Style.swift in Sources */,
 				293CAF6C29A666F200D75D48 /* Constants.swift in Sources */,
 				293CAF6829A6617B00D75D48 /* EventCell.swift in Sources */,
 				297E713E299FABF00053E32E /* SceneDelegate.swift in Sources */,

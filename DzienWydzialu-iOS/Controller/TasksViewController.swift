@@ -74,13 +74,7 @@ extension TasksViewController : UITableViewDataSource {
         taskCell.descriptionLabel.text = task.description
         taskCell.taskNumberLabel.text = "Task \(task.numberOfTask)"
         taskCell.pointsButton.setTitle("\(task.points) POINTS", for: .normal)
-        
-        taskCell.checkmarkImage.isHidden = true
-        taskCell.downTextLabel.isHidden = false
-        taskCell.qrcodeImage.isHidden = false
-        taskCell.upTextLabel.text = "SCAN CODE"
-        taskCell.downTextLabel.text = "TO COMPLETE THE TASK"
-        taskCell.filter.alpha = 0.55
+        taskCell.isDone = task.done
     }
     
     private func setDefaultTask(taskCell: inout TaskCell, task: Tasks) {
@@ -89,15 +83,10 @@ extension TasksViewController : UITableViewDataSource {
         taskCell.descriptionLabel.text = task.description
         taskCell.taskNumberLabel.text = nil
         taskCell.pointsButton.setTitle("NO TASKS", for: .normal)
-        
-        taskCell.checkmarkImage.isHidden = true
-        taskCell.downTextLabel.isHidden = true
-        taskCell.qrcodeImage.isHidden = true
-        taskCell.upTextLabel.text = nil
     }
 }
 
-//MARK: - LOADING TASKS
+//MARK: - Loading tasks
 
 extension TasksViewController {
     func loadTasks() {

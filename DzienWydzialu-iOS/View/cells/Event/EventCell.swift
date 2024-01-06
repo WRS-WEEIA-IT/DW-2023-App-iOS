@@ -11,7 +11,7 @@ import SafariServices
 class EventCell: UITableViewCell {
     
     @IBOutlet weak var backgroundImage: UIImageView!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var eventType: UILabel!
     @IBOutlet weak var eventSubject: UILabel!
     @IBOutlet weak var place: UILabel!
@@ -24,8 +24,7 @@ class EventCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0))
-        backgroundImage.layer.cornerRadius = backgroundImage.frame.size.height / 8
+        styleCell()
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {

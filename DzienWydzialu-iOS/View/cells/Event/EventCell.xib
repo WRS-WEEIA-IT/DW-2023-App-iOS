@@ -7,6 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
@@ -15,7 +18,6 @@
         </array>
         <array key="Montserrat-VariableFont_wght.ttf">
             <string>MontserratRoman-Bold</string>
-            <string>MontserratRoman-Medium</string>
         </array>
     </customFonts>
     <objects>
@@ -31,103 +33,90 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventCellBackground" translatesAutoresizingMaskIntoConstraints="NO" id="R4d-b3-EE7">
                         <rect key="frame" x="0.0" y="0.0" width="458" height="179"/>
                     </imageView>
-                    <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYw-fI-Uhc" userLabel="filter">
-                        <rect key="frame" x="0.0" y="0.0" width="458" height="179"/>
-                        <color key="backgroundColor" name="backgroundColor"/>
-                    </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31.03.2023 10:00 - 11:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6T-QE-gWr">
-                        <rect key="frame" x="327.5" y="10" width="110.5" height="12.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31 marca 2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6T-QE-gWr">
+                        <rect key="frame" x="361" y="20" width="72" height="12.5"/>
                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="10"/>
-                        <color key="textColor" name="reversedBackgroundColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="g1A-SG-1Ew">
-                        <rect key="frame" x="377" y="104.5" width="41" height="42"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7z-E2-18G">
-                                <rect key="frame" x="1" y="0.0" width="39.5" height="17.5"/>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfE-rn-Q4P">
-                                <rect key="frame" x="0.0" y="22.5" width="41" height="19.5"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="shadowOffset" width="2" height="2"/>
-                            </label>
-                        </subviews>
-                    </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eqy-Fe-nFf">
-                        <rect key="frame" x="20" y="87" width="150" height="77"/>
+                        <rect key="frame" x="25" y="110.5" width="150" height="53.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lecture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgY-P2-xjD">
-                                <rect key="frame" x="0.0" y="0.0" width="40.5" height="14"/>
-                                <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="10"/>
-                                <color key="textColor" name="reversedBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="0.0" width="32" height="10"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="8"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Topic" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="hfG-uq-2dT">
-                                <rect key="frame" x="0.0" y="22" width="32.5" height="17"/>
-                                <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="12"/>
-                                <color key="textColor" name="reversedBackgroundColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Topic" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfG-uq-2dT">
+                                <rect key="frame" x="0.0" y="18" width="34" height="15"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1B-B2-b4a" customClass="GradientButton" customModule="DzienWydzialu_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="47" width="90" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="Tln-kW-X06"/>
-                                    <constraint firstAttribute="height" constant="30" id="za3-fJ-9ow"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="10"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Sign up">
-                                    <color key="titleColor" name="reversedBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="cSa-3m-hGx" eventType="touchUpInside" id="hj4-Bp-Qez"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzg-Dj-AzJ">
+                                <rect key="frame" x="0.0" y="41" width="28" height="12.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="width" constant="150" id="jMa-hb-Mga"/>
                         </constraints>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 11:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZZ-zC-Q2b">
+                        <rect key="frame" x="375.5" y="35.5" width="57.5" height="12.5"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1B-B2-b4a" customClass="GradientButton" customModule="DzienWydzialu_iOS" customModuleProvider="target">
+                        <rect key="frame" x="343" y="124" width="90" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="Tln-kW-X06"/>
+                            <constraint firstAttribute="height" constant="30" id="za3-fJ-9ow"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="10"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="Sign up">
+                            <color key="titleColor" name="reversedBackgroundColor"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonPressed:" destination="cSa-3m-hGx" eventType="touchUpInside" id="hj4-Bp-Qez"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" name="backgroundColor"/>
                 <constraints>
-                    <constraint firstItem="DYw-fI-Uhc" firstAttribute="leading" secondItem="Jgu-Ni-teQ" secondAttribute="leading" id="1n8-kc-fwN"/>
+                    <constraint firstAttribute="bottom" secondItem="s1B-B2-b4a" secondAttribute="bottom" constant="25" id="5in-tm-cqp"/>
                     <constraint firstAttribute="bottom" secondItem="R4d-b3-EE7" secondAttribute="bottom" id="82w-5f-TSU"/>
-                    <constraint firstItem="DYw-fI-Uhc" firstAttribute="top" secondItem="Jgu-Ni-teQ" secondAttribute="top" id="Evf-Fd-EDK"/>
-                    <constraint firstAttribute="bottom" secondItem="DYw-fI-Uhc" secondAttribute="bottom" id="KCP-hg-Y7f"/>
-                    <constraint firstItem="g1A-SG-1Ew" firstAttribute="centerY" secondItem="eqy-Fe-nFf" secondAttribute="centerY" id="Ovr-PP-XQA"/>
-                    <constraint firstAttribute="trailing" secondItem="DYw-fI-Uhc" secondAttribute="trailing" id="PZY-LM-YpZ"/>
                     <constraint firstAttribute="bottom" secondItem="eqy-Fe-nFf" secondAttribute="bottom" constant="15" id="d8r-1U-MCj"/>
                     <constraint firstItem="R4d-b3-EE7" firstAttribute="leading" secondItem="Jgu-Ni-teQ" secondAttribute="leading" id="dL9-2D-OVQ"/>
-                    <constraint firstAttribute="trailing" secondItem="u6T-QE-gWr" secondAttribute="trailing" constant="20" id="dVj-v8-oNV"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="g1A-SG-1Ew" secondAttribute="trailing" constant="20" id="ewv-yi-0ON"/>
+                    <constraint firstAttribute="trailing" secondItem="u6T-QE-gWr" secondAttribute="trailing" constant="25" id="dVj-v8-oNV"/>
                     <constraint firstAttribute="trailing" secondItem="R4d-b3-EE7" secondAttribute="trailing" id="hfh-oO-56a"/>
+                    <constraint firstItem="uZZ-zC-Q2b" firstAttribute="top" secondItem="u6T-QE-gWr" secondAttribute="bottom" constant="3" id="iKM-H4-qlr"/>
                     <constraint firstItem="R4d-b3-EE7" firstAttribute="top" secondItem="Jgu-Ni-teQ" secondAttribute="top" id="jaj-ee-MRh"/>
-                    <constraint firstItem="eqy-Fe-nFf" firstAttribute="leading" secondItem="Jgu-Ni-teQ" secondAttribute="leading" constant="20" id="yTZ-iT-jMu"/>
-                    <constraint firstItem="u6T-QE-gWr" firstAttribute="top" secondItem="Jgu-Ni-teQ" secondAttribute="top" constant="10" id="zcL-AQ-zqX"/>
+                    <constraint firstAttribute="trailing" secondItem="uZZ-zC-Q2b" secondAttribute="trailing" constant="25" id="nT3-Po-FEL"/>
+                    <constraint firstAttribute="trailing" secondItem="s1B-B2-b4a" secondAttribute="trailing" constant="25" id="wQ6-cf-61g"/>
+                    <constraint firstItem="eqy-Fe-nFf" firstAttribute="leading" secondItem="Jgu-Ni-teQ" secondAttribute="leading" constant="25" id="yTZ-iT-jMu"/>
+                    <constraint firstItem="u6T-QE-gWr" firstAttribute="top" secondItem="Jgu-Ni-teQ" secondAttribute="top" constant="20" id="zcL-AQ-zqX"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" name="backgroundColor"/>
             <connections>
                 <outlet property="backgroundImage" destination="R4d-b3-EE7" id="kHV-p6-EQR"/>
-                <outlet property="dateLabel" destination="u6T-QE-gWr" id="aEV-bJ-fGr"/>
                 <outlet property="eventSubject" destination="hfG-uq-2dT" id="xfT-CF-q0a"/>
                 <outlet property="eventType" destination="YgY-P2-xjD" id="8kL-Si-att"/>
-                <outlet property="place" destination="NfE-rn-Q4P" id="RZ9-O5-ysv"/>
+                <outlet property="hourLabel" destination="uZZ-zC-Q2b" id="gKc-WC-C8J"/>
+                <outlet property="place" destination="xzg-Dj-AzJ" id="dc8-gu-sLl"/>
                 <outlet property="signUpButton" destination="s1B-B2-b4a" id="Z1L-iZ-jo9"/>
             </connections>
             <point key="canvasLocation" x="-44.927536231884062" y="77.34375"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="EventCellBackground" width="331" height="150"/>
+        <image name="EventCellBackground" width="386" height="160"/>
         <namedColor name="backgroundColor">
             <color red="0.050999999046325684" green="0.050999999046325684" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

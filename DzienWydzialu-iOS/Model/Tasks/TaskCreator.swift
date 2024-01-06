@@ -8,7 +8,7 @@
 import UIKit
 
 class TaskCreator {
-    static func createTask(documentData : [String : Any]) -> Tasks? {
+    static func createTask(documentData: [String: Any]) -> Tasks? {
         guard let title = documentData[K.Tasks.title] as? String else { return nil }
         guard let description = documentData[K.Tasks.description] as? String else { return nil }
         guard let imageSource = documentData[K.Tasks.imageSource] as? String else { return nil }

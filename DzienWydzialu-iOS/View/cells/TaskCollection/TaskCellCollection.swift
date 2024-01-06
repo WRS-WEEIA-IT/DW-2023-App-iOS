@@ -14,14 +14,11 @@ class TaskCellCollection : UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pointsButton: GradientButton!
-    
     @IBOutlet weak var checkmarkImage: UIImageView!
     @IBOutlet weak var qrcodeImage: UIImageView!
+    @IBOutlet weak var infoLabel: UILabel!
     
-    @IBOutlet weak var upTextLabel: UILabel!
-    @IBOutlet weak var downTextLabel: UILabel!
-    
-    @IBOutlet weak var filter: UIView!
+    var isDone: Bool = false
     
     override class func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +27,6 @@ class TaskCellCollection : UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        backgroundImage.layer.cornerRadius = backgroundImage.frame.size.height / 8
+        styleCell()
     }
 }

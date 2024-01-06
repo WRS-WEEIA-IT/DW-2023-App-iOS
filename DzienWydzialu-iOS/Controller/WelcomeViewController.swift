@@ -16,8 +16,9 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
     
     let db = Firestore.firestore()
         
-    var eventsArray: [Events] = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", hall: "")]
+    var eventsArray = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", hall: "")]
     var tasksArray: [Tasks] = [Tasks(title: "No tasks available", description: "Wait for incoming event!", points: 0, imageSource: "", qrCode: "", numberOfTask: -1, done: false)]
+    var tasksImages: [String: UIImage] = [:]
     
     var timer = Timer()
     var counter = 0
@@ -39,7 +40,7 @@ class WelcomeViewController: UIViewController, UICollectionViewDataSource {
             self.timer = Timer.scheduledTimer(timeInterval: K.scrollTimeInterval, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
         
-        loadAllEvents()
+        loadEvents()
         loadTasks()
         checkID()
         checkWinner()
@@ -124,19 +125,12 @@ extension WelcomeViewController: UICollectionViewDelegate {
     
     private func setTask(taskCell: inout TaskCellCollection, task: Tasks) {
         if UIImage(named: task.imageSource) != nil {
-            taskCell.backgroundImage.image = UIImage(named: task.imageSource)
+            taskCell.backgroundImage.image = tasksImages[task.imageSource]
         }
         taskCell.titleLabel.text = task.title
         taskCell.descriptionLabel.text = task.description
         taskCell.taskNumberLabel.text = "Task \(task.numberOfTask)"
         taskCell.pointsButton.setTitle("\(task.points) POINTS", for: .normal)
-        
-        taskCell.checkmarkImage.isHidden = true
-        taskCell.downTextLabel.isHidden = false
-        taskCell.qrcodeImage.isHidden = false
-        taskCell.upTextLabel.text = "SCAN CODE"
-        taskCell.downTextLabel.text = "TO COMPLETE THE TASK"
-        taskCell.filter.alpha = 0.55
     }
     
     private func setDefaultTask(taskCell: inout TaskCellCollection, task: Tasks) {
@@ -145,11 +139,6 @@ extension WelcomeViewController: UICollectionViewDelegate {
         taskCell.descriptionLabel.text = task.description
         taskCell.taskNumberLabel.text = nil
         taskCell.pointsButton.setTitle("NO TASKS", for: .normal)
-        
-        taskCell.checkmarkImage.isHidden = true
-        taskCell.downTextLabel.isHidden = true
-        taskCell.qrcodeImage.isHidden = true
-        taskCell.upTextLabel.text = nil
     }
 }
 
@@ -172,10 +161,10 @@ extension WelcomeViewController : UITableViewDataSource {
             } else if event.imageSource == "" {
                 cell.backgroundImage.image = nil
             }
-            cell.dateLabel.text = event.time
+            cell.hourLabel.text = event.time
             cell.eventSubject.text = event.title
             cell.eventType.text = event.eventType
-            cell.place.text = event.hall
+            cell.place.text = "Sala \(event.hall)"
         }
         
         return cell
@@ -185,7 +174,7 @@ extension WelcomeViewController : UITableViewDataSource {
 //MARK: - Loading Events
 
 extension WelcomeViewController {
-    func loadAllEvents() {
+    func loadEvents() {
         self.eventsArray = []
         loadEvent(collectionType: K.lectures)
         loadEvent(collectionType: K.workshops)
@@ -225,6 +214,7 @@ extension WelcomeViewController {
                 if let newTask = TaskCreator.createTask(documentData: documentData) {
                     if !newTask.done {
                         self.tasksArray.append(newTask)
+                        self.tasksImages[newTask.imageSource] = UIImage(named: newTask.imageSource)
 
                         DispatchQueue.main.async {
                             self.taskCollectionView.reloadData()

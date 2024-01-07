@@ -10,17 +10,12 @@ import FirebaseFirestore
 
 class EventsViewController: UIViewController {
     @IBOutlet weak var eventTableView: UITableView!
-    @IBOutlet weak var eventIcon: UIImageView!
-    @IBOutlet weak var eventLabel: UILabel!
     
     let db = Firestore.firestore()
     var eventsArray: [Events] = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", hall: "")]
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        eventIcon.tintColor = UIColor(named: K.buttonColor)
-        eventLabel.textColor = UIColor(named: K.buttonColor)
         
         eventTableView.dataSource = self
         eventTableView.register(UINib(nibName: K.eventNibName, bundle: nil), forCellReuseIdentifier: K.eventCellIdentifier)

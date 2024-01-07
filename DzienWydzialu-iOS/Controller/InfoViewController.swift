@@ -12,8 +12,6 @@ import FirebaseFirestore
 class InfoViewController: UIViewController {
     @IBOutlet weak var pointsButton: GradientButton!
     @IBOutlet weak var appIdLabel: UILabel!
-    @IBOutlet weak var settingsIcon: UIImageView!
-    @IBOutlet weak var settingsLabel: UILabel!
     @IBOutlet weak var awardStackView: UIStackView!
     
     let db = Firestore.firestore()
@@ -21,8 +19,6 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        settingsIcon.tintColor = UIColor(named: K.buttonColor)
-        settingsLabel.textColor = UIColor(named: K.buttonColor)
         update()
         checkWinner()
     }

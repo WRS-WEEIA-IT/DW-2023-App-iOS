@@ -9,8 +9,6 @@ import UIKit
 import FirebaseFirestore
 
 class TasksViewController: UIViewController {
-    @IBOutlet weak var taskIcon: UIImageView!
-    @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var tasksTableView: UITableView!
     @IBOutlet weak var pointsLabel: UILabel!
     
@@ -19,9 +17,6 @@ class TasksViewController: UIViewController {
                 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        taskIcon.tintColor = UIColor(named: K.buttonColor)
-        taskLabel.textColor = UIColor(named: K.buttonColor)
 
         tasksTableView.dataSource = self
         tasksTableView.rowHeight = K.rowHeight
@@ -38,11 +33,33 @@ class TasksViewController: UIViewController {
 extension TasksViewController {
     func update() {
         let points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
-        pointsLabel.text = "Currently you have \(points) points!"
+        pointsLabel.attributedText = getAttributedInfoText(points: points)
+        
         loadTasks()
         if self.tasksArray.count > 1 {
             self.tasksArray.remove(at: 0)
         }
+    }
+    
+    private func getAttributedInfoText(points: Int) -> NSMutableAttributedString {
+        let attrs = [
+            NSAttributedString.Key.font : UIFont(name: "Montserrat-ExtraBold", size: 12),
+            NSAttributedString.Key.foregroundColor : UIColor(named: "purpleColor")
+        ]
+        let attributedPoints = NSMutableAttributedString(
+            string: String(points),
+            attributes: attrs as [NSAttributedString.Key : Any]
+        )
+        
+        let infoText = "Currently you have "
+        let attributedInfo = NSMutableAttributedString(string: infoText)
+        let secondInfoText = " points"
+        let attributedSecondInfo = NSMutableAttributedString(string: secondInfoText)
+        
+        attributedInfo.append(attributedPoints)
+        attributedInfo.append(attributedSecondInfo)
+        
+        return attributedInfo
     }
 }
 

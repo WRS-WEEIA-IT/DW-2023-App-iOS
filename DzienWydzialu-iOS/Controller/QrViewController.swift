@@ -17,6 +17,7 @@ class QrViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         avCaptureSession = AVCaptureSession()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
@@ -58,16 +59,12 @@ class QrViewController: UIViewController {
 
             //MARK: - Frame square
             
-            let frameSize = CGSize(width: K.frameWidth, height: K.frameHeight)
+            let frameSize = CGSize(width: K.qrFrameWidth, height: K.qrFrameHeight)
             UIGraphicsBeginImageContextWithOptions(frameSize, false, 0)
 
             let context = UIGraphicsGetCurrentContext()
 
-            if let strokeColor = UIColor(named: "reversedBackgroundColor") {
-                context?.setStrokeColor(strokeColor.cgColor)
-            } else {
-                context?.setStrokeColor(UIColor.white.cgColor)
-            }
+            context?.setStrokeColor(UIColor.white.cgColor)
             context?.setLineWidth(5.0)
 
             let roundedRectPath = UIBezierPath(roundedRect: CGRect(origin: CGPoint.zero, size: frameSize), cornerRadius: 15.0)
@@ -79,7 +76,7 @@ class QrViewController: UIViewController {
             
             let imageView = frameImage
             layer.contents = imageView?.cgImage
-            layer.frame = CGRect(x: 0, y: 0, width: K.frameWidth, height: K.frameHeight)
+            layer.frame = CGRect(x: 0, y: 0, width: K.qrFrameWidth, height: K.qrFrameHeight)
             layer.position = CGPoint(x: self.view.layer.bounds.midX, y: self.view.layer.bounds.midY)
             
             self.view.layer.addSublayer(layer)
@@ -88,18 +85,22 @@ class QrViewController: UIViewController {
             
             let crossShapeLayer = CAShapeLayer()
 
+            let crossSize = 20.0
+            let xPos = 35.0
+            let yPos = 65.0
+            
             let crossPath = UIBezierPath()
             crossPath.move(to: CGPoint(x: 0, y: 0))
-            crossPath.addLine(to: CGPoint(x: K.Xcross.crossSize, y: K.Xcross.crossSize))
-            crossPath.move(to: CGPoint(x: K.Xcross.crossSize, y: 0))
-            crossPath.addLine(to: CGPoint(x: 0, y: K.Xcross.crossSize))
+            crossPath.addLine(to: CGPoint(x: crossSize, y: crossSize))
+            crossPath.move(to: CGPoint(x: crossSize, y: 0))
+            crossPath.addLine(to: CGPoint(x: 0, y: crossSize))
 
             crossShapeLayer.path = crossPath.cgPath
-            crossShapeLayer.lineWidth = K.Xcross.crossLineWidth
-            crossShapeLayer.strokeColor = K.Xcross.crossColor.cgColor
+            crossShapeLayer.lineWidth = 2.0
+            crossShapeLayer.strokeColor = UIColor.white.cgColor
             crossShapeLayer.fillColor = UIColor.clear.cgColor
-            crossShapeLayer.frame = CGRect(x: 0, y: 0, width: K.Xcross.crossSize, height: K.Xcross.crossSize)
-            crossShapeLayer.position = CGPoint(x: self.view.layer.bounds.minX+K.Xcross.xPositionOfButtonX, y: self.view.layer.bounds.minY+K.Xcross.yPositionOfButtonX)
+            crossShapeLayer.frame = CGRect(x: 0, y: 0, width: crossSize, height: crossSize)
+            crossShapeLayer.position = CGPoint(x: self.view.layer.bounds.minX+xPos, y: self.view.layer.bounds.minY+yPos)
 
             self.view.layer.addSublayer(crossShapeLayer)
 
@@ -116,7 +117,7 @@ class QrViewController: UIViewController {
         let ac = UIAlertController(title: "Scanner not supported", message: "Please use a device with a camera. Because this device does not support scanning a code", preferredStyle: .alert)
         DispatchQueue.main.async {
             let action = UIAlertAction(title: "OK", style: .default, handler: { _ in
-                self.dismiss(animated: true)
+                self.dismissViewController()
             })
             ac.addAction(action)
             self.present(ac, animated: true)
@@ -127,6 +128,7 @@ class QrViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        tabBarController?.tabBar.isHidden = true
         if (avCaptureSession?.isRunning == false) {
             DispatchQueue.global(qos: .background).async {
                 self.avCaptureSession.startRunning()
@@ -136,6 +138,8 @@ class QrViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        tabBarController?.tabBar.isHidden = false
         DispatchQueue.global(qos: .background).async {
             if (self.avCaptureSession?.isRunning == true) {
                 self.avCaptureSession.stopRunning()
@@ -153,6 +157,7 @@ class QrViewController: UIViewController {
     
     @objc func dismissViewController() {
         dismiss(animated: true, completion: nil)
+        self.tabBarController?.selectedIndex = K.TabBarIndex.tasks
     }
 }
 

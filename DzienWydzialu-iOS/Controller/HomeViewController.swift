@@ -135,6 +135,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         taskCell.descriptionLabel.text = task.description
         taskCell.taskNumberLabel.text = "Task \(task.numberOfTask)"
         taskCell.pointsButton.setTitle("\(task.points) POINTS", for: .normal)
+        taskCell.isDone = task.done
     }
     
     private func setDefaultTask(taskCell: inout TaskCellCollection, task: Tasks) {

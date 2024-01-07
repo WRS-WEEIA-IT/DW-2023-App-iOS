@@ -21,13 +21,13 @@ extension TaskCellCollection {
     
     private func setStatusStyle() {
         if isDone {
-            checkmarkImage.isHidden = true
-            qrcodeImage.isHidden = false
-            infoLabel.text = "SCAN CODE\nTO COMPLETE THE TASK"
-        } else {
             checkmarkImage.isHidden = false
             qrcodeImage.isHidden = true
             infoLabel.text = "TASK DONE"
+        } else {
+            checkmarkImage.isHidden = true
+            qrcodeImage.isHidden = false
+            infoLabel.text = "SCAN CODE\nTO COMPLETE THE TASK"
         }
     }
     

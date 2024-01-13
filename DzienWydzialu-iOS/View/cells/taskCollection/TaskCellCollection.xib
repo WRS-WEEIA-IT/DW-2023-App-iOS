@@ -17,9 +17,6 @@
         <array key="Montserrat-Light.ttf">
             <string>Montserrat-Light</string>
         </array>
-        <array key="Montserrat-Medium.ttf">
-            <string>Montserrat-Medium</string>
-        </array>
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
         </array>
@@ -38,36 +35,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="412" height="180"/>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xJB-TA-MCP">
-                        <rect key="frame" x="25" y="108" width="130" height="47"/>
+                        <rect key="frame" x="25" y="102" width="110" height="53"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ds-R2-aXw">
-                                <rect key="frame" x="0.0" y="0.0" width="31" height="12.333333333333334"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                <rect key="frame" x="0.0" y="0.0" width="37" height="14.666666666666666"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" name="reversedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcr-As-dG9">
-                                <rect key="frame" x="0.0" y="17.333333333333329" width="61.333333333333336" height="14.666666666666664"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
+                                <rect key="frame" x="0.0" y="19.666666666666671" width="68.333333333333329" height="16"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="13"/>
                                 <color key="textColor" name="reversedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will find the code.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7m2-SD-FDL">
-                                <rect key="frame" x="0.0" y="37" width="130" height="10"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="K8R-2Z-E77"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="8"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will find the code.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7m2-SD-FDL">
+                                <rect key="frame" x="0.0" y="40.666666666666657" width="110" height="12.333333333333336"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="10"/>
                                 <color key="textColor" name="reversedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="xag-3E-b2j">
-                        <rect key="frame" x="317" y="12.333333333333329" width="70" height="155.33333333333337"/>
+                        <rect key="frame" x="277" y="11" width="110" height="158"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmarkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mAU-a5-usg">
-                                <rect key="frame" x="0.0" y="0.0" width="70" height="60"/>
+                                <rect key="frame" x="20" y="0.0" width="70" height="60"/>
                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="Ikl-B6-eCw"/>
@@ -75,7 +69,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrCodeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="G7n-0T-qoJ">
-                                <rect key="frame" x="0.0" y="69" width="70" height="70"/>
+                                <rect key="frame" x="20" y="69" width="70" height="70"/>
                                 <color key="tintColor" name="reversedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="CaP-LO-ZNv"/>
@@ -83,20 +77,23 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCAN CODE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gL5-g0-bzz">
-                                <rect key="frame" x="16.666666666666686" y="148" width="37" height="7.3333333333333428"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="6"/>
+                                <rect key="frame" x="30.333333333333318" y="148" width="49.333333333333343" height="10"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="8"/>
                                 <color key="textColor" name="reversedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="110" id="zBP-gG-rOp"/>
+                        </constraints>
                     </stackView>
                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsp-PL-ZR7">
-                        <rect key="frame" x="25" y="25" width="66" height="18"/>
+                        <rect key="frame" x="25" y="15" width="75" height="22"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="66" id="1Of-hg-OhS"/>
-                            <constraint firstAttribute="height" constant="18" id="7Jg-mQ-eeI"/>
+                            <constraint firstAttribute="width" constant="75" id="1Of-hg-OhS"/>
+                            <constraint firstAttribute="height" constant="22" id="7Jg-mQ-eeI"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="6"/>
+                        <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="7"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="15 POINTS">
                             <color key="titleColor" name="reversedBackgroundColor"/>
@@ -110,9 +107,11 @@
                     <constraint firstAttribute="trailing" secondItem="6hH-ms-B1Y" secondAttribute="trailing" id="MUw-2s-DmA"/>
                     <constraint firstItem="gsp-PL-ZR7" firstAttribute="leading" secondItem="DLo-6x-pTx" secondAttribute="leading" constant="25" id="QeW-Vw-AVH"/>
                     <constraint firstItem="6hH-ms-B1Y" firstAttribute="top" secondItem="DLo-6x-pTx" secondAttribute="top" id="TaQ-yI-Ss3"/>
-                    <constraint firstItem="gsp-PL-ZR7" firstAttribute="top" secondItem="DLo-6x-pTx" secondAttribute="top" constant="25" id="ahN-HL-UuO"/>
+                    <constraint firstItem="gsp-PL-ZR7" firstAttribute="top" secondItem="DLo-6x-pTx" secondAttribute="top" constant="15" id="ahN-HL-UuO"/>
                     <constraint firstAttribute="bottom" secondItem="xJB-TA-MCP" secondAttribute="bottom" constant="25" id="fS5-kc-RQc"/>
+                    <constraint firstItem="xJB-TA-MCP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gsp-PL-ZR7" secondAttribute="bottom" priority="999" constant="15" id="nLw-cX-A0b"/>
                     <constraint firstAttribute="trailing" secondItem="xag-3E-b2j" secondAttribute="trailing" constant="25" id="s4j-Hq-bDb"/>
+                    <constraint firstItem="xag-3E-b2j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xJB-TA-MCP" secondAttribute="trailing" priority="999" constant="20" id="uQZ-Uc-Lx7"/>
                     <constraint firstItem="xJB-TA-MCP" firstAttribute="leading" secondItem="DLo-6x-pTx" secondAttribute="leading" constant="25" id="xfo-3h-DdZ"/>
                 </constraints>
             </collectionViewCellContentView>

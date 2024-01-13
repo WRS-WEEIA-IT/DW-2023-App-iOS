@@ -18,9 +18,6 @@ class HomeViewController: UIViewController {
     var tasksArray: [Tasks] = [Tasks(title: "No tasks available", description: "Wait for incoming event!", points: 0, imageSource: "", qrCode: "", numberOfTask: -1, done: false)]
     var tasksImages: [String: UIImage] = [:]
     
-    var timer = Timer()
-    var counter = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,14 +28,11 @@ class HomeViewController: UIViewController {
         taskCollectionView.dataSource = self
         taskCollectionView.register(UINib(nibName: K.taskCollectionNibName, bundle: nil), forCellWithReuseIdentifier: K.taskCellCollectionIdentifier)
         
-        DispatchQueue.main.async {
-            self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
-        }
-        
         loadEvents()
         loadTasks()
         checkID()
         checkWinner()
+        _ = getNewId()
     }
     
     
@@ -54,11 +48,18 @@ class HomeViewController: UIViewController {
 //MARK: - ID and Points
 
 extension HomeViewController {
+    private func getNewId() -> String {
+        let timeStamp = Timestamp()
+        let seconds = String(timeStamp.nanoseconds.hashValue)
+        print(seconds)
+        
+        return seconds
+    }
+    
     func checkID() {
         if K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) != nil { return }
 
         let id = Int.random(in: 1...999999)
-        
         db.collection("users").whereField("id", isEqualTo: id).getDocuments { snapshot, error in
             if error != nil { return }
             if snapshot?.count == 0 {
@@ -114,17 +115,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         return taskCell
-    }
-    
-    @objc func changeImage() {
-        if counter < tasksArray.count {
-            counter += 1
-            if(counter == tasksArray.count) {
-                counter = 0
-            }
-            let index = IndexPath.init(item: counter, section: 0)
-            self.taskCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-        }
     }
     
     private func setTask(taskCell: inout TaskCellCollection, task: Tasks) {

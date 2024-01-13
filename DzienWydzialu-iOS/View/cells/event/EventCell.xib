@@ -40,22 +40,22 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eqy-Fe-nFf">
-                        <rect key="frame" x="25" y="110.5" width="150" height="53.5"/>
+                        <rect key="frame" x="25" y="105.5" width="150" height="58.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lecture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgY-P2-xjD">
-                                <rect key="frame" x="0.0" y="0.0" width="32" height="10"/>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="8"/>
+                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="12.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Topic" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfG-uq-2dT">
-                                <rect key="frame" x="0.0" y="18" width="34" height="15"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
+                                <rect key="frame" x="0.0" y="20.5" width="39.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzg-Dj-AzJ">
-                                <rect key="frame" x="0.0" y="41" width="28" height="12.5"/>
+                                <rect key="frame" x="0.0" y="46" width="28" height="12.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -97,6 +97,7 @@
                     <constraint firstAttribute="trailing" secondItem="R4d-b3-EE7" secondAttribute="trailing" id="hfh-oO-56a"/>
                     <constraint firstItem="uZZ-zC-Q2b" firstAttribute="top" secondItem="u6T-QE-gWr" secondAttribute="bottom" constant="3" id="iKM-H4-qlr"/>
                     <constraint firstItem="R4d-b3-EE7" firstAttribute="top" secondItem="Jgu-Ni-teQ" secondAttribute="top" id="jaj-ee-MRh"/>
+                    <constraint firstItem="s1B-B2-b4a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eqy-Fe-nFf" secondAttribute="trailing" priority="999" constant="20" id="n9f-GM-EWu"/>
                     <constraint firstAttribute="trailing" secondItem="uZZ-zC-Q2b" secondAttribute="trailing" constant="25" id="nT3-Po-FEL"/>
                     <constraint firstAttribute="trailing" secondItem="s1B-B2-b4a" secondAttribute="trailing" constant="25" id="wQ6-cf-61g"/>
                     <constraint firstItem="eqy-Fe-nFf" firstAttribute="leading" secondItem="Jgu-Ni-teQ" secondAttribute="leading" constant="25" id="yTZ-iT-jMu"/>

@@ -50,16 +50,15 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     private func getNewId() -> String {
         let timeStamp = Timestamp()
-        let seconds = String(timeStamp.nanoseconds.hashValue)
-        print(seconds)
+        let hashValue = String(timeStamp.nanoseconds.hashValue)
         
-        return seconds
+        return hashValue
     }
     
     func checkID() {
         if K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) != nil { return }
 
-        let id = Int.random(in: 1...999999)
+        let id = getNewId()
         db.collection("users").whereField("id", isEqualTo: id).getDocuments { snapshot, error in
             if error != nil { return }
             if snapshot?.count == 0 {

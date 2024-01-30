@@ -5,10 +5,11 @@
 //  Created by Bartek Chadryś on 06/01/2024.
 //
 
-import Foundation
+import UIKit
 
 extension TaskCell {
     func styleCell() {
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0))
         styleBackgroundImage()
         applyGradient()
         setStatusStyle()
@@ -24,6 +25,7 @@ extension TaskCell {
             checkmarkImage.isHidden = false
             qrcodeImage.isHidden = true
             infoLabel.text = "TASK DONE"
+            alpha = 0.6
         } else {
             checkmarkImage.isHidden = true
             qrcodeImage.isHidden = false

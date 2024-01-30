@@ -10,6 +10,7 @@ import FirebaseFirestore
 
 class EventsViewController: UIViewController {
     @IBOutlet weak var eventTableView: UITableView!
+    @IBOutlet weak var mapButton: UIButton!
     
     let db = Firestore.firestore()
     var eventsArray: [Events] = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", hall: "")]
@@ -24,6 +25,13 @@ class EventsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         loadAllEvents()
+        setMapButtonStyle()
+    }
+    
+    //MARK: - Map Button
+    
+    private func setMapButtonStyle() {
+        mapButton.titleLabel?.text = nil
     }
 }
 

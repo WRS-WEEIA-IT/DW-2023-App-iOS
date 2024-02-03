@@ -71,6 +71,7 @@
 		295EECB62B49E28E00D89D1A /* TaskCell+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EECB52B49E28E00D89D1A /* TaskCell+Style.swift */; };
 		295EECB82B49E30200D89D1A /* EventCell+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EECB72B49E30200D89D1A /* EventCell+Style.swift */; };
 		297007F22B699A8700F240B7 /* ZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297007F12B699A8700F240B7 /* ZoomImageView.swift */; };
+		2979DB0F2B6EB1F100D9948F /* StrokeGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2979DB0E2B6EB1F100D9948F /* StrokeGradientButton.swift */; };
 		297C39E729AE062700C62979 /* QrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297C39E629AE062700C62979 /* QrViewController.swift */; };
 		297E713C299FABF00053E32E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E713B299FABF00053E32E /* AppDelegate.swift */; };
 		297E713E299FABF00053E32E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E713D299FABF00053E32E /* SceneDelegate.swift */; };
@@ -125,6 +126,7 @@
 		295EECB52B49E28E00D89D1A /* TaskCell+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskCell+Style.swift"; sourceTree = "<group>"; };
 		295EECB72B49E30200D89D1A /* EventCell+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventCell+Style.swift"; sourceTree = "<group>"; };
 		297007F12B699A8700F240B7 /* ZoomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImageView.swift; sourceTree = "<group>"; };
+		2979DB0E2B6EB1F100D9948F /* StrokeGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeGradientButton.swift; sourceTree = "<group>"; };
 		297C39E629AE062700C62979 /* QrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrViewController.swift; sourceTree = "<group>"; };
 		297E7138299FABF00053E32E /* DzienWydzialu-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DzienWydzialu-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		297E713B299FABF00053E32E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		29257A2629A103A700FD5C3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2979DB0E2B6EB1F100D9948F /* StrokeGradientButton.swift */,
 				29FDF72B29BFB699003D84E6 /* GradientButton.swift */,
 				297007F12B699A8700F240B7 /* ZoomImageView.swift */,
 				29A9600529C3A55200AEF86D /* tasks */,
@@ -503,6 +506,7 @@
 				295EECB42B49E1FE00D89D1A /* TaskCellCollection+Style.swift in Sources */,
 				291DA18D29A56DE00087E1D8 /* TasksViewController.swift in Sources */,
 				292501CF29C27FCD000C5DC7 /* TaskCreator.swift in Sources */,
+				2979DB0F2B6EB1F100D9948F /* StrokeGradientButton.swift in Sources */,
 				297E713C299FABF00053E32E /* AppDelegate.swift in Sources */,
 				297007F22B699A8700F240B7 /* ZoomImageView.swift in Sources */,
 				293CAF7229A7FC5000D75D48 /* TaskCell.swift in Sources */,

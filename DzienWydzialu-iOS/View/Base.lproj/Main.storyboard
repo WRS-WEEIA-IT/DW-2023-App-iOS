@@ -500,6 +500,19 @@
                                     <constraint firstItem="pqz-Mf-wvF" firstAttribute="top" secondItem="LRo-Qe-4Vo" secondAttribute="top" id="zO0-MK-Hkm"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaF-0C-cXd">
+                                <rect key="frame" x="315" y="64" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="ep5-Mi-VB1"/>
+                                    <constraint firstAttribute="height" constant="30" id="jsD-QD-n7V"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="envelope" catalog="system"/>
+                                <connections>
+                                    <action selector="mailButtonClicked:" destination="nQq-To-3F6" eventType="touchUpInside" id="uML-tW-BCR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tlY-Ud-SE8"/>
                         <color key="backgroundColor" name="backgroundColor"/>
@@ -510,6 +523,8 @@
                             <constraint firstItem="UdB-UE-CEC" firstAttribute="top" secondItem="B8C-NO-8v7" secondAttribute="top" constant="15" id="XKg-aU-BKN"/>
                             <constraint firstItem="UdB-UE-CEC" firstAttribute="centerX" secondItem="B8C-NO-8v7" secondAttribute="centerX" id="aUS-Dx-0vS"/>
                             <constraint firstItem="LRo-Qe-4Vo" firstAttribute="top" secondItem="UdB-UE-CEC" secondAttribute="bottom" constant="5" id="chM-oV-Ur9"/>
+                            <constraint firstItem="tlY-Ud-SE8" firstAttribute="trailing" secondItem="eaF-0C-cXd" secondAttribute="trailing" constant="20" id="ohf-GD-A2O"/>
+                            <constraint firstItem="eaF-0C-cXd" firstAttribute="centerY" secondItem="UdB-UE-CEC" secondAttribute="centerY" id="rhP-GK-ILJ"/>
                             <constraint firstItem="LRo-Qe-4Vo" firstAttribute="trailing" secondItem="tlY-Ud-SE8" secondAttribute="trailing" id="uDt-00-wRl"/>
                         </constraints>
                     </view>
@@ -545,6 +560,7 @@
     </scenes>
     <resources>
         <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>
+        <image name="envelope" catalog="system" width="128" height="93"/>
         <image name="events" width="24.666666030883789" height="20.333333969116211"/>
         <image name="home" width="20" height="20.333333969116211"/>
         <image name="info" width="20" height="20.333333969116211"/>

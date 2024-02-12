@@ -42,20 +42,14 @@ extension InfoViewController {
 //MARK: - Contact email
 
 extension InfoViewController: MFMailComposeViewControllerDelegate {
-    @IBAction func contactUsPressed(_ sender: Any) {
+    @IBAction func mailButtonClicked(_ sender: Any) {
         if MFMailComposeViewController.canSendMail() {
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self
             mailComposer.setToRecipients(["dzien.weeia@samorzad.p.lodz.pl"])
             mailComposer.setSubject("")
                     
-            if let fileUrl = Bundle.main.url(forResource: "document", withExtension: "pdf") {
-                if let fileData = try? Data(contentsOf: fileUrl) {
-                    mailComposer.addAttachmentData(fileData, mimeType: "application/pdf", fileName: "document.pdf")
-                }
-            }
-                    
-            present(mailComposer, animated: true, completion: nil)
+            present(mailComposer, animated: true)
         }
     }
     

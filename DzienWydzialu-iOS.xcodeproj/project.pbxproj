@@ -84,6 +84,7 @@
 		299EF2ED29C0FFBF00CAFA95 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299EF2EB29C0FFBF00CAFA95 /* AlertViewController.xib */; };
 		29A9601129C3A89D00AEF86D /* TaskAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A9600F29C3A89D00AEF86D /* TaskAlert.swift */; };
 		29BE35042B7AC29F00A43F05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29BE35032B7AC29F00A43F05 /* GoogleService-Info.plist */; };
+		29BE35062B7ACC3700A43F05 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE35052B7ACC3700A43F05 /* MapViewController.swift */; };
 		29FBA3FB29C48E30005A0EAC /* TaskAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29FBA3FA29C48E30005A0EAC /* TaskAlert.xib */; };
 		29FDF72C29BFB699003D84E6 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FDF72B29BFB699003D84E6 /* GradientButton.swift */; };
 /* End PBXBuildFile section */
@@ -141,6 +142,7 @@
 		299EF2EB29C0FFBF00CAFA95 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		29A9600F29C3A89D00AEF86D /* TaskAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAlert.swift; sourceTree = "<group>"; };
 		29BE35032B7AC29F00A43F05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		29BE35052B7ACC3700A43F05 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		29FBA3FA29C48E30005A0EAC /* TaskAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskAlert.xib; sourceTree = "<group>"; };
 		29FDF72B29BFB699003D84E6 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +215,7 @@
 				291DA18C29A56DE00087E1D8 /* TasksViewController.swift */,
 				293CAF6D29A6731E00D75D48 /* InfoViewController.swift */,
 				297C39E629AE062700C62979 /* QrViewController.swift */,
+				29BE35052B7ACC3700A43F05 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				291DA18D29A56DE00087E1D8 /* TasksViewController.swift in Sources */,
 				292501CF29C27FCD000C5DC7 /* TaskCreator.swift in Sources */,
 				2979DB0F2B6EB1F100D9948F /* StrokeGradientButton.swift in Sources */,
+				29BE35062B7ACC3700A43F05 /* MapViewController.swift in Sources */,
 				297E713C299FABF00053E32E /* AppDelegate.swift in Sources */,
 				297007F22B699A8700F240B7 /* ZoomImageView.swift in Sources */,
 				293CAF7229A7FC5000D75D48 /* TaskCell.swift in Sources */,

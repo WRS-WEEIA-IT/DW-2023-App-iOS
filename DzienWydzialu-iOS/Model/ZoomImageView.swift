@@ -11,7 +11,7 @@ class ZoomImageView: UIScrollView {
     private let imageView = UIImageView()
     
     @IBInspectable
-    private var imageName: String? {
+    var imageName: String? {
         didSet {
             guard let imageName = imageName else { return }
             imageView.image = UIImage(named: imageName)

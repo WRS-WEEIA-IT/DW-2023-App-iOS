@@ -187,36 +187,56 @@
             </objects>
             <point key="canvasLocation" x="951.20000000000005" y="-5.1724137931034484"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="C3l-03-8Zy">
             <objects>
-                <viewController id="1J2-Py-AAU" sceneMemberID="viewController">
+                <viewController id="1J2-Py-AAU" customClass="MapViewController" customModule="DzienWydzialu_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WEq-QM-tcA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Kjg-9J-7be" customClass="ZoomImageView" customModule="DzienWydzialu_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="47" width="375" height="708"/>
+                                <rect key="frame" x="0.0" y="107" width="375" height="648"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="imageName" value="EventCellBackground"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="imageName" value="groundFloor"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56d-1y-gBU">
+                                <rect key="frame" x="304" y="67" width="51" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="51" id="g9d-3h-cuf"/>
+                                    <constraint firstAttribute="height" constant="30" id="zXt-tP-JgN"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="square.2.layers.3d.bottom.filled" catalog="system"/>
+                                <connections>
+                                    <action selector="floorButtonClicked:" destination="1J2-Py-AAU" eventType="touchUpInside" id="dAr-mb-jLt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O0V-ir-PkV"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Kjg-9J-7be" firstAttribute="top" secondItem="O0V-ir-PkV" secondAttribute="top" id="ATD-yc-ivF"/>
+                            <constraint firstItem="56d-1y-gBU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="O0V-ir-PkV" secondAttribute="leading" symbolic="YES" id="4dC-4E-TrS"/>
+                            <constraint firstItem="56d-1y-gBU" firstAttribute="top" secondItem="WEq-QM-tcA" secondAttribute="topMargin" constant="20" id="8Iw-K6-hm5"/>
                             <constraint firstItem="Kjg-9J-7be" firstAttribute="centerX" secondItem="WEq-QM-tcA" secondAttribute="centerX" id="LdX-XG-RUA"/>
                             <constraint firstItem="Kjg-9J-7be" firstAttribute="leading" secondItem="O0V-ir-PkV" secondAttribute="leading" id="Q4o-9A-u8E"/>
                             <constraint firstItem="O0V-ir-PkV" firstAttribute="trailing" secondItem="Kjg-9J-7be" secondAttribute="trailing" id="iVe-XH-kej"/>
+                            <constraint firstItem="O0V-ir-PkV" firstAttribute="trailing" secondItem="56d-1y-gBU" secondAttribute="trailing" constant="20" id="ivb-3k-X2w"/>
+                            <constraint firstItem="Kjg-9J-7be" firstAttribute="top" secondItem="56d-1y-gBU" secondAttribute="bottom" constant="10" id="oNr-xG-blC"/>
                             <constraint firstItem="O0V-ir-PkV" firstAttribute="bottom" secondItem="Kjg-9J-7be" secondAttribute="bottom" id="y40-Cr-9yA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="floorButton" destination="56d-1y-gBU" id="5qn-Rt-x5n"/>
+                        <outlet property="zoomImageView" destination="Kjg-9J-7be" id="yJd-8c-Bkv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lQy-xH-52F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="-703"/>
+            <point key="canvasLocation" x="1760.8" y="-703.44827586206895"/>
         </scene>
         <!--Events View Controller-->
         <scene sceneID="A0s-gP-w3Y">
@@ -567,6 +587,7 @@
         <image name="launchScreenImage" width="375" height="420"/>
         <image name="mapIcon" width="17.666666030883789" height="15.666666984558105"/>
         <image name="qr" width="49.333332061767578" height="49"/>
+        <image name="square.2.layers.3d.bottom.filled" catalog="system" width="128" height="117"/>
         <image name="tasks" width="20" height="20.333333969116211"/>
         <image name="weeia_settings" width="352" height="80"/>
         <image name="wrs_weeia_settings" width="241" height="240"/>

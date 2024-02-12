@@ -41,17 +41,17 @@ struct K {
         static let timeEnd = "timeEnd"
         static let partner = "partner"
         static let title = "title"
-        static let imageSource = "imageSource"
-        static let hall = "hall"
+        static let imageSrc = "imageSrc"
+        static let room = "room"
     }
     
     struct Tasks {
         static let title = "title"
-        static let imageSource = "imageSource"
+        static let imageSrc = "imageSrc"
         static let description = "description"
         static let points = "points"
         static let qrCode = "qrCode"
-        static let taskNumber = "taskNumber"
+        static let taskId = "taskId"
     }
     
     struct TabBarIndex {

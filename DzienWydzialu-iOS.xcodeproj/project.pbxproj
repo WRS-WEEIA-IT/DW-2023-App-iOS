@@ -78,12 +78,12 @@
 		297E7140299FABF00053E32E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E713F299FABF00053E32E /* HomeViewController.swift */; };
 		297E7143299FABF00053E32E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297E7141299FABF00053E32E /* Main.storyboard */; };
 		297E7148299FABF10053E32E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297E7146299FABF10053E32E /* LaunchScreen.storyboard */; };
-		297E7150299FAD800053E32E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 297E714F299FAD800053E32E /* GoogleService-Info.plist */; };
 		299EE35329BC9CC900DD3583 /* TaskCellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299EE35229BC9CC900DD3583 /* TaskCellCollection.swift */; };
 		299EE35729BC9E0D00DD3583 /* TaskCellCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299EE35629BC9E0D00DD3583 /* TaskCellCollection.xib */; };
 		299EF2EC29C0FFBF00CAFA95 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299EF2EA29C0FFBF00CAFA95 /* AlertViewController.swift */; };
 		299EF2ED29C0FFBF00CAFA95 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299EF2EB29C0FFBF00CAFA95 /* AlertViewController.xib */; };
 		29A9601129C3A89D00AEF86D /* TaskAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A9600F29C3A89D00AEF86D /* TaskAlert.swift */; };
+		29BE35042B7AC29F00A43F05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29BE35032B7AC29F00A43F05 /* GoogleService-Info.plist */; };
 		29FBA3FB29C48E30005A0EAC /* TaskAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29FBA3FA29C48E30005A0EAC /* TaskAlert.xib */; };
 		29FDF72C29BFB699003D84E6 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FDF72B29BFB699003D84E6 /* GradientButton.swift */; };
 /* End PBXBuildFile section */
@@ -135,12 +135,12 @@
 		297E7142299FABF00053E32E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		297E7147299FABF10053E32E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		297E7149299FABF10053E32E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		297E714F299FAD800053E32E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		299EE35229BC9CC900DD3583 /* TaskCellCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellCollection.swift; sourceTree = "<group>"; };
 		299EE35629BC9E0D00DD3583 /* TaskCellCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCellCollection.xib; sourceTree = "<group>"; };
 		299EF2EA29C0FFBF00CAFA95 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		299EF2EB29C0FFBF00CAFA95 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		29A9600F29C3A89D00AEF86D /* TaskAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAlert.swift; sourceTree = "<group>"; };
+		29BE35032B7AC29F00A43F05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29FBA3FA29C48E30005A0EAC /* TaskAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskAlert.xib; sourceTree = "<group>"; };
 		29FDF72B29BFB699003D84E6 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -280,7 +280,7 @@
 				29257A2829A103B600FD5C3A /* Controller */,
 				29257A2929A1056B00FD5C3A /* Supporting Files */,
 				297E7149299FABF10053E32E /* Info.plist */,
-				297E714F299FAD800053E32E /* GoogleService-Info.plist */,
+				29BE35032B7AC29F00A43F05 /* GoogleService-Info.plist */,
 			);
 			path = "DzienWydzialu-iOS";
 			sourceTree = "<group>";
@@ -473,8 +473,8 @@
 				293CAF9B29A81A8900D75D48 /* Montserrat-LightItalic.ttf in Resources */,
 				293CAF9929A81A8900D75D48 /* Montserrat-VariableFont_wght.ttf in Resources */,
 				299EF2ED29C0FFBF00CAFA95 /* AlertViewController.xib in Resources */,
-				297E7150299FAD800053E32E /* GoogleService-Info.plist in Resources */,
 				29FBA3FB29C48E30005A0EAC /* TaskAlert.xib in Resources */,
+				29BE35042B7AC29F00A43F05 /* GoogleService-Info.plist in Resources */,
 				293CAF8C29A81A8900D75D48 /* Montserrat-ExtraBold.ttf in Resources */,
 				293CAF8D29A81A8900D75D48 /* Montserrat-ExtraLight.ttf in Resources */,
 				29257A2B29A10D6D00FD5C3A /* Assets.xcassets in Resources */,

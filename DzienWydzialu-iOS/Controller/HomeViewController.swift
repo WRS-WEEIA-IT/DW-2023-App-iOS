@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     
     let db = Firestore.firestore()
         
-    var eventsArray = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", hall: "")]
+    var eventsArray = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", room: "")]
     var tasksArray: [Tasks] = [Tasks(title: "No tasks available", description: "Wait for incoming event!", points: 0, imageSource: "", qrCode: "", numberOfTask: -1, done: false)]
     var tasksImages: [String: UIImage] = [:]
     
@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     private func getNewId() -> String {
         let timeStamp = Timestamp()
-        let hashValue = String(timeStamp.nanoseconds.hashValue)
+        let hashValue = String(abs(timeStamp.nanoseconds.hashValue))
         
         return hashValue
     }
@@ -158,7 +158,7 @@ extension HomeViewController : UITableViewDataSource {
             cell.hourLabel.text = event.time
             cell.eventSubject.text = event.title
             cell.eventType.text = event.eventType
-            cell.place.text = "Sala \(event.hall)"
+            cell.place.text = "Sala \(event.room)"
         }
         
         return cell

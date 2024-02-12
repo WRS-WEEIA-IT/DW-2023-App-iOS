@@ -28,7 +28,7 @@ class EventCell: UITableViewCell {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSeFIvOGhhrMT6bvAaxosJENssDEa4kW-4ZJr0LpDQsLagVoNQ/closedform") {
+        if let url = URL(string: "https://forms.gle/XjRZccrbxortTEiU6") {
                 UIApplication.shared.open(url)
         }
     }

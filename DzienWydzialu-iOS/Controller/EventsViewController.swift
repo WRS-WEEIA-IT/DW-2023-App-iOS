@@ -13,7 +13,7 @@ class EventsViewController: UIViewController {
     @IBOutlet weak var mapButton: UIButton!
     
     let db = Firestore.firestore()
-    var eventsArray: [Events] = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", hall: "")]
+    var eventsArray: [Events] = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", room: "")]
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,7 @@ extension EventsViewController : UITableViewDataSource {
         cell.hourLabel.text = event.time
         cell.eventSubject.text = event.title
         cell.eventType.text = event.eventType
-        cell.place.text = "Sala \(event.hall)"
+        cell.place.text = "Sala \(event.room)"
         
         return cell
     }

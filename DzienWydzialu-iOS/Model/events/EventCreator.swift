@@ -12,13 +12,13 @@ class EventCreator {
     static func createEvent(documentData: [String: Any], collectionType: String) -> Events? {
         guard let partner = documentData[K.Events.partner] as? String else { return nil }
         guard let title = documentData[K.Events.title] as? String else { return nil }
-        guard let imageSource = documentData[K.Events.imageSource] as? String else { return nil }
+        guard let imageSource = documentData[K.Events.imageSrc] as? String else { return nil }
         guard let timeStart = documentData[K.Events.timeStart] as? Timestamp else { return nil }
         guard let timeEnd = documentData[K.Events.timeEnd] as? Timestamp else { return nil }
-        guard let hall = documentData[K.Events.hall] as? String else { return nil }
+        guard let room = documentData[K.Events.room] as? String else { return nil }
         
         let time = getTimeFormat(timeStart: timeStart, timeEnd: timeEnd)
-        var eventType = collectionType == K.lectures ? "Lecture" : "Workshop"
+        let eventType = collectionType == K.lectures ? "Lecture" : "Workshop"
 
         let newEvent = Events(
             eventType: eventType,
@@ -26,7 +26,7 @@ class EventCreator {
             title: title,
             partner: partner,
             imageSource: imageSource,
-            hall: hall
+            room: room
         )
         return newEvent
     }

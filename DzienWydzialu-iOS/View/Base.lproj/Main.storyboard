@@ -363,10 +363,10 @@
                                 <rect key="frame" x="0.0" y="148" width="375" height="571"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqz-Mf-wvF" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="780"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="2Fn-aO-btg">
-                                                <rect key="frame" x="20" y="0.0" width="335" height="750"/>
+                                                <rect key="frame" x="20" y="0.0" width="335" height="450"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNA-wu-yfb">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="22"/>
@@ -375,7 +375,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BQQ-DY-4Kt" userLabel="Top Stack View">
-                                                        <rect key="frame" x="0.0" y="58.666666666666657" width="335" height="238.99999999999997"/>
+                                                        <rect key="frame" x="0.0" y="55" width="335" height="239"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP ID: #1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCi-8a-raP">
                                                                 <rect key="frame" x="120" y="0.0" width="95" height="17.333333333333332"/>
@@ -390,13 +390,13 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules are simple" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-8H-IKD">
-                                                                <rect key="frame" x="102.66666666666667" y="68.333333333333343" width="129.66666666666663" height="18.333333333333329"/>
+                                                                <rect key="frame" x="102.66666666666667" y="68.333333333333314" width="129.66666666666663" height="18.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="w5y-1V-b9p">
-                                                                <rect key="frame" x="0.0" y="101.66666666666666" width="335" height="87.333333333333343"/>
+                                                                <rect key="frame" x="0.0" y="101.66666666666669" width="335" height="87.333333333333314"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collect points scanning qr codes during Dzień Wydziału on 31st March 2024" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubw-wf-tPw">
                                                                         <rect key="frame" x="27.666666666666657" y="0.0" width="280" height="29.333333333333332"/>
@@ -405,13 +405,13 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will inform students who have the most points after the event in the info section" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6f-qZ-skU">
-                                                                        <rect key="frame" x="0.0" y="36.333333333333371" width="335" height="29.333333333333329"/>
+                                                                        <rect key="frame" x="0.0" y="36.333333333333314" width="335" height="29.333333333333329"/>
                                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple is not a sponsor of any awards" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brb-C9-nIU">
-                                                                        <rect key="frame" x="58.333333333333329" y="72.666666666666686" width="218.33333333333337" height="14.666666666666671"/>
+                                                                        <rect key="frame" x="58.333333333333329" y="72.666666666666629" width="218.33333333333337" height="14.666666666666671"/>
                                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -419,7 +419,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF1-mH-a9O" customClass="StrokeGradientButton" customModule="DzienWydzialu_iOS" customModuleProvider="target">
-                                                                <rect key="frame" x="92.666666666666686" y="204.00000000000003" width="150" height="35"/>
+                                                                <rect key="frame" x="92.666666666666686" y="204" width="150" height="35"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="1xc-cw-s4H"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="nDW-la-vig"/>
@@ -432,7 +432,7 @@
                                                                 </state>
                                                             </button>
                                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ryd-XF-orA">
-                                                                <rect key="frame" x="92.333333333333329" y="239.00000000000003" width="150.66666666666669" height="5"/>
+                                                                <rect key="frame" x="92.333333333333329" y="239" width="150.66666666666669" height="5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU WON AN AWARD!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIR-fz-8QD">
                                                                         <rect key="frame" x="0.0" y="0.0" width="150.66666666666666" height="0.0"/>
@@ -451,13 +451,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organizers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5x4-gj-FRn">
-                                                        <rect key="frame" x="123.33333333333334" y="334.33333333333331" width="88.666666666666657" height="19.666666666666686"/>
+                                                        <rect key="frame" x="123.33333333333334" y="327.33333333333331" width="88.666666666666657" height="19.666666666666686"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9uP-fQ-0rC" userLabel="OrganizersLogoStack">
-                                                        <rect key="frame" x="37.666666666666657" y="390.66666666666663" width="260" height="70"/>
+                                                        <rect key="frame" x="37.666666666666657" y="380" width="260" height="70"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weeia_settings" translatesAutoresizingMaskIntoConstraints="NO" id="eck-3I-OgL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
@@ -476,61 +476,9 @@
                                                             <constraint firstAttribute="height" constant="70" id="h1E-bp-BFl"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strategic partners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaw-im-cJa">
-                                                        <rect key="frame" x="94.333333333333329" y="497.33333333333337" width="146.33333333333337" height="19.666666666666629"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="xuf-96-5jX" userLabel="PartnersLogoStack">
-                                                        <rect key="frame" x="50" y="553.66666666666663" width="235" height="80"/>
-                                                        <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zf_logo" translatesAutoresizingMaskIntoConstraints="NO" id="UKu-gq-8Mq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="80" id="u8q-AC-EPh"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commerzBank_logo" translatesAutoresizingMaskIntoConstraints="NO" id="E2j-bK-9r2">
-                                                                <rect key="frame" x="115" y="0.0" width="120" height="80"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="120" id="TYe-AX-LPy"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="arN-yS-JBT"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7yU-Kg-t38" userLabel="Contact Stack View">
-                                                        <rect key="frame" x="62.666666666666686" y="670.33333333333337" width="210" height="79.666666666666629"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some questions?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKR-IK-hIM">
-                                                                <rect key="frame" x="35" y="0.0" width="140" height="19.666666666666668"/>
-                                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                                                <color key="textColor" name="reversedBackgroundColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awb-vm-jcS" customClass="GradientButton" customModule="DzienWydzialu_iOS" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="34.666666666666629" width="210" height="45"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="T1Q-Ak-Kwq"/>
-                                                                    <constraint firstAttribute="height" constant="45" id="bxQ-09-TAw"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" title="CONTACT US">
-                                                                    <color key="titleColor" name="reversedBackgroundColor"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="contactUsPressed:" destination="nQq-To-3F6" eventType="touchUpInside" id="JAK-58-YhA"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="750" id="J7p-UX-IAT"/>
+                                                    <constraint firstAttribute="height" constant="450" id="J7p-UX-IAT"/>
                                                     <constraint firstItem="dNA-wu-yfb" firstAttribute="leading" secondItem="2Fn-aO-btg" secondAttribute="leading" id="poC-4e-Fkg"/>
                                                 </constraints>
                                             </stackView>
@@ -540,7 +488,7 @@
                                             <constraint firstAttribute="trailing" secondItem="2Fn-aO-btg" secondAttribute="trailing" constant="20" id="FkP-uJ-BEH"/>
                                             <constraint firstItem="2Fn-aO-btg" firstAttribute="top" secondItem="pqz-Mf-wvF" secondAttribute="top" id="bNZ-Sz-ga6"/>
                                             <constraint firstItem="2Fn-aO-btg" firstAttribute="leading" secondItem="pqz-Mf-wvF" secondAttribute="leading" constant="20" id="jQ1-n8-Psn"/>
-                                            <constraint firstAttribute="height" constant="780" id="ya2-qb-evv"/>
+                                            <constraint firstAttribute="height" constant="500" id="ya2-qb-evv"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -596,8 +544,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowtriangle.right.fill" catalog="system" width="32" height="32"/>
-        <image name="commerzBank_logo" width="2400" height="1600"/>
+        <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>
         <image name="events" width="24.666666030883789" height="20.333333969116211"/>
         <image name="home" width="20" height="20.333333969116211"/>
         <image name="info" width="20" height="20.333333969116211"/>
@@ -607,7 +554,6 @@
         <image name="tasks" width="20" height="20.333333969116211"/>
         <image name="weeia_settings" width="352" height="80"/>
         <image name="wrs_weeia_settings" width="241" height="240"/>
-        <image name="zf_logo" width="1182" height="1182"/>
         <namedColor name="backgroundColor">
             <color red="0.050999999046325684" green="0.050999999046325684" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

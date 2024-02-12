@@ -11,10 +11,10 @@ class TaskCreator {
     static func createTask(documentData: [String: Any]) -> Tasks? {
         guard let title = documentData[K.Tasks.title] as? String else { return nil }
         guard let description = documentData[K.Tasks.description] as? String else { return nil }
-        guard let imageSource = documentData[K.Tasks.imageSource] as? String else { return nil }
+        guard let imageSource = documentData[K.Tasks.imageSrc] as? String else { return nil }
         guard let points = documentData[K.Tasks.points] as? Int else { return nil }
         guard let qrCode = documentData[K.Tasks.qrCode] as? String else { return nil }
-        guard let taskNumber = documentData[K.Tasks.taskNumber] as? Int else { return nil }
+        guard let taskId = documentData[K.Tasks.taskId] as? Int else { return nil }
         
         let done = checkTaskWithLocal(qrcode: qrCode, newPoints: points)
         let newTask = Tasks(
@@ -23,7 +23,7 @@ class TaskCreator {
             points: points,
             imageSource: imageSource,
             qrCode: qrCode,
-            numberOfTask: taskNumber,
+            numberOfTask: taskId,
             done: done
         )
         return newTask

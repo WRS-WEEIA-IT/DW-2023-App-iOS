@@ -7,10 +7,13 @@
 
 import UIKit
 import FirebaseFirestore
+import ImageSlideshow
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var taskCollectionView: UICollectionView!
+    @IBOutlet weak var imageSlideshow: ImageSlideshow!
+    @IBOutlet weak var modalBackgroundView: UIView!
     
     let db = Firestore.firestore()
         
@@ -20,6 +23,27 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        modalBackgroundView.layer.cornerRadius = 25
+        imageSlideshow.backgroundColor = UIColor(named: "backgroundColor")
+        imageSlideshow.slideshowInterval = 3
+        imageSlideshow.pageIndicator = nil
+        imageSlideshow.isUserInteractionEnabled = false
+        let gradient = CellsStyles.getBackgroundGradientView()
+        gradient.layer.opacity = 0.75
+//        imageSlideshow.layer.opacity = 0.75
+        imageSlideshow.contentScaleMode = .scaleAspectFill
+        imageSlideshow.addSubview(gradient)
+//        imageSlideshow.layer.cornerCurve = .circular
+//        imageSlideshow.layer.cornerRadius = 15
+        imageSlideshow.setImageInputs([
+            ImageSource(image: UIImage(named: "homeImage1")!),
+            ImageSource(image: UIImage(named: "homeImage2")!),
+            ImageSource(image: UIImage(named: "homeImage3")!),
+            ImageSource(image: UIImage(named: "homeImage4")!),
+            ImageSource(image: UIImage(named: "homeImage5")!),
+            ImageSource(image: UIImage(named: "homeImage6")!),
+        ])
         
         eventTableView.dataSource = self
         eventTableView.register(UINib(nibName: K.eventNibName, bundle: nil), forCellReuseIdentifier: K.eventCellIdentifier)
@@ -34,7 +58,6 @@ class HomeViewController: UIViewController {
         checkWinner()
         _ = getNewId()
     }
-    
     
     @IBAction func seeEventsButtonClicked(_ sender: UIButton) {
         self.tabBarController?.selectedIndex = K.TabBarIndex.events

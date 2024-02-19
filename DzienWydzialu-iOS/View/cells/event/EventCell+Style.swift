@@ -11,7 +11,20 @@ extension EventCell {
     func styleCell() {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0))
         backgroundImage.layer.cornerRadius = backgroundImage.frame.size.height / 8
+        hideComponents()
         applyGradient()
+    }
+    
+    private func hideComponents() {
+        dateLabel.isHidden = isDefault
+        signUpButton.isHidden = isDefault
+        hideButtonInLectures()
+    }
+    
+    private func hideButtonInLectures() {
+        if eventType.text == "Lecture" {
+            signUpButton.isHidden = true
+        }
     }
     
     private func applyGradient() {

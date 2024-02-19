@@ -19,6 +19,7 @@ class TaskCellCollection : UICollectionViewCell {
     @IBOutlet weak var infoLabel: UILabel!
     
     var isDone: Bool = false
+    var hideQrText: Bool = false
     
     override class func awakeFromNib() {
         super.awakeFromNib()

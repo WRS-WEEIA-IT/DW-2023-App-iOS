@@ -16,9 +16,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="nJd-0I-4q3">
-                                <rect key="frame" x="0.0" y="249" width="375" height="314"/>
+                                <rect key="frame" x="63.666666666666657" y="368.66666666666669" width="247.99999999999997" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="314" id="acM-uO-0s9"/>
+                                    <constraint firstAttribute="height" constant="75" id="acM-uO-0s9"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchScreenImage" width="375" height="420"/>
+        <image name="launchScreenImage" width="248" height="105"/>
     </resources>
 </document>

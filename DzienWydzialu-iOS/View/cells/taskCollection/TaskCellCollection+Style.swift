@@ -9,6 +9,7 @@ import UIKit
 
 extension TaskCellCollection {
     func styleCell() {
+        infoLabel.isHidden = hideQrText
         styleBackgroundImage()
         applyGradient()
         setStatusStyle()

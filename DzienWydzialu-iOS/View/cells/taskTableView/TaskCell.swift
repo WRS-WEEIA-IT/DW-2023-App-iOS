@@ -19,6 +19,7 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var infoLabel: UILabel!
     
     var isDone: Bool = false
+    var hideQrText: Bool = false
     
     override func layoutSubviews() {
         super.layoutSubviews()

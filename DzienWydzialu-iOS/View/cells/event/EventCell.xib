@@ -33,8 +33,8 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventCellBackground" translatesAutoresizingMaskIntoConstraints="NO" id="R4d-b3-EE7">
                         <rect key="frame" x="0.0" y="0.0" width="458" height="179"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31 marca 2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6T-QE-gWr">
-                        <rect key="frame" x="361" y="20" width="72" height="12.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 marca 2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6T-QE-gWr">
+                        <rect key="frame" x="358" y="20" width="75" height="12.5"/>
                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="10"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -107,6 +107,7 @@
             <color key="backgroundColor" name="backgroundColor"/>
             <connections>
                 <outlet property="backgroundImage" destination="R4d-b3-EE7" id="kHV-p6-EQR"/>
+                <outlet property="dateLabel" destination="u6T-QE-gWr" id="VS5-RA-Irq"/>
                 <outlet property="eventSubject" destination="hfG-uq-2dT" id="xfT-CF-q0a"/>
                 <outlet property="eventType" destination="YgY-P2-xjD" id="8kL-Si-att"/>
                 <outlet property="hourLabel" destination="uZZ-zC-Q2b" id="gKc-WC-C8J"/>

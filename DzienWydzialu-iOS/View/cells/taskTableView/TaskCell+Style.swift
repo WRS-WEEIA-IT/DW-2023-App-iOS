@@ -10,6 +10,7 @@ import UIKit
 extension TaskCell {
     func styleCell() {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0))
+        infoLabel.isHidden = hideQrText
         styleBackgroundImage()
         applyGradient()
         setStatusStyle()

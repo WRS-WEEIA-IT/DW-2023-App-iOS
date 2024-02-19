@@ -55,7 +55,12 @@ extension EventsViewController : UITableViewDataSource {
         cell.hourLabel.text = event.time
         cell.eventSubject.text = event.title
         cell.eventType.text = event.eventType
-        cell.place.text = "Sala \(event.room)"
+        if event.room.isEmpty {
+            cell.place.text = ""
+            cell.isDefault = true
+        } else {
+            cell.place.text = "Sala \(event.room)"
+        }
         
         return cell
     }

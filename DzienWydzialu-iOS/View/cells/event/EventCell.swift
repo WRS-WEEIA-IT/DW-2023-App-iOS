@@ -16,6 +16,9 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventSubject: UILabel!
     @IBOutlet weak var place: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    var isDefault: Bool = false
     
     override class func awakeFromNib() {
         super.awakeFromNib()

@@ -100,6 +100,7 @@ extension TasksViewController : UITableViewDataSource {
         taskCell.descriptionLabel.text = task.description
         taskCell.taskNumberLabel.text = nil
         taskCell.pointsButton.setTitle("NO TASKS", for: .normal)
+        taskCell.hideQrText = true
     }
 }
 

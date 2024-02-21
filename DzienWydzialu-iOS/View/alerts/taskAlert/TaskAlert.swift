@@ -18,7 +18,7 @@ class TaskAlert: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pointsButton: GradientButton!
     
-    var parentVC = UIViewController()
+    weak var parentVC: UIViewController?
     var task: Tasks?
     
     init() {
@@ -57,6 +57,10 @@ class TaskAlert: UIViewController {
             self.descriptionLabel.text = newTask.description
             self.pointsButton.titleLabel?.text = "\(newTask.points) POINTS"
             self.backgroundImage.layer.cornerRadius = 25
+            applyGradient()
+            if let image = UIImage(named: newTask.imageSource) {
+                self.backgroundImage.image = image
+            }
         }
     }
     
@@ -80,10 +84,19 @@ class TaskAlert: UIViewController {
             self.dismiss(animated: false)
             self.removeFromParent()
         }
-        parentVC.dismiss(animated: true)
+        parentVC?.dismiss(animated: true)
     }
     
     @IBAction func okPressed(_ sender: GradientButton) {
         hide()
+    }
+    
+    private func applyGradient() {
+        for subview in backgroundImage.subviews {
+            subview.removeFromSuperview()
+        }
+        
+        let gradientView = CellsStyles.getBackgroundGradientView()
+        backgroundImage.addSubview(gradientView)
     }
 }

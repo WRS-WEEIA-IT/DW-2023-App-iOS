@@ -23,7 +23,7 @@ class AlertViewController: UIViewController {
     @IBOutlet weak var okRedButton: UIButton!
     @IBOutlet weak var okYellowButton: UIButton!
     
-    var parentVC = UIViewController()
+    weak var parentVC: UIViewController?
     
     var isWrong: Bool = true
     var isWinner: Bool = false
@@ -141,7 +141,7 @@ class AlertViewController: UIViewController {
             self.removeFromParent()
         }
         if !homeAlert {
-            parentVC.dismiss(animated: true)
+            parentVC?.dismiss(animated: true)
         }
     }
     

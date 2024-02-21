@@ -24,6 +24,7 @@ class TasksViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         update()
     }
 }
@@ -32,10 +33,11 @@ class TasksViewController: UIViewController {
 
 extension TasksViewController {
     func update() {
-        let points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
-        pointsLabel.attributedText = getAttributedInfoText(points: points)
-        
         loadTasks()
+        DispatchQueue.main.async {
+            let points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
+            self.pointsLabel.attributedText = self.getAttributedInfoText(points: points)
+        }
         if self.tasksArray.count > 1 {
             self.tasksArray.remove(at: 0)
         }
@@ -92,6 +94,7 @@ extension TasksViewController : UITableViewDataSource {
         taskCell.taskNumberLabel.text = "Task \(task.numberOfTask)"
         taskCell.pointsButton.setTitle("\(task.points) POINTS", for: .normal)
         taskCell.isDone = task.done
+        taskCell.hideQrText = false
     }
     
     private func setDefaultTask(taskCell: inout TaskCell, task: Tasks) {
@@ -108,17 +111,16 @@ extension TasksViewController : UITableViewDataSource {
 
 extension TasksViewController {
     func loadTasks() {
-        db.collection("tasks").addSnapshotListener { snapshot , error in
-            if error != nil { return }
-            guard let snapshotDocuments = snapshot?.documents else { return }
-            self.tasksArray = []
+        DispatchQueue.main.async {
+            self.db.collection("tasks").addSnapshotListener { snapshot , error in
+                if error != nil { return }
+                guard let snapshotDocuments = snapshot?.documents else { return }
+                self.tasksArray = []
 
-            for document in snapshotDocuments {
-                let documentData = document.data()
-                if let newTask = TaskCreator.createTask(documentData: documentData) {
-                    self.tasksArray.append(newTask)
-
-                    DispatchQueue.main.async {
+                for document in snapshotDocuments {
+                    let documentData = document.data()
+                    if let newTask = TaskCreator.createTask(documentData: documentData) {
+                        self.tasksArray.append(newTask)
                         self.tasksTableView.reloadData()
                     }
                 }

@@ -158,6 +158,7 @@ class QrViewController: UIViewController {
     @objc func dismissViewController() {
         dismiss(animated: true, completion: nil)
         self.tabBarController?.selectedIndex = K.TabBarIndex.tasks
+        self.tabBarController?.selectedViewController?.viewDidLoad()
     }
 }
 
@@ -171,23 +172,27 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
             guard let stringValue = readableObject.stringValue else { return }
             manageCode(codeString: stringValue)
+            self.dismissViewController()
         }
     }
     
     func manageCode(codeString: String) {
         var codeArray: [String] = []
-        guard let currentCodeArray = K.defaults.sharedUserDefaults.stringArray(forKey: K.defaults.codeArray) else { return
-        }
-        if currentCodeArray.contains(codeString) {
-            self.errorVibration()
-            let alert = AlertViewController()
-            alert.parentVC = self
-            alert.isWrong = false
-            alert.homeAlert = false
-            alert.appear(sender: self)
-            return
-        } else {
-            codeArray = currentCodeArray
+        if let currentCodeArray = K.defaults.sharedUserDefaults.stringArray(forKey: K.defaults.codeArray) {
+            if currentCodeArray.contains(codeString) {
+                DispatchQueue.main.async {
+                    self.errorVibration()
+                    let alert = AlertViewController()
+                    alert.parentVC = self
+                    alert.isWrong = false
+                    alert.homeAlert = false
+                    alert.appear(sender: self)
+                    return
+                }
+                return
+            } else {
+                codeArray = currentCodeArray
+            }
         }
         
         var taskFound = false
@@ -207,7 +212,7 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                         K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
                         self.foundVibration()
                         
-                        self.updatePoints(task: newTask)
+                        self.updatePoints(newPoints: newTask.points)
                         
                         let alert = TaskAlert()
                         alert.parentVC = self
@@ -217,16 +222,16 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
                     }
                 }
                 if !taskFound {
+                    self.errorVibration()
                     let alert = AlertViewController()
                     alert.parentVC = self
                     alert.isWrong = true
                     alert.homeAlert = false
                     alert.appear(sender: self)
+                    return
                 }
             }
         }
-        
-        self.errorVibration()
         K.defaults.sharedUserDefaults.set(codeArray, forKey: K.defaults.codeArray)
     }
     
@@ -243,12 +248,14 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
-    func updatePoints(task: Tasks) {
-        var points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
-        points += task.points
-        K.defaults.sharedUserDefaults.set(points, forKey: K.defaults.points)
-        if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
-            self.db.collection("users").document(id).updateData(["points" : points, "time" : Timestamp.init()])
+    func updatePoints(newPoints: Int) {
+        DispatchQueue.main.async {
+            var points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
+            points += newPoints
+            K.defaults.sharedUserDefaults.set(points, forKey: K.defaults.points)
+            if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
+                self.db.collection("users").document(id).updateData(["points" : points, "time" : Timestamp.init()])
+            }
         }
     }
 }

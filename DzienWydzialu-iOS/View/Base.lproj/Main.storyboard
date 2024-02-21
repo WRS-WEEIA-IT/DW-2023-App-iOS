@@ -234,17 +234,27 @@
                                     <action selector="floorButtonClicked:" destination="1J2-Py-AAU" eventType="touchUpInside" id="dAr-mb-jLt"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pqR-KX-zSI">
+                                <rect key="frame" x="172.66666666666666" y="25.333333333333329" width="30" height="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DfY-u4-N40"/>
+                                    <constraint firstAttribute="width" constant="30" id="T0N-GJ-GbX"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O0V-ir-PkV"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="56d-1y-gBU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="O0V-ir-PkV" secondAttribute="leading" symbolic="YES" id="4dC-4E-TrS"/>
                             <constraint firstItem="56d-1y-gBU" firstAttribute="top" secondItem="WEq-QM-tcA" secondAttribute="topMargin" constant="20" id="8Iw-K6-hm5"/>
+                            <constraint firstItem="pqR-KX-zSI" firstAttribute="top" secondItem="O0V-ir-PkV" secondAttribute="top" constant="20" id="EjQ-f8-Z2q"/>
                             <constraint firstItem="Kjg-9J-7be" firstAttribute="centerX" secondItem="WEq-QM-tcA" secondAttribute="centerX" id="LdX-XG-RUA"/>
                             <constraint firstItem="Kjg-9J-7be" firstAttribute="leading" secondItem="O0V-ir-PkV" secondAttribute="leading" id="Q4o-9A-u8E"/>
                             <constraint firstItem="O0V-ir-PkV" firstAttribute="trailing" secondItem="Kjg-9J-7be" secondAttribute="trailing" id="iVe-XH-kej"/>
                             <constraint firstItem="O0V-ir-PkV" firstAttribute="trailing" secondItem="56d-1y-gBU" secondAttribute="trailing" constant="20" id="ivb-3k-X2w"/>
                             <constraint firstItem="Kjg-9J-7be" firstAttribute="top" secondItem="56d-1y-gBU" secondAttribute="bottom" constant="10" id="oNr-xG-blC"/>
+                            <constraint firstItem="pqR-KX-zSI" firstAttribute="centerX" secondItem="WEq-QM-tcA" secondAttribute="centerX" id="xum-gg-NEN"/>
                             <constraint firstItem="O0V-ir-PkV" firstAttribute="bottom" secondItem="Kjg-9J-7be" secondAttribute="bottom" id="y40-Cr-9yA"/>
                         </constraints>
                     </view>
@@ -339,7 +349,7 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FO1-fw-vkL">
-                                <rect key="frame" x="20" y="203.66666666666669" width="335" height="525.33333333333326"/>
+                                <rect key="frame" x="20" y="203" width="335" height="526"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJU-Tm-m4Z">
@@ -349,7 +359,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently you have 0 points!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9N-ve-49r">
-                                <rect key="frame" x="102.33333333333333" y="179" width="170.66666666666669" height="14.666666666666657"/>
+                                <rect key="frame" x="102.33333333333333" y="179" width="170.66666666666669" height="14"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -599,6 +609,7 @@
     </scenes>
     <resources>
         <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>
+        <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="envelope" catalog="system" width="128" height="85"/>
         <image name="events" width="24.666666030883789" height="20.333333969116211"/>
         <image name="home" width="20" height="20.333333969116211"/>
@@ -623,10 +634,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

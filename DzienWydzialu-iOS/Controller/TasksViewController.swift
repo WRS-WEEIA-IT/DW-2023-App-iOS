@@ -122,6 +122,7 @@ extension TasksViewController {
                     if let newTask = TaskCreator.createTask(documentData: documentData) {
                         self.tasksArray.append(newTask)
                         self.tasksTableView.reloadData()
+                        self.update()
                     }
                 }
             }

@@ -158,7 +158,6 @@ class QrViewController: UIViewController {
     @objc func dismissViewController() {
         dismiss(animated: true, completion: nil)
         self.tabBarController?.selectedIndex = K.TabBarIndex.tasks
-        self.tabBarController?.selectedViewController?.viewDidLoad()
     }
 }
 

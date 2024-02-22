@@ -13,7 +13,7 @@ class EventsViewController: UIViewController {
     @IBOutlet weak var mapButton: UIButton!
     
     let db = Firestore.firestore()
-    var eventsArray: [Events] = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", room: "")]
+    var eventsArray = [Events]()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,11 +70,16 @@ extension EventsViewController : UITableViewDataSource {
 
 extension EventsViewController {
     func loadAllEvents() {
-        self.eventsArray = []
+        self.eventsArray = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", room: "")]
         loadEvent(collectionType: K.lectures)
         loadEvent(collectionType: K.workshops)
-        if self.eventsArray.count > 1 {
-            self.eventsArray.remove(at: 0)
+    }
+    
+    private func manageDefaultEvent() {
+        if eventsArray.count > 1 {
+            eventsArray.removeAll { event in
+                event.title == "No events available"
+            }
         }
     }
 
@@ -88,11 +93,9 @@ extension EventsViewController {
                 if let newEvent = EventCreator.createEvent(documentData: documentData, collectionType: collectionType) {
                     self.eventsArray.append(newEvent)
                     self.eventsArray.sort { $0.time < $1.time }
-
-                    DispatchQueue.main.async {
-                        self.eventTableView.reloadData()
-                    }
+                    self.manageDefaultEvent()
                 }
+                self.eventTableView.reloadData()
             }
         }
     }

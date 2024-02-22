@@ -17,8 +17,8 @@ class HomeViewController: UIViewController {
     
     let db = Firestore.firestore()
         
-    var eventsArray = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", room: "")]
-    var tasksArray: [Tasks] = [Tasks(title: "No tasks available", description: "Wait for incoming event!", points: 0, imageSource: "", qrCode: "", numberOfTask: -1, done: false)]
+    var eventsArray = [Events]()
+    var tasksArray = [Tasks]()
     var tasksImages: [String: UIImage] = [:]
     
     override func viewDidLoad() {
@@ -34,11 +34,33 @@ class HomeViewController: UIViewController {
         taskCollectionView.dataSource = self
         taskCollectionView.register(UINib(nibName: K.taskCollectionNibName, bundle: nil), forCellWithReuseIdentifier: K.taskCellCollectionIdentifier)
         
-        loadEvents()
-        loadTasks()
         checkID()
         checkWinner()
-        _ = getNewId()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        update()
+    }
+    
+    private func update() {
+        loadEvents()
+        loadTasks()
+    }
+    
+    private func manageDefaultTask() {
+        if tasksArray.count > 1 {
+            tasksArray.removeAll { task in
+                task.title == "No tasks available"
+            }
+        }
+    }
+    
+    private func manageDefaultEvent() {
+        if eventsArray.count > 1 {
+            eventsArray.removeAll { event in
+                event.title == "No events available"
+            }
+        }
     }
     
     @IBAction func seeEventsButtonClicked(_ sender: UIButton) {
@@ -200,7 +222,7 @@ extension HomeViewController : UITableViewDataSource {
 
 extension HomeViewController {
     func loadEvents() {
-        self.eventsArray = []
+        self.eventsArray = [Events(eventType: "Wait for incoming event!", time: "", title: "No events available", partner: "", imageSource: "", room: "")]
         loadEvent(collectionType: K.lectures)
         loadEvent(collectionType: K.workshops)
     }
@@ -215,11 +237,9 @@ extension HomeViewController {
                 if let newEvent = EventCreator.createEvent(documentData: documentData, collectionType: collectionType) {
                     self.eventsArray.append(newEvent)
                     self.eventsArray.sort { $0.time < $1.time }
-                    
-                    DispatchQueue.main.async {
-                        self.eventTableView.reloadData()
-                    }
+                    self.manageDefaultEvent()
                 }
+                self.eventTableView.reloadData()
             }
         }
     }
@@ -232,7 +252,7 @@ extension HomeViewController {
         db.collection("tasks").addSnapshotListener { snapshot , error in
             if error != nil { return }
             guard let snapshotDocuments = snapshot?.documents else { return }
-            self.tasksArray = []
+            self.tasksArray = [Tasks(title: "No tasks available", description: "Wait for incoming event!", points: 0, imageSource: "", qrCode: "", numberOfTask: -1, done: false)]
 
             for document in snapshotDocuments {
                 let documentData = document.data()
@@ -240,12 +260,10 @@ extension HomeViewController {
                     if !newTask.done {
                         self.tasksArray.append(newTask)
                         self.tasksImages[newTask.imageSource] = UIImage(named: newTask.imageSource)
-
-                        DispatchQueue.main.async {
-                            self.taskCollectionView.reloadData()
-                        }
+                        self.manageDefaultTask()
                     }
                 }
+                self.taskCollectionView.reloadData()
             }
         }
     }

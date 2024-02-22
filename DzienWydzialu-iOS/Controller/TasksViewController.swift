@@ -13,7 +13,7 @@ class TasksViewController: UIViewController {
     @IBOutlet weak var pointsLabel: UILabel!
     
     let db = Firestore.firestore()
-    var tasksArray: [Tasks] = [Tasks(title: "No tasks available", description: "Wait for incoming event!", points: 0, imageSource: "", qrCode: "", numberOfTask: -1, done: false)]
+    var tasksArray = [Tasks]()
                 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,7 @@ class TasksViewController: UIViewController {
         tasksTableView.dataSource = self
         tasksTableView.rowHeight = K.rowHeight
         tasksTableView.register(UINib(nibName: K.taskNibName, bundle: nil), forCellReuseIdentifier: K.taskCellIdentifier)
+        tasksTableView.showsVerticalScrollIndicator = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -35,8 +36,13 @@ extension TasksViewController {
     private func update() {
         updatePoints()
         loadTasks()
-        if self.tasksArray.count > 1 {
-            self.tasksArray.remove(at: 0)
+    }
+    
+    private func manageDefaultTask() {
+        if tasksArray.count > 1 {
+            tasksArray.removeAll { task in
+                task.title == "No tasks available"
+            }
         }
     }
     
@@ -117,15 +123,17 @@ extension TasksViewController {
             self.db.collection("tasks").addSnapshotListener { snapshot , error in
                 if error != nil { return }
                 guard let snapshotDocuments = snapshot?.documents else { return }
-                self.tasksArray = []
+                self.tasksArray = [Tasks(title: "No tasks available", description: "Wait for incoming event!", points: 0, imageSource: "", qrCode: "", numberOfTask: -1, done: false)]
 
                 for document in snapshotDocuments {
                     let documentData = document.data()
                     if let newTask = TaskCreator.createTask(documentData: documentData) {
                         self.tasksArray.append(newTask)
-                        self.tasksTableView.reloadData()
+                        self.tasksArray.sort { !$0.done && $1.done }
                         self.updatePoints()
+                        self.manageDefaultTask()
                     }
+                    self.tasksTableView.reloadData()
                 }
             }
         }

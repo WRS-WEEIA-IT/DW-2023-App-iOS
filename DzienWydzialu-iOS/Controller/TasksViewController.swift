@@ -13,7 +13,7 @@ class TasksViewController: UIViewController {
     @IBOutlet weak var pointsLabel: UILabel!
     
     let db = Firestore.firestore()
-    var tasksArray : [Tasks] = [Tasks(title: "No tasks available", description: "Wait for incoming event!", points: 0, imageSource: "", qrCode: "", numberOfTask: -1, done: false)]
+    var tasksArray: [Tasks] = [Tasks(title: "No tasks available", description: "Wait for incoming event!", points: 0, imageSource: "", qrCode: "", numberOfTask: -1, done: false)]
                 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +32,17 @@ class TasksViewController: UIViewController {
 //MARK: - Points and Update
 
 extension TasksViewController {
-    func update() {
+    private func update() {
+        updatePoints()
         loadTasks()
-        DispatchQueue.main.async {
-            let points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
-            self.pointsLabel.attributedText = self.getAttributedInfoText(points: points)
-        }
         if self.tasksArray.count > 1 {
             self.tasksArray.remove(at: 0)
         }
+    }
+    
+    private func updatePoints() {
+        let points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
+        self.pointsLabel.attributedText = self.getAttributedInfoText(points: points)
     }
     
     private func getAttributedInfoText(points: Int) -> NSMutableAttributedString {
@@ -122,7 +124,7 @@ extension TasksViewController {
                     if let newTask = TaskCreator.createTask(documentData: documentData) {
                         self.tasksArray.append(newTask)
                         self.tasksTableView.reloadData()
-                        self.update()
+                        self.updatePoints()
                     }
                 }
             }

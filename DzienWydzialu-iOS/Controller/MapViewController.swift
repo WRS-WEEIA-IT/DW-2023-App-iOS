@@ -26,4 +26,8 @@ class MapViewController: UIViewController {
             zoomImageView.imageName = "firstFloor"
         }
     }
+    
+    @IBAction func downArrowButtonClicked(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
 }

@@ -248,13 +248,11 @@ extension QrViewController : AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func updatePoints(newPoints: Int) {
-        DispatchQueue.main.async {
-            var points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
-            points += newPoints
-            K.defaults.sharedUserDefaults.set(points, forKey: K.defaults.points)
-            if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
-                self.db.collection("users").document(id).updateData(["points" : points, "time" : Timestamp.init()])
-            }
+        var points = K.defaults.sharedUserDefaults.integer(forKey: K.defaults.points)
+        points += newPoints
+        K.defaults.sharedUserDefaults.set(points, forKey: K.defaults.points)
+        if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
+            self.db.collection("users").document(id).updateData(["points" : points, "time" : Timestamp.init()])
         }
     }
 }

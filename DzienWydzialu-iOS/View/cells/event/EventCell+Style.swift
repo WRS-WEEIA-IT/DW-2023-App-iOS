@@ -13,6 +13,8 @@ extension EventCell {
         backgroundImage.layer.cornerRadius = backgroundImage.frame.size.height / 8
         hideComponents()
         applyGradient()
+        self.dateLabel.text = "20 marca 2024"
+        self.dateLabel.isHidden = false
     }
     
     private func hideComponents() {

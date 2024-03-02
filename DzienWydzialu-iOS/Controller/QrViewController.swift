@@ -17,9 +17,19 @@ class QrViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    private func isCameraStatusAuthorized() -> Bool {
+        let status = AVCaptureDevice.authorizationStatus(for: .video)
+        if status == .denied || status == .restricted {
+            return false
+        }
+        return true
+    }
+    
+    private func setupCamera() {
         avCaptureSession = AVCaptureSession()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
                 self.failed()
                 return
@@ -108,8 +118,8 @@ class QrViewController: UIViewController {
             self.view.addGestureRecognizer(tapGesture)
             
             DispatchQueue.global(qos: .background).async {
-                    self.avCaptureSession.startRunning()
-                }
+                self.avCaptureSession.startRunning()
+            }
         }
     }
     
@@ -128,6 +138,26 @@ class QrViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if !isCameraStatusAuthorized() {
+            let alertController = UIAlertController(
+                title: "Unable to access camera",
+                message: "Camera permission is required to scan qr codes",
+                preferredStyle: .alert
+            )
+            alertController.addAction(UIAlertAction(title: "Settings", style: .cancel, handler: { [weak self] _ in
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+                UIApplication.shared.open(settingsUrl)
+                self?.dismissViewController()
+            }))
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { [weak self] _ in
+                self?.dismissViewController()
+            }))
+            
+            present(alertController, animated: true)
+            return
+        }
+        
+        setupCamera()
         tabBarController?.tabBar.isHidden = true
         if (avCaptureSession?.isRunning == false) {
             DispatchQueue.global(qos: .background).async {

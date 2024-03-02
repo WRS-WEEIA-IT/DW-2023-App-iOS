@@ -210,7 +210,7 @@ extension HomeViewController : UITableViewDataSource {
                 cell.place.text = ""
                 cell.isDefault = true
             } else {
-                cell.place.text = "Sala \(event.room)"
+                cell.place.text = "\(event.partner), Room \(event.room)"
             }
         }
         

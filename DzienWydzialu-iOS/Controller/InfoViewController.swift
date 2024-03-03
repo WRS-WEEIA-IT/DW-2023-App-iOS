@@ -8,6 +8,7 @@
 import UIKit
 import MessageUI
 import FirebaseFirestore
+import ThirdPartyMailer
 
 class InfoViewController: UIViewController {
     @IBOutlet weak var pointsButton: GradientButton!
@@ -43,18 +44,82 @@ extension InfoViewController {
 
 extension InfoViewController: MFMailComposeViewControllerDelegate {
     @IBAction func mailButtonClicked(_ sender: Any) {
-        if MFMailComposeViewController.canSendMail() {
-            let mailComposer = MFMailComposeViewController()
-            mailComposer.mailComposeDelegate = self
-            mailComposer.setToRecipients(["dzien.weeia@samorzad.p.lodz.pl"])
-            mailComposer.setSubject("")
-                    
-            present(mailComposer, animated: true)
+        let recipient = "dzien.weeia@samorzad.p.lodz.pl"
+        var actions = getAvailableMailsActions(recipient: recipient)
+        
+        if !actions.isEmpty {
+            let alertController = UIAlertController(
+                title: "Which mail app do you want to use?",
+                message: nil,
+                preferredStyle: .alert
+            )
+            
+            actions.append(UIAlertAction(title: "Cancel", style: .default))
+            actions.forEach { alertController.addAction($0) }
+            
+            present(alertController, animated: true)
+        } else {
+            let alertController = UIAlertController(
+                title: "We did not find any compatible mail app on your phone",
+                message: "Our mail is: \(recipient)",
+                preferredStyle: .alert
+            )
+            
+            alertController.addAction(UIAlertAction(title: "Copy mail", style: .cancel, handler: { _ in
+                UIPasteboard.general.string = recipient
+            }))
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .default))
+            
+            present(alertController, animated: true)
         }
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
+    }
+
+    private func getAvailableMailsActions(recipient: String) -> [UIAlertAction] {
+        let clients = getAvailableMailClients()
+        var actions = [UIAlertAction]()
+        
+        clients.forEach { client in
+            actions.append(
+                UIAlertAction(
+                    title: client.name,
+                    style: .default,
+                    handler: { _ in
+                        ThirdPartyMailer.openCompose(client, recipient: recipient)
+                    }
+                )
+            )
+        }
+        if MFMailComposeViewController.canSendMail() {
+            actions.append(
+                UIAlertAction(
+                    title: "Apple Mail",
+                    style: .default,
+                    handler: { [weak self] _ in
+                        let mailComposer = MFMailComposeViewController()
+                        mailComposer.mailComposeDelegate = self
+                        mailComposer.setToRecipients([recipient])
+                        
+                        self?.present(mailComposer, animated: true)
+                    }
+                )
+            )
+        }
+        return actions
+    }
+    
+    private func getAvailableMailClients() -> [ThirdPartyMailClient] {
+        let availableClientsNames = ["Gmail", "Microsoft Outlook"]
+        var clients = ThirdPartyMailClient.clients.filter { availableClientsNames.contains($0.name) }
+        clients.forEach { client in
+            if !ThirdPartyMailer.isMailClientAvailable(client) {
+                clients.removeAll(where: { $0.name == client.name })
+            }
+        }
+        return clients
     }
 }
 

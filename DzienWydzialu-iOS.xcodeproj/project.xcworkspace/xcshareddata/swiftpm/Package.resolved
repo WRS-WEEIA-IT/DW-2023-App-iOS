@@ -152,6 +152,15 @@
         "revision" : "ab3a58b7209a17d781c0d1dbb3e1ff3da306bae8",
         "version" : "1.20.3"
       }
+    },
+    {
+      "identity" : "thirdpartymailer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vtourraine/ThirdPartyMailer.git",
+      "state" : {
+        "revision" : "44c1cfaa6969963f22691aa67f88a69e3b6d651f",
+        "version" : "2.1.0"
+      }
     }
   ],
   "version" : 2

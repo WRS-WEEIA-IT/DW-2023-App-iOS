@@ -30,7 +30,7 @@ class InfoViewController: UIViewController {
 extension InfoViewController {
     func update() {
         if let id = K.defaults.sharedUserDefaults.string(forKey: K.defaults.codeId) {
-            appIdLabel.text = "APP ID: #\(id)"
+            appIdLabel.text = "USER ID: #\(id)"
         } else {
             appIdLabel.text = "NO ID ASSIGNED"
         }

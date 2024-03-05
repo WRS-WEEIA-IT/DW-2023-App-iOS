@@ -432,8 +432,8 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BQQ-DY-4Kt" userLabel="Top Stack View">
                                                         <rect key="frame" x="0.0" y="55" width="335" height="239"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP ID: #1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCi-8a-raP">
-                                                                <rect key="frame" x="120" y="0.0" width="95" height="17.333333333333332"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USER ID: #1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCi-8a-raP">
+                                                                <rect key="frame" x="115.33333333333334" y="0.0" width="104.33333333333334" height="17.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14"/>
                                                                 <color key="textColor" name="reversedBackgroundColor"/>
                                                                 <nil key="highlightedColor"/>
